@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import questions from '../../src/sla'
+import {dialogs} from '../../src/sla'
 import $ from 'jquery'
 export default {
     name:'Game',
@@ -40,8 +40,9 @@ export default {
             btn2: '',
             btn3: '',
             btn4: '',
-            escolhido: [], 
-            contadorQuestion: 0
+            contadorQuestion: 0,
+            escolhidoDois: [],
+    
         }
     },
     methods: {
@@ -92,43 +93,42 @@ export default {
             }
 
         },
-        rand(min=0, max=4){
-        while (this.escolhido.length < 4) {
-                const num = Math.random() * (max - min) + min
-                let aleatorio = Math.floor(num)
+        rand(){
+                dialogs.map((i, indice)=>{
+                console.log(this.contadorQuestion)
+                while(indice === this.contadorQuestion && this.escolhidoDois.indexOf(this.contadorQuestion) === -1){
+                this.escolhidoDois.push(this.contadorQuestion)
+                $('.question-content').append(i.text1)
+                $('.question-content').append(i.text2)
+                $('.question-content').append(i.text3)
+                $('.question-content').append(i.text4)
+                $('.question-content').append(i.text5)
+                this.btn1 = i.btn1
+                this.btn2 = i.btn2
+                this.btn3 = i.btn3
+                this.btn4 = i.btn4
                 
-                if (this.escolhido.indexOf(aleatorio) === -1){
-                    this.escolhido.push(aleatorio)
-                    this.contadorQuestion = aleatorio
-                    
-                } 
             }
+            })
         },
         acertou(){
             if(this.r1 !== '____' && this.r2 !== '____' && this.r3 !== '____' && this.r4 !== '____' ){
+                $('.question-content').html('<div class="question-type">Dialog <i class="fa fa-comments-o" aria-hidden="true"></i></div>')
+                this.r1 = "____"
+                this.r2 = "____"
+                this.r3 = "____"
+                this.r4 = "____"
+                $('.response').append(this.r1)
+                $('.response2').append(this.r2)
+                $('.response3').append(this.r3)
+                $('.response4').append(this.r4)
+                this.contadorQuestion+=1
                 this.rand()
             }
         }
     },
     mounted(){
-        this.rand(0, 1)
-        
-        console.log(this.escolhido)
-        
-        questions.map((i, indice)=>{
-            
-      
-            if(indice === this.contadorQuestion ){
-            $('.question-content').append(i.text1)
-            $('.question-content').append(i.text2)
-            $('.question-content').append(i.text3)
-            $('.question-content').append(i.text4)
-            $('.question-content').append(i.text5)
-            this.btn1 = i.btn1
-            this.btn2 = i.btn2
-            this.btn3 = i.btn3
-            this.btn4 = i.btn4
-        }})
+        this.rand()
         $('.response').append(this.r1)
         $('.response2').append(this.r2)
         $('.response3').append(this.r3)
