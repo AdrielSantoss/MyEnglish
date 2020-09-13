@@ -32,23 +32,27 @@ export default {
     name:'Game',
     data: function(){
         return {
-            r1: '____',
-            r2: '____',
-            r3: '____',
-            r4: '____',
+            r1: '',
+            r2: '',
+            r3: '',
+            r4: '',
             btn1: '',
             btn2: '',
             btn3: '',
             btn4: '',
             contadorQuestion: 0,
             escolhidoDois: [],
+            resposta1: '',
+            resposta2: '',
+            resposta3: '',
+            resposta4: '',
     
         }
     },
     methods: {
         clickResponse(evt){
             if(this.r1 === "____"){
-                if(evt.originalTarget.firstChild.data === 'fine'){
+                if(evt.originalTarget.firstChild.data === this.resposta1){
                     this.r1 = evt.originalTarget.firstChild.data
                     $('.response').html(this.r1)
                     return
@@ -59,7 +63,7 @@ export default {
             }
 
             if(this.r2 === "____"){
-                if(evt.originalTarget.firstChild.data === 'old'){
+                if(evt.originalTarget.firstChild.data === this.resposta2){
                     this.r2 = evt.originalTarget.firstChild.data
                     $('.response2').html(this.r2)
                     return
@@ -70,7 +74,7 @@ export default {
             }
 
             if(this.r3 === "____"){
-                if(evt.originalTarget.firstChild.data === 'I am'){
+                if(evt.originalTarget.firstChild.data === this.resposta3){
                     this.r3 = evt.originalTarget.firstChild.data
                     $('.response3').html(this.r3)
                     return
@@ -81,7 +85,7 @@ export default {
             }
 
             if(this.r4 === "____"){
-                if(evt.originalTarget.firstChild.data === 'years'){
+                if(evt.originalTarget.firstChild.data === this.resposta4){
                     this.r4 = evt.originalTarget.firstChild.data
                     this.acertou()
                     $('.response4').html(this.r4)
@@ -95,18 +99,29 @@ export default {
         },
         rand(){
                 dialogs.map((i, indice)=>{
-                console.log(this.contadorQuestion)
                 while(indice === this.contadorQuestion && this.escolhidoDois.indexOf(this.contadorQuestion) === -1){
-                this.escolhidoDois.push(this.contadorQuestion)
-                $('.question-content').append(i.text1)
-                $('.question-content').append(i.text2)
-                $('.question-content').append(i.text3)
-                $('.question-content').append(i.text4)
-                $('.question-content').append(i.text5)
-                this.btn1 = i.btn1
-                this.btn2 = i.btn2
-                this.btn3 = i.btn3
-                this.btn4 = i.btn4
+                    this.escolhidoDois.push(this.contadorQuestion)
+                    $('.question-content').append(i.text1)
+                    $('.question-content').append(i.text2)
+                    $('.question-content').append(i.text3)
+                    $('.question-content').append(i.text4)
+                    $('.question-content').append(i.text5)
+                    this.r1 = "____"
+                    this.r2 = "____"
+                    this.r3 = "____"
+                    this.r4 = "____"
+                    $('.response').html(this.r1)
+                    $('.response2').html(this.r2)
+                    $('.response3').html(this.r3)
+                    $('.response4').html(this.r4)
+                    this.resposta1 = i.r1
+                    this.resposta2 = i.r2
+                    this.resposta3 = i.r3
+                    this.resposta4 = i.r4
+                    this.btn1 = i.btn1
+                    this.btn2 = i.btn2
+                    this.btn3 = i.btn3
+                    this.btn4 = i.btn4
                 
             }
             })
@@ -114,14 +129,6 @@ export default {
         acertou(){
             if(this.r1 !== '____' && this.r2 !== '____' && this.r3 !== '____' && this.r4 !== '____' ){
                 $('.question-content').html('<div class="question-type">Dialog <i class="fa fa-comments-o" aria-hidden="true"></i></div>')
-                this.r1 = "____"
-                this.r2 = "____"
-                this.r3 = "____"
-                this.r4 = "____"
-                $('.response').append(this.r1)
-                $('.response2').append(this.r2)
-                $('.response3').append(this.r3)
-                $('.response4').append(this.r4)
                 this.contadorQuestion+=1
                 this.rand()
             }
@@ -129,11 +136,6 @@ export default {
     },
     mounted(){
         this.rand()
-        $('.response').append(this.r1)
-        $('.response2').append(this.r2)
-        $('.response3').append(this.r3)
-        $('.response4').append(this.r4)
-    
     }
     
 }
