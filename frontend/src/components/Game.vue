@@ -20,6 +20,7 @@
               <div class="option" @click="clickResponse">{{btn2}}</div>
               <div class="option" @click="clickResponse">{{btn3}}</div>
               <div class="option" @click="clickResponse">{{btn4}}</div>
+              <div :class="{option:btn5}" @click="clickResponse">{{btn5}}</div>
           </div>
       </div>
   </div>
@@ -36,21 +37,32 @@ export default {
             r2: '',
             r3: '',
             r4: '',
+            r5: '',
+            r6: '',
+            r7: '',
+            r8: '',
             btn1: '',
             btn2: '',
             btn3: '',
             btn4: '',
+            btn5: '',
             contadorQuestion: 0,
             escolhidoDois: [],
             resposta1: '',
             resposta2: '',
             resposta3: '',
             resposta4: '',
+            resposta5: '',
+            resposta6: '',
+            resposta7: '',
+            resposta8: '',
+    
     
         }
     },
     methods: {
         clickResponse(evt){
+
             if(this.r1 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta1){
                     this.r1 = evt.originalTarget.firstChild.data
@@ -87,13 +99,62 @@ export default {
             if(this.r4 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta4){
                     this.r4 = evt.originalTarget.firstChild.data
-                    this.acertou()
                     $('.response4').html(this.r4)
                     return
+           
                 }else {
                     alert('errou tente novamente')
                     return
                 }
+            }
+
+            if(this.resposta5){
+                if(this.resposta6){
+                    if(this.resposta7){
+                        if(this.resposta8){
+                            if(this.r8 === "____"){
+                                if(evt.originalTarget.firstChild.data === this.resposta8){
+                                    this.r8 = evt.originalTarget.firstChild.data
+                                    this.acertou()
+                                    $('.response8').html(this.r8)
+                                    return
+                                }else {
+                                    alert('errou tente novamente')
+                                    return
+                                }
+                            }
+                        }
+                    }else {
+                        if(this.r6 === "____"){
+                            if(evt.originalTarget.firstChild.data === this.resposta6){
+                                this.r6 = evt.originalTarget.firstChild.data
+                                this.acertou()
+                                $('.response6').html(this.r6)
+                                return
+                            }else {
+                                alert('errou tente novamente')
+                                return
+                            }
+                        }
+                    }
+                }else {
+                    if(this.r5 === "____"){
+                        if(evt.originalTarget.firstChild.data === this.resposta5){
+                            this.r5 = evt.originalTarget.firstChild.data
+                            console.log(this.resposta5)
+                            this.acertou()
+                            $('.response5').html(this.r5)
+                            return
+                        }else {
+                            
+                            alert('errou tente novamente')
+                            return
+                        }
+                    }
+                }
+            }else {
+                console.log(!this.resposta5)
+                 this.acertou()
             }
 
         },
@@ -106,22 +167,39 @@ export default {
                     $('.question-content').append(i.text3)
                     $('.question-content').append(i.text4)
                     $('.question-content').append(i.text5)
+                    $('.question-content').append(i.text6)
+                    $('.question-content').append(i.text7)
                     this.r1 = "____"
                     this.r2 = "____"
                     this.r3 = "____"
                     this.r4 = "____"
+                    this.r5 = "____"
+                    this.r6 = "____"
+                    this.r7 = "____"
+                    this.r8 = "____"
                     $('.response').html(this.r1)
                     $('.response2').html(this.r2)
                     $('.response3').html(this.r3)
                     $('.response4').html(this.r4)
+                    $('.response5').html(this.r5)
+                    $('.response6').html(this.r6)
+                    $('.response7').html(this.r7)
+                    $('.response8').html(this.r8)
                     this.resposta1 = i.r1
                     this.resposta2 = i.r2
                     this.resposta3 = i.r3
                     this.resposta4 = i.r4
+                    this.resposta5 = i.r5
+                    this.resposta6 = i.r6
+                    this.resposta7 = i.r7
+                    this.resposta8 = i.r8
+                    this.resposta9 = i.r9
+                    this.resposta10 = i.r10
                     this.btn1 = i.btn1
                     this.btn2 = i.btn2
                     this.btn3 = i.btn3
                     this.btn4 = i.btn4
+                    this.btn5 = i.btn5
                 
             }
             })

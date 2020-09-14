@@ -28,15 +28,23 @@ export const dialogs = [{
     r4: 'thank',
 }
 ,{
-    text1: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Jennifer, would <span class="response"></span> to have dinner with me?</span>',
-    text2: '<span> Yes. That would be nice when do you want to <span class="response2"></span> - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text3: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Is today ok? </span>',
-    text4: '<span> <span class="response3"></span> sorry, i cant not go today. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text5: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - How <span class="response4"></span> tomorrow night? </span>',
-    btn1: 'like',
-    btn2: 'about',
+    text1: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Hi Sarah, how are you?</span>',
+    text2: '<span> Fine, <span class="response"></span> are you doing? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text3: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Ok </span>',
+    text4: '<span>  What do you <span class="response2"></span> to do? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text5: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - I’m hungry. I’d like to <span class="response3"></span> something. </span>',
+    text6: '<span> Where do you want to <span class="response4"></span>? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text7: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - I’d like to go to an Italian <span class="response5"></span></span>',
+    btn1: 'want',
+    btn2: 'eat',
     btn3: 'go',
-    btn4: 'fine'
+    btn4: 'how',
+    btn5: 'restaurant',
+    r1: 'how',
+    r2: 'want',
+    r3: 'eat',
+    r4: 'go',
+    r5: 'restaurant',
 }
 ,{
     text1: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Hello how are you?</span>',
