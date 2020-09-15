@@ -76,8 +76,8 @@ export default {
                     
                     return
                 }else {
-                    alert('errou tente novamente')
-                    return
+                   this.$toasted.global.defaultError()
+                    
                 }
             }
 
@@ -89,7 +89,7 @@ export default {
                     $('.response2').html(this.r2)
                     return
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -102,7 +102,7 @@ export default {
                     $('.response3').html(this.r3)
                     return
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -115,12 +115,12 @@ export default {
                     $('.response4').html(this.r4)
                     let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
                     if(this.r4 === ultimo){
+                        this.$toasted.global.defaultSuccess()
                         this.acertou()
                     }
                     return
-           
                 }else {
-                    alert('errou tente novamente')
+                   this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -133,12 +133,12 @@ export default {
                     $('.response5').html(this.r5)
                     let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
                     if(this.r5 === ultimo){
+                        this.$toasted.global.defaultSuccess()
                         this.acertou()
                     }
                     return
-           
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -151,12 +151,13 @@ export default {
                     $('.response6').html(this.r6)
                     let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
                     if(this.r6 === ultimo){
+                        this.$toasted.global.defaultSuccess()
                         this.acertou()
                     }
                     return
            
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -169,12 +170,13 @@ export default {
                     $('.response7').html(this.r7)
                     let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
                     if(this.r7 === ultimo){
+                        this.$toasted.global.defaultSuccess()
                         this.acertou()
                     }
                     return
            
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -187,12 +189,13 @@ export default {
                     $('.response8').html(this.r8)
                     let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
                     if(this.r8 === ultimo){
+                        this.$toasted.global.defaultSuccess()
                         this.acertou()
                     }
                     return
            
                 }else {
-                    alert('errou tente novamente')
+                    this.$toasted.global.defaultError()
                     return
                 }
             }
@@ -305,7 +308,7 @@ export default {
 .responses-options{
     display: flex;
     width: 1000px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 .option{
@@ -318,6 +321,7 @@ export default {
     border-radius: 5%;
     width: 120px;
     height: 35px;
+    margin: 50px;
     cursor: pointer;
 }
 .menu-icons{
@@ -360,7 +364,10 @@ export default {
     background-color: white;
     width: 600px;
     border-radius: 1%;
-    padding: 10px
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
 ;
 }
 .question-content span{
@@ -401,6 +408,59 @@ export default {
 }
 .disableButton{
     display: none;
+}
+.left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+}
+.right{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    margin-right: 35px;
+    right: 0px;
+}
+.man-perfil{
+    width: 50px;
+    height: 45px;
+    background-color: purple;
+    border-radius: 50%;
+    background-image: url('../assets/imgs/man.jpg');
+    background-position: center;
+    margin-right: 5px;
+}
+.oldman-perfil{
+    width: 50px;
+    height: 45px;
+    background-color: purple;
+    border-radius: 50%;
+    background-image: url('../assets/imgs/oldman.jpg');
+    background-position: center;
+    margin-right: 5px;
+}
+.woman-perfil{
+    position: relative;
+    width: 50px;
+    height: 45px;
+    background-color: purple;
+    border-radius: 50%;
+    background-image: url('../assets/imgs/woman.jpg');
+    background-position: center;
+    margin-left: 5px;
+}
+.womanTwo-perfil{
+    position: relative;
+    width: 50px;
+    height: 45px;
+    background-color: purple;
+    border-radius: 50%;
+    background-image: url('../assets/imgs/woman2.jpg');
+    background-position: center;
+    margin-left: 5px;
 }
 
 </style>
