@@ -47,15 +47,29 @@ export const dialogs = [{
     r5: 'restaurant',
 }
 ,{
-    text1: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Hello how are you?</span>',
-    text2: '<span>I m <span class="response"></span> thanks - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text3: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - How <span class="response2"></span> are you? </span>',
-    text4: '<span> <span class="response3"></span> 20 years old and you? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text5: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Im 20 <span class="response4"></span> old </span>',
-    btn1: 'years',
-    btn2: 'old',
-    btn3: 'I am',
-    btn4: 'fine'
+    text1: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Mary, would you like to <span class="response"></span> something to eat with me?</span>',
+    text2: '<span>OK. When?. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text3: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - At 10 <span class="response2"></span>. </span>',
+    text4: '<span> 10 in the morning? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text5: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - No, at <span class="response3"></span>. </span>',
+    text6: '<span> Sorry, that’s too late. I <span class="response4"></span> go to <span class="response5"></span> around 10:00PM.- <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text7: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - OK, how about 1:30 PM?</span>',
+    text8: '<span> No, that’s too <span class="response6"></span>. I’ll still be at work then. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text9: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - OK, how about 1:30 PM?</span>',
+    text10: '<span> How about 5:00PM?. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
+    text11: '<span><i class="fa fa-user-circle-o" aria-hidden="true"></i> - That’s fine.span>',
+    btn1: 'night',
+    btn2: 'bed',
+    btn3: 'get',
+    btn4: 'usually',
+    btn5: 'early',
+    btn6: 'O’clock',
+    r1: 'get',
+    r2: 'O’clock',
+    r3: 'night',
+    r4: 'usually',
+    r5: 'bed',
+    r6: 'early',
 }]
 
 export const listenAndLearning = [{

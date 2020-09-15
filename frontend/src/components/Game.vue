@@ -16,11 +16,12 @@
 
       <div class="responses-area">
           <div class="responses-options">
-              <div class="option" @click="clickResponse">{{btn1}}</div>
-              <div class="option" @click="clickResponse">{{btn2}}</div>
-              <div class="option" @click="clickResponse">{{btn3}}</div>
-              <div class="option" @click="clickResponse">{{btn4}}</div>
+              <div :class="{option:btn1}" @click="clickResponse">{{btn1}}</div>
+              <div :class="{option:btn2}" @click="clickResponse">{{btn2}}</div>
+              <div :class="{option:btn3}" @click="clickResponse">{{btn3}}</div>
+              <div :class="{option:btn4}" @click="clickResponse">{{btn4}}</div>
               <div :class="{option:btn5}" @click="clickResponse">{{btn5}}</div>
+              <div :class="{option:btn6}" @click="clickResponse">{{btn6}}</div>
           </div>
       </div>
   </div>
@@ -46,8 +47,11 @@ export default {
             btn3: '',
             btn4: '',
             btn5: '',
+            btn6: '',
             contadorQuestion: 0,
             escolhidoDois: [],
+            contadorTotal: [],
+            evts: [],
             resposta1: '',
             resposta2: '',
             resposta3: '',
@@ -65,8 +69,11 @@ export default {
 
             if(this.r1 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta1){
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
                     this.r1 = evt.originalTarget.firstChild.data
                     $('.response').html(this.r1)
+                    
                     return
                 }else {
                     alert('errou tente novamente')
@@ -77,6 +84,8 @@ export default {
             if(this.r2 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta2){
                     this.r2 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
                     $('.response2').html(this.r2)
                     return
                 }else {
@@ -88,6 +97,8 @@ export default {
             if(this.r3 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta3){
                     this.r3 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
                     $('.response3').html(this.r3)
                     return
                 }else {
@@ -99,7 +110,13 @@ export default {
             if(this.r4 === "____"){
                 if(evt.originalTarget.firstChild.data === this.resposta4){
                     this.r4 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
                     $('.response4').html(this.r4)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                    if(this.r4 === ultimo){
+                        this.acertou()
+                    }
                     return
            
                 }else {
@@ -108,55 +125,79 @@ export default {
                 }
             }
 
-            if(this.resposta5){
-                if(this.resposta6){
-                    if(this.resposta7){
-                        if(this.resposta8){
-                            if(this.r8 === "____"){
-                                if(evt.originalTarget.firstChild.data === this.resposta8){
-                                    this.r8 = evt.originalTarget.firstChild.data
-                                    this.acertou()
-                                    $('.response8').html(this.r8)
-                                    return
-                                }else {
-                                    alert('errou tente novamente')
-                                    return
-                                }
-                            }
-                        }
-                    }else {
-                        if(this.r6 === "____"){
-                            if(evt.originalTarget.firstChild.data === this.resposta6){
-                                this.r6 = evt.originalTarget.firstChild.data
-                                this.acertou()
-                                $('.response6').html(this.r6)
-                                return
-                            }else {
-                                alert('errou tente novamente')
-                                return
-                            }
-                        }
+            if(this.r5 === "____"){
+                if(evt.originalTarget.firstChild.data === this.resposta5){
+                    this.r5 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
+                    $('.response5').html(this.r5)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                    if(this.r5 === ultimo){
+                        this.acertou()
                     }
+                    return
+           
                 }else {
-                    if(this.r5 === "____"){
-                        if(evt.originalTarget.firstChild.data === this.resposta5){
-                            this.r5 = evt.originalTarget.firstChild.data
-                            console.log(this.resposta5)
-                            this.acertou()
-                            $('.response5').html(this.r5)
-                            return
-                        }else {
-                            
-                            alert('errou tente novamente')
-                            return
-                        }
-                    }
+                    alert('errou tente novamente')
+                    return
                 }
-            }else {
-                console.log(!this.resposta5)
-                 this.acertou()
             }
 
+            if(this.r6 === "____"){
+                if(evt.originalTarget.firstChild.data === this.resposta6){
+                    this.r6 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
+                    $('.response6').html(this.r6)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                    if(this.r6 === ultimo){
+                        this.acertou()
+                    }
+                    return
+           
+                }else {
+                    alert('errou tente novamente')
+                    return
+                }
+            }
+
+            if(this.r7 === "____"){
+                if(evt.originalTarget.firstChild.data === this.resposta7){
+                    this.r7 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
+                    $('.response7').html(this.r7)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                    if(this.r7 === ultimo){
+                        this.acertou()
+                    }
+                    return
+           
+                }else {
+                    alert('errou tente novamente')
+                    return
+                }
+            }
+
+            if(this.r8 === "____"){
+                if(evt.originalTarget.firstChild.data === this.resposta8){
+                    this.r8 = evt.originalTarget.firstChild.data
+                    evt.originalTarget.className = 'disableButton'
+                    this.evts.push(evt)
+                    $('.response8').html(this.r8)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                    if(this.r8 === ultimo){
+                        this.acertou()
+                    }
+                    return
+           
+                }else {
+                    alert('errou tente novamente')
+                    return
+                }
+            }
+
+    
         },
         rand(){
                 dialogs.map((i, indice)=>{
@@ -169,14 +210,34 @@ export default {
                     $('.question-content').append(i.text5)
                     $('.question-content').append(i.text6)
                     $('.question-content').append(i.text7)
+                    $('.question-content').append(i.text8)
+                    $('.question-content').append(i.text9)
+                    $('.question-content').append(i.text10)
+                    $('.question-content').append(i.text11)
                     this.r1 = "____"
                     this.r2 = "____"
                     this.r3 = "____"
-                    this.r4 = "____"
-                    this.r5 = "____"
-                    this.r6 = "____"
-                    this.r7 = "____"
-                    this.r8 = "____"
+                    if(i.r4){
+                        this.r4 = "____"
+                        this.contadorTotal.push(i.r4)
+                        if(i.r5){
+                            this.r5 = "____"
+                            this.contadorTotal.push(i.r5)
+                            if(i.r6){
+                                this.r6 = "____"
+                                this.contadorTotal.push(i.r6)
+                                if(i.r7){
+                                    this.r7 = "____"
+                                    this.contadorTotal.push(i.r7)
+                                    if(i.r8){
+                                        this.r8 = "____"
+                                        this.contadorTotal.push(i.r8)
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     $('.response').html(this.r1)
                     $('.response2').html(this.r2)
                     $('.response3').html(this.r3)
@@ -200,6 +261,7 @@ export default {
                     this.btn3 = i.btn3
                     this.btn4 = i.btn4
                     this.btn5 = i.btn5
+                    this.btn6 = i.btn6
                 
             }
             })
@@ -207,6 +269,7 @@ export default {
         acertou(){
             if(this.r1 !== '____' && this.r2 !== '____' && this.r3 !== '____' && this.r4 !== '____' ){
                 $('.question-content').html('<div class="question-type">Dialog <i class="fa fa-comments-o" aria-hidden="true"></i></div>')
+                this.evts.map(i => i.originalTarget.className = 'option')
                 this.contadorQuestion+=1
                 this.rand()
             }
@@ -335,6 +398,9 @@ export default {
 .response5 {
     color: slategray;
     font-weight: 800;
+}
+.disableButton{
+    display: none;
 }
 
 </style>
