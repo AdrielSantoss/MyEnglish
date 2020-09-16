@@ -3,12 +3,12 @@ import Toasted from 'vue-toasted'
 
 Vue.use(Toasted, {
     iconPack: 'fontawesome',
-    duration: 600
+    duration: 800
 })
 
 Vue.toasted.register(
     'defaultSuccess',
-     'ACERTOU!' ,
+     'CORRETO!' ,
     { type: 'success', icon: 'check' }
 )
 

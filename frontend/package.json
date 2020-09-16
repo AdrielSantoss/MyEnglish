@@ -15,7 +15,8 @@
     "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
-    "vue-toasted": "^1.1.28"
+    "vue-toasted": "^1.1.28",
+    "vuetify-audio": "^0.3.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

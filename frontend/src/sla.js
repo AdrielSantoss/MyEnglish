@@ -45,31 +45,6 @@ export const dialogs = [{
     r3: 'eat',
     r4: 'go',
     r5: 'restaurant',
-}
-,{
-    text1: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - Mary, would you like to <span class="response"></span> something to eat with me?</span>',
-    text2: '<span class="right">OK. When?. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text3: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - At 10 <span class="response2"></span>. </span>',
-    text4: '<span class="right"> 10 in the morning? - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text5: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - No, at <span class="response3"></span>. </span>',
-    text6: '<span class="right"> Sorry, that’s too late. I <span class="response4"></span> go to <span class="response5"></span> around 10:00PM.- <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text7: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - OK, how about 1:30 PM?</span>',
-    text8: '<span class="right"> No, that’s too <span class="response6"></span>. I’ll still be at work then. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text9: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - OK, how about 1:30 PM?</span>',
-    text10: '<span class="right"> How about 5:00PM?. - <i class="fa fa-user-circle" aria-hidden="true"></i></span>',
-    text11: '<span class="left"><i class="fa fa-user-circle-o" aria-hidden="true"></i> - That’s fine.span>',
-    btn1: 'night',
-    btn2: 'bed',
-    btn3: 'get',
-    btn4: 'usually',
-    btn5: 'early',
-    btn6: 'O’clock',
-    r1: 'get',
-    r2: 'O’clock',
-    r3: 'night',
-    r4: 'usually',
-    r5: 'bed',
-    r6: 'early',
 }]
 
 export const listenAndLearning = [{
