@@ -1,15 +1,15 @@
 <template>
    <div class="game-wrapper">
-       <ListenAndLearning/>
+       <Translate/>
    </div>
 </template>
 
 <script>
-import ListenAndLearning from './ListenAndLearning'
+import Translate from './Translate'
 export default {
     name: 'Game',
     components: {
-        ListenAndLearning
+        Translate
     }
 
 }

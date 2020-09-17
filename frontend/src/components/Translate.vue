@@ -2,21 +2,29 @@
   <div class="game-wrapper ">
 
       <div class="menu-icons">
+          <div class="menu-wrapper">
             <i class="fa fa-times-circle"></i>
           <i class="fa fa-pencil-square" aria-hidden="true"></i>
+          </div>
       </div>
       <div class="question-container">
           <div class="question-content">
               <div class="question-type">
-                   Listen and learning <i class="fa fa-comments-o" aria-hidden="true"></i>
+                   Translate <i class="fa fa-comments-o" aria-hidden="true"></i>
               </div>
-              <div class="image"></div>
+              <div class="image">
+                <div class="text"></div>
+              </div>
+
             
-                    <audio class="audioPlay" controls>
-                        <source src='../assets/audios/lets-play-soccer.mp3'  type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>   
-              <div class="text"></div>
+              <div class="translate-wrapper">
+                  <div class="translate-title">
+                       Traduza a frase acima:
+                  </div>
+                  <div class="translate">
+                      
+                  </div>
+              </div>
           </div>
       </div>
 
@@ -26,6 +34,7 @@
               <div :class="{option:btn2}" @click="clickResponse">{{btn2}}</div>
               <div :class="{option:btn3}" @click="clickResponse">{{btn3}}</div>
               <div :class="{option:btn4}" @click="clickResponse">{{btn4}}</div>
+              <div :class="{option:btn5}" @click="clickResponse">{{btn5}}</div>
               <div class="next" v-show="showNext">Continuar</div>
           </div>
       </div>
@@ -34,7 +43,7 @@
 </template>
 
 <script>
-import {ListenAndLearning} from '../listenAndLearning'
+import {translate} from '../translate'
 import $ from 'jquery'
 export default {
     name: 'ListenAndLerning',
@@ -43,68 +52,41 @@ export default {
             btn2: '',
             btn3: '',
             btn4: '',
-            resposne: '',
-            r: '____',
-            contadorQuestion: 0,
+            btn5: '',
+            r1: '____',
+            r2: '____',
+            r3: '____',
+            showNext: false,
             escolhidoDois: [],
-            audio: '../assets/audios/lets-play-soccer.mp3',
-            img: '',
-            showNext: false
+            contadorQuestion: 0
     
         
     }),
     methods:{
-        clickResponse(evt){
-
-                if(this.r === "____"){
-                    if(evt.originalTarget.firstChild.data === this.response){
-                        this.r = evt.originalTarget.firstChild.data
-                        $('.response').html(this.r)
-                        this.btn1 = ''
-                        this.btn2 = ''
-                        this.btn3 = ''
-                        this.btn4 = ''
-                        this.showNext = !this.showNext
-                        this.$toasted.global.defaultSuccess()
-                        $('.next').click(()=>{
-                            this.acertou()
-                        })
-                        return
-                    }else {
-                        alert('erro')
-                        return
-                    }
-                }
+        clickResponse(){
+          
+            
                  
-        },
-        rand(){
-                ListenAndLearning.map((i, indice)=>{
+        }, rand(){
+            translate.map((i, indice)=>{
                 while(indice === this.contadorQuestion && this.escolhidoDois.indexOf(this.contadorQuestion) === -1){
                     this.escolhidoDois.push(this.contadorQuestion)
-                    this.r = "____"
 
                     $('.text').html(i.text)
-                    $('.response').html(this.r)
-    
-                    this.response = i.r
-                    this.img = i.img
-                    console.log(this.img)
+                    $('.translate').append(this.r1+' ')
+                    $('.translate').append(this.r2+' ')
+                    $('.translate').append(this.r3+ ' ?')
+          
                     this.btn1 = i.btn1
                     this.btn2 = i.btn2
                     this.btn3 = i.btn3
                     this.btn4 = i.btn4
+                    this.btn5 = i.btn5
                 
             }
             })
-        },acertou(){
-            if(this.r !== '____'){
-                this.contadorQuestion+=1
-                this.showNext = !this.showNext
-                this.rand()
-            }
-        },
-    },
-    mounted(){
+        }
+    }, mounted(){
         this.rand()
     }
 }
@@ -151,8 +133,10 @@ export default {
 }
 .menu-icons{
     width: 300px;
+
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .menu-icons i{
     margin: 15px;
@@ -206,7 +190,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    border-bottom: 1px solid slategray;
+ 
     height: 30px;
     margin-bottom: 10px;
     padding: 20px;
@@ -217,6 +201,7 @@ export default {
      background-image: url('../assets/imgs/ListenAndLerning1.jpg');
     background-repeat: no-repeat;
     background-position: center;
+
 }
 
 audio{
@@ -229,8 +214,14 @@ audio{
 
 
 .text{
-    margin-top: 15px;
     font-size: 35px;
+    background-color: rgba(0, 0, 0, 0.459);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 .next{
     display: flex;
@@ -250,4 +241,11 @@ audio{
     font-weight: 800;
     
 }
+.translate-title{
+    text-align: center;
+}
+.translate{
+       font-size: 35px;
+}
+
 </style>

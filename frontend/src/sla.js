@@ -47,7 +47,3 @@ export const dialogs = [{
     r5: 'restaurant',
 }]
 
-export const listenAndLearning = [{
-    
-}]
-
