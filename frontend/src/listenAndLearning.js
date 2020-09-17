@@ -1,6 +1,6 @@
 export const ListenAndLearning = [{
     text: 'Lets <span class="response"></span> soccer',
-    audio: 'lets-play-soccer.mp3',
+    audio: '../assets/audios/poct.mp3',
     img: '../assets/imgs/man.jpg',
     btn1: 'going',
     btn2: 'play',

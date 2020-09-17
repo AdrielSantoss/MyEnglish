@@ -10,13 +10,19 @@
               <div class="question-type">
                    Listen and learning <i class="fa fa-comments-o" aria-hidden="true"></i>
               </div>
-              <div class="image"></div>
+              <div class="image">
+                  <img :src="img" alt="">
+              </div>
             
                     <audio class="audioPlay" controls>
-                        <source src='../assets/audios/lets-play-soccer.mp3'  type="audio/mpeg">
+                        <source  src="../assets/audios/lets-play-soccer.mp3"  type="audio/mpeg">
+                        
                         Your browser does not support the audio element.
                     </audio>   
-              <div class="text"></div>
+              <div class="text">
+                  
+              </div>
+              
           </div>
       </div>
 
@@ -48,7 +54,7 @@ export default {
             contadorQuestion: 0,
             escolhidoDois: [],
             audio: '../assets/audios/lets-play-soccer.mp3',
-            img: '',
+            img: 'http://picsum.photos/200/300',
             showNext: false
     
         
@@ -206,7 +212,6 @@ export default {
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    border-bottom: 1px solid slategray;
     height: 30px;
     margin-bottom: 10px;
     padding: 20px;

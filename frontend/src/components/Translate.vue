@@ -19,10 +19,13 @@
             
               <div class="translate-wrapper">
                   <div class="translate-title">
-                       Traduza a frase acima:
+                       Traduza a {{fraseOrWord}} acima:
                   </div>
                   <div class="translate">
-                      
+                      <div class="text1"></div>
+                      <div class="text2"></div>
+                      <div class="text3"></div>
+                      <div class="text4"></div>
                   </div>
               </div>
           </div>
@@ -53,17 +56,151 @@ export default {
             btn3: '',
             btn4: '',
             btn5: '',
-            r1: '____',
-            r2: '____',
-            r3: '____',
+            contadorWord: 0,
+            r1: '',
+            r2: '',
+            r3: '',
+            r4: '',
+            r5: '',
+            fraseOrWord: 'palavra',
+            response1: '',
+            response2: '',
+            response3: '',
             showNext: false,
             escolhidoDois: [],
-            contadorQuestion: 0
+            contadorQuestion: 0,
+            contadorTotal: []
     
         
     }),
     methods:{
-        clickResponse(){
+        clickResponse(evt){
+            if(this.r1 === "____ "){
+                if(evt.originalTarget.firstChild.data === this.response1){
+                    evt.originalTarget.className = 'disableButton'
+                    this.r1 = evt.originalTarget.firstChild.data
+                    $('.text1').html(this.r1)
+                    let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+
+                    if(this.r1 === ultimo){
+                    this.$toasted.global.defaultSuccess()
+                        this.showNext = !this.showNext
+                        $('.next').click(()=>{
+                            this.acertou()
+                        })
+                    }
+                    
+                    return
+                }else {
+                   this.$toasted.global.defaultError()
+                   return
+                    
+                }
+            }
+            if(this.r2 === "____ "){
+                if(evt.originalTarget.firstChild.data === this.response2){
+                    evt.originalTarget.className = 'disableButton'
+                    this.r2 = evt.originalTarget.firstChild.data
+                    $('.text2').html(this.r2)
+                    
+                let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                 if(this.r2 === ultimo){
+                    this.$toasted.global.defaultSuccess()
+                        this.showNext = !this.showNext
+                        this.btn1 = ''
+                        this.btn2 = ''
+                        this.btn3 = ''
+                        this.btn4 = ''
+                        this.btn5 = ''
+                        $('.next').click(()=>{
+                            this.acertou()
+                        })
+                    }
+                    return
+                }else {
+                   this.$toasted.global.defaultError()
+                   return
+                    
+                }
+            }
+            if(this.r3 === "____ "){
+                if(evt.originalTarget.firstChild.data === this.response3){
+                    evt.originalTarget.className = 'disableButton'
+                    this.r3 = evt.originalTarget.firstChild.data
+                    $('.text3').html(this.r3)
+
+                let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                 if(this.r3 === ultimo){
+                    this.$toasted.global.defaultSuccess()
+                        this.showNext = !this.showNext
+                        this.btn1 = ''
+                        this.btn2 = ''
+                        this.btn3 = ''
+                        this.btn4 = ''
+                        this.btn5 = ''
+                        $('.next').click(()=>{
+                            this.acertou()
+                        })
+                    }
+                    return
+                }else {
+                   this.$toasted.global.defaultError()
+                   return
+                    
+                }
+            }
+            if(this.r4 === "____ "){
+                if(evt.originalTarget.firstChild.data === this.response4){
+                    evt.originalTarget.className = 'disableButton'
+                    this.r4 = evt.originalTarget.firstChild.data
+                    $('.text4').html(this.r4)
+
+                let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                 if(this.r4 === ultimo){
+                    this.$toasted.global.defaultSuccess()
+                        this.showNext = !this.showNext
+                        this.btn1 = ''
+                        this.btn2 = ''
+                        this.btn3 = ''
+                        this.btn4 = ''
+                        this.btn5 = ''
+                        $('.next').click(()=>{
+                            this.acertou()
+                        })
+                    }
+                    return
+                }else {
+                   this.$toasted.global.defaultError()
+                   return
+                    
+                }
+            }
+            if(this.r5 === "____ "){
+                if(evt.originalTarget.firstChild.data === this.response5){
+                    evt.originalTarget.className = 'disableButton'
+                    this.r5 = evt.originalTarget.firstChild.data
+                    $('.text5').html(this.r5)
+
+                let ultimo =  this.contadorTotal[this.contadorTotal.length-1];
+                 if(this.r5 === ultimo){
+                    this.$toasted.global.defaultSuccess()
+                        this.showNext = !this.showNext
+                        this.btn1 = ''
+                        this.btn2 = ''
+                        this.btn3 = ''
+                        this.btn4 = ''
+                        this.btn5 = ''
+                        $('.next').click(()=>{
+                            this.acertou()
+                        })
+                    }
+                    return
+                }else {
+                   this.$toasted.global.defaultError()
+                   return
+                    
+                }
+            }
           
             
                  
@@ -73,18 +210,76 @@ export default {
                     this.escolhidoDois.push(this.contadorQuestion)
 
                     $('.text').html(i.text)
-                    $('.translate').append(this.r1+' ')
-                    $('.translate').append(this.r2+' ')
-                    $('.translate').append(this.r3+ ' ?')
-          
+                    this.contarpalavra(i.text)
+                    this.response = i.text
+
                     this.btn1 = i.btn1
                     this.btn2 = i.btn2
                     this.btn3 = i.btn3
                     this.btn4 = i.btn4
                     this.btn5 = i.btn5
-                
+                    this.response1 = i.t1
+                    this.response2 = i.t2
+                    this.response3 = i.t3
+
+                    if(i.t1){
+                        this.contadorTotal.push(i.t1)
+                        if(i.t2){
+                            this.contadorTotal.push(i.t2)
+                            if(i.t3){
+                                this.contadorTotal.push(i.t3)
+                                if(i.t4){
+                                    this.contadorTotal.push(i.t4)
+                                    if(i.t5){
+                                        this.contadorTotal.push(i.t5)
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    for(i = 1; i <= this.contadorWord; i++){
+                           if(i === 1){
+                               this.r1 = '____ '
+                               
+                           }
+                           if(i === 2){
+                              this.r2 = '____ ' 
+                              this.fraseOrWord = 'frase'
+                           }
+
+                           if(i === 3){
+                              this.r3 = '____ ' 
+                           }
+                           if(i === 4){
+                              this.r4 = '____ ' 
+                           }
+                           if(i === 5){
+                              this.r5 = '____ ' 
+                           }
+                            
+                    }
+      
+                    $('.text1').html(this.r1)
+                    $('.text2').html(this.r2)
+                    $('.text3').html(this.r3)
+                    $('.text4').html(this.r4)
             }
             })
+        },acertou(){
+                this.contadorQuestion+=1
+                this.showNext = !this.showNext
+                this.rand()
+            
+        },
+         contarpalavra(valor){         
+            valor.replace(/(\r\n|\n|\r)/g," ").trim();
+            
+            var cont = valor.split(/\s+/g).length ;
+                        
+            
+               this.contadorWord = cont
+            
         }
     }, mounted(){
         this.rand()
@@ -246,6 +441,13 @@ audio{
 }
 .translate{
        font-size: 35px;
+       display: flex;
+}
+.translate div {
+    margin: 5px;
+}
+.disableButton{
+    display: none;
 }
 
 </style>

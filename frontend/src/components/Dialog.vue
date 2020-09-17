@@ -408,7 +408,6 @@ export default {
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    border-bottom: 1px solid slategray;
     height: 30px;
     margin-bottom: 10px;
     padding: 20px;
