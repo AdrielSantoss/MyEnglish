@@ -9,17 +9,12 @@ import ListenAndLearning from './ListenAndLearning'
 export default {
     name: 'Game',
     components: {
-        ListenAndLearning
+        ListenAndLearning,
+
     },
     data: ()=> ({
         num: 1
-    }),
-    methods: {
-
-    },mounted(){
-
-    }
-
+    })
 }
 </script>
 

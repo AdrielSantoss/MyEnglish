@@ -11,14 +11,12 @@
                    Listen and learning <i class="fa fa-comments-o" aria-hidden="true"></i>
               </div>
               <div class="image">
-                  <img :src="img" alt="">
               </div>
+              <div class="audio">
+                   <vue-audio :file="file" />
+              </div> 
             
-                    <audio class="audioPlay" controls>
-                        <source  src="../assets/audios/lets-play-soccer.mp3"  type="audio/mpeg">
-                        
-                        Your browser does not support the audio element.
-                    </audio>   
+  
               <div class="text">
                   
               </div>
@@ -41,6 +39,7 @@
 
 <script>
 import {ListenAndLearning} from '../listenAndLearning'
+import VueAudio from 'vue-audio'
 import $ from 'jquery'
 export default {
     name: 'ListenAndLerning',
@@ -53,12 +52,17 @@ export default {
             r: '____',
             contadorQuestion: 0,
             escolhidoDois: [],
-            audio: '../assets/audios/lets-play-soccer.mp3',
+            audio: 'lets-play-soccer',
+            file: '../assets/audios/poct.mp3',
             img: 'http://picsum.photos/200/300',
-            showNext: false
+            showNext: false,
+    
     
         
     }),
+    components: {
+        'vue-audio': VueAudio
+    },
     methods:{
         clickResponse(evt){
 
@@ -94,7 +98,8 @@ export default {
     
                     this.response = i.r
                     this.img = i.img
-                    console.log(this.img)
+                    this.audio = i.audio
+                
                     this.btn1 = i.btn1
                     this.btn2 = i.btn2
                     this.btn3 = i.btn3
@@ -106,9 +111,17 @@ export default {
             if(this.r !== '____'){
                 this.contadorQuestion+=1
                 this.showNext = !this.showNext
+                $('.audio').html('')
+                $('.audio').append('<audio class="audioPlay" controls><source id="audio" src="../assets/audios/very-rich.mp3"  type="audio/mpeg"/></audio>')
                 this.rand()
+                
             }
         },
+        getImgUrl(audio){
+
+            console.log(audio)
+            return require('../assets/audios/'+audio+'.mp3')
+        }
     },
     mounted(){
         this.rand()
@@ -116,7 +129,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .game-wrapper{
 
     height: 100vh;
