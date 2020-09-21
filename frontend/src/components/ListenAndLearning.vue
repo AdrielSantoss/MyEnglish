@@ -13,7 +13,7 @@
               <div class="image">
               </div>
               <div class="audio">
-                   <vue-audio :file="file" />
+                   <button @click="ouvir()">ouvir</button>
               </div> 
             
   
@@ -38,8 +38,8 @@
 </template>
 
 <script>
+
 import {ListenAndLearning} from '../listenAndLearning'
-import VueAudio from 'vue-audio'
 import $ from 'jquery'
 export default {
     name: 'ListenAndLerning',
@@ -59,11 +59,7 @@ export default {
     
     
         
-    }),
-    components: {
-        'vue-audio': VueAudio
-    },
-    methods:{
+    }), methods:{
         clickResponse(evt){
 
                 if(this.r === "____"){
@@ -117,10 +113,9 @@ export default {
                 
             }
         },
-        getImgUrl(audio){
-
-            console.log(audio)
-            return require('../assets/audios/'+audio+'.mp3')
+        ouvir(){
+            
+            return audio.play()
         }
     },
     mounted(){
