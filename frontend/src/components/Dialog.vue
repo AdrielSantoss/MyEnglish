@@ -30,6 +30,7 @@
 
 <script>
 import {dialogs} from '../../src/sla'
+
 import $ from 'jquery'
 export default {
     name:'Dialog',
@@ -301,7 +302,8 @@ export default {
                 this.evts.map(i => i.originalTarget.className = 'option')
                 this.contadorQuestion+=1
                 this.showNext = !this.showNext
-                this.rand()
+                this.$store.commit("changeQuestion", 'Translate');
+                //this.rand()
             }
         }
     },
