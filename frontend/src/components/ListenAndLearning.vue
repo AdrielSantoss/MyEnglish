@@ -13,7 +13,7 @@
               <div class="image">
               </div>
               <div class="audio">
-                   <button @click="ouvir()">ouvir</button>
+                   <button >ouvir</button>
               </div> 
             
   
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-
+import { mapState } from 'vuex'
 import {ListenAndLearning} from '../listenAndLearning'
 import $ from 'jquery'
 export default {
@@ -59,7 +59,9 @@ export default {
     
     
         
-    }), methods:{
+    }), 
+    computed: mapState(['question']),
+    methods:{
         clickResponse(evt){
 
                 if(this.r === "____"){
@@ -84,6 +86,7 @@ export default {
                  
         },
         rand(){
+     
                 ListenAndLearning.map((i, indice)=>{
                 while(indice === this.contadorQuestion && this.escolhidoDois.indexOf(this.contadorQuestion) === -1){
                     this.escolhidoDois.push(this.contadorQuestion)
@@ -109,13 +112,10 @@ export default {
                 this.showNext = !this.showNext
                 $('.audio').html('')
                 $('.audio').append('<audio class="audioPlay" controls><source id="audio" src="../assets/audios/very-rich.mp3"  type="audio/mpeg"/></audio>')
+        
                 this.rand()
                 
             }
-        },
-        ouvir(){
-            
-            return audio.play()
         }
     },
     mounted(){
