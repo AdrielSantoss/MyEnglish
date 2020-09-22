@@ -3,12 +3,13 @@ import Header from '../Header'
 import Header_Container from '../Header_Container'
 import Content from '../Content'
 import Footer from '../Footer'
+import {Outlet} from 'react-router-dom'
 
 export default function Home() {
  return (
    <div>
        <Header/>
-       <Header_Container/>
+       <Outlet/>
        <Content/>
        <Footer/>
    </div>

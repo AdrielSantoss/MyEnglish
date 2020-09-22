@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './header-content.css'
+import {Link} from 'react-router-dom'
+
 
 export default function Header_Content() {
 
   const [user, setUser] = useState('')
   const [name, setName] = useState('')
+ 
 
   useEffect(()=>{
     if(localStorage.getItem('user_MyEnglish')){
@@ -30,7 +33,7 @@ export default function Header_Content() {
       <div className="login-container" >
         <p className="login-msg">Faça login para começar</p>
         <div className="buttons-authentication">
-        <button type="button" class="btn btn-dark mr-5 btn-lg">Login</button>
+        <Link to="/login"><button type="button" class="btn btn-dark mr-5 btn-lg">Login</button></Link>
           <button type="button" class="btn btn-dark btn-lg">Register</button>
         </div>
     </div>

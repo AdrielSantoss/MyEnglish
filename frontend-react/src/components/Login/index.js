@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css'
+import {Link} from 'react-router-dom'
 
 export default function Login() {
  return (
@@ -14,6 +15,19 @@ export default function Login() {
         </div>
         <center>Wellcome again to MyEnglish, por favor entre com sua conta</center> 
         <hr></hr>
+        <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1"/>
+  </div>
+  <small id="emailHelp" class="form-text text-muted mb-3">Não possui uma conta? <Link to="/register">click aqui</Link> </small>
+
+  <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
     </div>
    </div>
    </div>

@@ -1,0 +1,26 @@
+.register-wrapper{
+    background-color: white;
+    color:black;
+    height: 555px;
+    width: 450px;
+    padding: 10px;
+    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+    margin-left: 70px;
+
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 5px;
+}
+.hello-title{
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.msg{
+  color: red
+}
