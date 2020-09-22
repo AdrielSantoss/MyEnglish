@@ -1,0 +1,90 @@
+.start-wrapper{
+    background-color: white;
+    color:black;
+    height: 570px;
+    width: 450px;
+    padding: 10px;
+    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+    margin-left: 70px;
+}
+.levels {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    grid-template-areas:
+    "basic intermediario"
+    "avanced idontknow"
+
+}
+.idontknow {
+    background-image: url('../../assets/imgs/question.jpg');
+    background-repeat: no-repeat;
+}
+.avanced {
+    background-image: url('../../assets/imgs/avanced.jpg');
+    background-repeat: no-repeat;
+  
+}
+.intermediario{
+    background-image: url('../../assets/imgs/intermediario.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.basic {
+    background-image: url('../../assets/imgs/basic.jpg');
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+.basic:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.intermediario:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.avanced:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.idontknow:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.level-title{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+}
+.level-title:hover{
+        background-color: rgba(0, 0, 0, 0.274);
+        transition: 0.5s;
+}
+.test-wrapper{
+    width: 450px;
+    background-color: white;
+    height: 200px;
+}
+.buttons-response {
+    text-align: center;
+}
+.wrapper_alert{
+    height: 250px;
+    background-color: red;
+}
+.start-alert{
+    color: black;
+    margin-left: 70px;
+    margin-top: 160px
+}

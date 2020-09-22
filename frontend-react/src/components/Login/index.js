@@ -1,8 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './login.css'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import UsersService from '../../config/services'
 
-export default function Login() {
+
+ function Login() {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [msg, setMsg] = useState('')
+  const navigation = useNavigate();
+
+  const login = async(evt)=>{
+    evt.preventDefault()
+    try{
+      await UsersService.login({email: email, password: password})
+      navigation('/')
+    }catch (err){
+      if(err == "Error: Request failed with status code 401"){
+        setMsg('Email ou senha incorretas') 
+    }else {
+      setMsg('Erro: '+err)
+    }
+    }
+  }
+
  return (
    <div>
     <div className="login-wrapper mt-5">
@@ -15,15 +37,16 @@ export default function Login() {
         </div>
         <center>Wellcome again to MyEnglish, por favor entre com sua conta</center> 
         <hr></hr>
-        <form>
+        <form onSubmit={login}>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyUp={(e)=>{setEmail(e.target.value)}}/>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
+    <input type="password" class="form-control" id="exampleInputPassword1" onKeyUp={(e)=>{setPassword(e.target.value)}}/>
   </div>
+  {msg}
   <small id="emailHelp" class="form-text text-muted mb-3">Não possui uma conta? <Link to="/register">click aqui</Link> </small>
 
   <button type="submit" class="btn btn-primary">Entrar</button>
@@ -33,3 +56,5 @@ export default function Login() {
    </div>
  );
 }
+
+export default Login

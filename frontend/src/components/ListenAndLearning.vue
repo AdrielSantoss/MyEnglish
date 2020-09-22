@@ -15,11 +15,8 @@
               <div class="audio">
                    <button >ouvir</button>
               </div> 
-            
-  
-              <div class="text">
-                  
-              </div>
+        
+              <div class="text"></div>
               
           </div>
       </div>

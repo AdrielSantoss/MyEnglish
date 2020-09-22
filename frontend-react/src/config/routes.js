@@ -5,6 +5,8 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 import Container from '../components/Header_Container'
 import Content from '../components/Header_Content'
+import Start from '../components/Start'
+import Introduction from '../components/Introduction'
 
 export default function MainRoutes(){
 
@@ -17,8 +19,11 @@ export default function MainRoutes(){
                     <Route path="/" element={<Content/>}/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
+                    <Route path="/start" element={<Start/>}/>
                 </Route>
             </Route>
+
+            <Route path="/intro" element={<Introduction/>} /> 
 
         </Routes>
     )

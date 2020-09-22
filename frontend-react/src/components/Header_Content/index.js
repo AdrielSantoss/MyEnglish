@@ -13,7 +13,7 @@ export default function Header_Content() {
     if(localStorage.getItem('user_MyEnglish')){
       let user = JSON.parse(localStorage.getItem('user_MyEnglish'))
       setUser(user)
-      setName(name)
+      setName(user.name)
  }
   },[])
 
@@ -21,9 +21,9 @@ export default function Header_Content() {
     if(localStorage.getItem('user_MyEnglish')){
       return (
         <div className="login-container" >
-        <p className="login-msg">Seja muito bem vindo {user} , o que deseja fazer?</p>
+        <p className="login-msg">Seja muito bem vindo {name} , o que deseja fazer?</p>
         <div className="buttons-authentication">
-        <button type="button" class="btn btn-dark mr-5 btn-lg">Começar</button>
+        <Link to="/start"><button type="button" class="btn btn-dark mr-5 btn-lg">Começar</button></Link>
            <button type="button" class="btn btn-dark btn-lg">ChatRoom</button>
         </div>
     </div>
@@ -34,7 +34,7 @@ export default function Header_Content() {
         <p className="login-msg">Faça login para começar</p>
         <div className="buttons-authentication">
         <Link to="/login"><button type="button" class="btn btn-dark mr-5 btn-lg">Login</button></Link>
-          <button type="button" class="btn btn-dark btn-lg">Register</button>
+          <Link to="/register"><button type="button" class="btn btn-dark btn-lg">Register</button></Link>
         </div>
     </div>
    )
