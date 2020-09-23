@@ -7,6 +7,7 @@ import Container from '../components/Header_Container'
 import Content from '../components/Header_Content'
 import Start from '../components/Start'
 import Introduction from '../components/Introduction'
+import Game from '../components/Game'
 
 export default function MainRoutes(){
 
@@ -24,6 +25,7 @@ export default function MainRoutes(){
             </Route>
 
             <Route path="/intro" element={<Introduction/>} /> 
+            <Route path="/game" element={<Game/>} /> 
 
         </Routes>
     )
