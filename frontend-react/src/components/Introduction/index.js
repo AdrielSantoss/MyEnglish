@@ -1,16 +1,17 @@
 import React from 'react';
 import './introduction.css'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import {LeftArrowAlt} from '@styled-icons/boxicons-regular/LeftArrowAlt'
+
 
 export default function Introduction() {
 
     const navigation = useNavigate()
 
  return (
-    <div className="game-template bg-dark">
+    <div className="game-template">
     <div className="game-introduction">
-    <div className="left">
+    <div className="leftArrow">
                 <LeftArrowAlt size={45} onClick={()=>{navigation('/start')}}/>
             </div>
         <div className="hello">
@@ -38,11 +39,14 @@ export default function Introduction() {
         </div>
     </center>
     <div className="buttons">
-        <center><button type="button" class="btn btn-success mb-3 mt-5 btn-block">Começar a aprender</button></center> 
+        
     </div>
     </div>
-  
-
+    <div className="responses-area">
+                <div className="responses-options">
+                    <Link to="/game"><center><button type="button" class="btn btn-primary btn-block" >Começar a praticar</button></center></Link>
+                </div>
+            </div>
 </div>
  );
 }

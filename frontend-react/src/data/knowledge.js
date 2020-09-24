@@ -26,12 +26,47 @@ export const knowledgeQuestions = [{
     type:'translate'
 }, {
     text: 'Lets <span class="response"></span> soccer',
-    audio: 'lets-play-soccer',
+    audio: require('../assets/audios/lets-play-soccer.mp3'),
     img: '../assets/imgs/man.jpg',
     btn1: 'going',
     btn2: 'play',
     btn3: 'run',
     btn4: 'slay',
     r: 'play',
+    type: 'listen-and-learning'
+},{
+    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+    text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
+    text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',
+    text5: '<span class="left"><div class="oldman-perfil"></div> - <span class="response4"></span> you </span>',
+    btn1: 'thank',
+    btn2: 'yours',
+    btn3: 'what',
+    btn4: 'speak',
+    r1: 'what',
+    r2: 'yours',
+    r3: 'speak',
+    r4: 'thank',
+    type: 'dialog'
+},{
+    text: 'hello let’s play',
+    t1: 'ola',
+    t2: 'vamos',
+    t3: 'brincar',
+    btn1: 'como',
+    btn2: 'vamos',
+    btn3: 'ola',
+    btn4: 'brincar',
+    btn5: 'com',  
+    type: 'translate'
+},{
+    text: 'I’m <span class="response"></span> rich',
+    audio: require('../assets/audios/very-rich.mp3'),
+    btn1: 'very',
+    btn2: 'much',
+    btn3: 'easy',
+    btn4: 'extreme',
+    r: 'very',
     type: 'listen-and-learning'
 }]

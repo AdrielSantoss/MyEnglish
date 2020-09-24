@@ -3,7 +3,9 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
+    background-color: rgb(123, 140, 158);
+
     box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.9);
 }
 .game-introduction{
@@ -11,8 +13,10 @@
     width: 500px;
     height: 500px;
     border-radius: 5%;
+    margin-top: 80px;
 }
 .hello{
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +72,7 @@
     margin-right: auto;
     width: 200px;
 }
-.left{
+.leftArrow{
     position: absolute;
     cursor: pointer;
 }
