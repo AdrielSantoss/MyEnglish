@@ -30,7 +30,7 @@ export default function Start() {
             <div className="basic "><div className="level-title">Básico</div></div>
             <div className="intermediario "><div className="level-title">Intermediario</div></div>
             <div className="avanced "><div className="level-title">Avançado</div></div>
-            <div className="idontknow "><Link to="/intro"><div className="level-title">Eu não sei</div></Link></div>
+            <div className="idontknow "><Link to="/game"><div className="level-title">Eu não sei</div></Link></div>
         </div>
       </div>
       </div>

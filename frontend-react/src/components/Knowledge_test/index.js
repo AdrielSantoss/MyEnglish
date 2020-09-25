@@ -10,19 +10,27 @@ import {ReportProblem} from '@styled-icons/material/ReportProblem'
 import {InfoCircle} from '@styled-icons/boxicons-solid/InfoCircle'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Introduction from '../Introduction'
+import Final from '../Final'
+import {IntroWrapper, FinishWrapper} from './style.js'
 
 
-export default function ListenAnd_Learning() {
+export default function Knowledge_test() {
 
     const [selecteds, setSelecteds] = useState([])
     const [counterQuestions, setCounterQuestions] = useState(0)
+    const [showIntro, setShowIntro] = useState('normal')
+    const [showEnd, setShowEnd] = useState('none')
 
     useEffect(()=>{
         rand()
     },[])
 
     function rand(min=0, max=6){
-
+        if(selecteds.length >= 5){
+            setShowEnd('flex')
+ 
+        }
         while (selecteds.length < 6) {
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
@@ -35,6 +43,10 @@ export default function ListenAnd_Learning() {
             } 
         }
               
+    }
+
+    function hideIntro(){
+        return setShowIntro('none')
     }
 
  return (
@@ -51,8 +63,12 @@ export default function ListenAnd_Learning() {
     </div>
     <ToastContainer/>
 
-    {knowledgeQuestions.map((i,indice)=>{
+    <IntroWrapper display={showIntro}>
+        <Introduction />
+    </IntroWrapper>
 
+    {knowledgeQuestions.map((i,indice)=>{
+        if(showIntro === 'none'){
         if(indice === counterQuestions){
             while(selecteds.length < 6){
                 if(i.type === 'dialog'){
@@ -76,8 +92,22 @@ export default function ListenAnd_Learning() {
                 }
 
             }
-        }
+        }}
     })}
+
+        <IntroWrapper display={showIntro}>
+            <div className="responses-area">
+                <div className="responses-options">
+                    <center><button type="button" class="btn btn-primary btn-block" onClick={hideIntro}>Começar a praticar</button></center>
+                </div>
+            </div>
+        </IntroWrapper>
+
+        <FinishWrapper display={showEnd}>
+            <Final />
+        </FinishWrapper>
+
+
 </div>
  );
 }
