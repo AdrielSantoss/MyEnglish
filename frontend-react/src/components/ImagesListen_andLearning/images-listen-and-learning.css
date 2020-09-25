@@ -1,0 +1,30 @@
+.images-wrapper{
+    width: 400x;
+    height: 300px;
+}
+.images-learning{
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    grid-template-areas:
+    "home recreation"
+    "office park"
+}
+
+.home{
+    background-image: url('../../assets/imgs/question.jpg');
+    background-repeat: no-repeat;
+}
+.recreation{
+    background-image: url('../../assets/imgs/question.jpg');
+    background-repeat: no-repeat;
+}
+.office{
+    background-image: url('../../assets/imgs/question.jpg');
+    background-repeat: no-repeat;
+}
+.park{
+    background-image: url('../../assets/imgs/question.jpg');
+    background-repeat: no-repeat;
+}

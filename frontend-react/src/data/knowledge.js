@@ -15,6 +15,7 @@ export const knowledgeQuestions = [{
     type: 'dialog'
 },{
     text: 'How are you',
+    img: require("../assets/imgs/how-are-you.jpg"),
     t1: 'como',
     t2: 'vai',
     t3: 'você',
@@ -27,7 +28,7 @@ export const knowledgeQuestions = [{
 }, {
     text: 'Lets <span class="response"></span> soccer',
     audio: require('../assets/audios/lets-play-soccer.mp3'),
-    img: '../assets/imgs/man.jpg',
+    img: require("../assets/imgs/lets-play.jpg"),
     btn1: 'going',
     btn2: 'play',
     btn3: 'run',
@@ -49,24 +50,16 @@ export const knowledgeQuestions = [{
     r3: 'speak',
     r4: 'thank',
     type: 'dialog'
-},{
-    text: 'hello let’s play',
-    t1: 'ola',
-    t2: 'vamos',
-    t3: 'brincar',
-    btn1: 'como',
-    btn2: 'vamos',
-    btn3: 'ola',
-    btn4: 'brincar',
-    btn5: 'com',  
-    type: 'translate'
-},{
-    text: 'I’m <span class="response"></span> rich',
-    audio: require('../assets/audios/very-rich.mp3'),
-    btn1: 'very',
-    btn2: 'much',
-    btn3: 'easy',
-    btn4: 'extreme',
-    r: 'very',
-    type: 'listen-and-learning'
+}, {
+    word: 'casa',
+    img1: '',
+    img2: '',
+    img3: '',
+    img4: '',
+    audio1: '',
+    audio2: '',
+    audio3: '',
+    audio4: '',
+    r: 'img1',
+    type: 'images-listen-and-learning'
 }]

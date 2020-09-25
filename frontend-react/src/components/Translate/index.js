@@ -3,6 +3,7 @@ import './translate.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Image} from './style.js'
 
 export default function Translate(props) {
 
@@ -162,11 +163,11 @@ export default function Translate(props) {
                     <div className="question-type">
                         Translate <i className="fa fa-comments-o" aria-hidden="true"></i>
                     </div>
-                    <div className="image">
+                    
+                    <Image img={props.item.img}>
                         <div className="text" >{props.item.text}</div>
-                    </div>
-
-
+                    </Image>
+    
                     <div className="translate-wrapper">
                         <div className="translate-title">
                             Traduza a frase acima:

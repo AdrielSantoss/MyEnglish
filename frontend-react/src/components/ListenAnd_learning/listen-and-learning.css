@@ -85,6 +85,7 @@ audio{
 .text-listen{
     margin-top: 15px;
     font-size: 35px;
+
 }
 .next{
     display: flex;
@@ -99,8 +100,12 @@ audio{
     cursor: pointer;
   
 }
-.response {
+.response{
     color: slategray;
-    font-weight: 800;
+    font-weight: 600;
+    font-size: 35pt;
     
+}
+.text-listen .response {
+    font-size: 30px;
 }

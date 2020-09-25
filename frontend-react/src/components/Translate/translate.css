@@ -93,7 +93,7 @@ audio{
 
 .text{
     font-size: 35px;
-    background-color: rgba(0, 0, 0, 0.459);
+    background-color: rgba(0, 0, 0, 0.541);
     width: 100%;
     height: 100%;
     display: flex;
@@ -116,7 +116,7 @@ audio{
 }
 .response {
     color: slategray;
-    font-weight: 800;
+    font-weight: 600;
     
 }
 .translate-title{

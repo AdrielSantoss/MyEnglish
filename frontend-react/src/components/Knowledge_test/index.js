@@ -4,6 +4,7 @@ import {knowledgeQuestions} from '../../data/knowledge.js'
 import Dialog from '../Dialog'
 import Translate from '../Translate'
 import ListenAnd_learning from '../ListenAnd_learning'
+import ImagesListen_AndLearning from '../ImagesListen_andLearning'
 import {TimesCircle} from '@styled-icons/fa-solid/TimesCircle'
 import {ColorPalette} from '@styled-icons/ionicons-sharp/ColorPalette'
 import {ReportProblem} from '@styled-icons/material/ReportProblem'
@@ -87,6 +88,12 @@ export default function Knowledge_test() {
                     return (
                         <div>
                             <ListenAnd_learning item={i} rand={rand}/>
+                        </div>
+                    )
+                }else if(i.type === 'images-listen-and-learning'){
+                    return(
+                        <div>
+                            <ImagesListen_AndLearning item={i} rand={rand}/>
                         </div>
                     )
                 }

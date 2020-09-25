@@ -3,6 +3,7 @@ import './listen-and-learning.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Image} from './style.js'
 
 
 export default function ListenAnd_learning(props) {
@@ -48,8 +49,7 @@ export default function ListenAnd_learning(props) {
               <div class="question-type">
                    Listen and learning <i class="fa fa-comments-o" aria-hidden="true"></i>
               </div>
-              <div class="image">
-              </div>
+              <Image img={props.item.img}/>
               <audio controls>
                 <source src="horse.ogg" type="audio/ogg"/>
                 <source src={props.item.audio} type="audio/mpeg"/>
