@@ -8,6 +8,7 @@ import {Image} from './style.js'
 
 export default function ListenAnd_learning(props) {
 
+    const [error, setError] = useState(false)
 
     useEffect(()=>{
          setQuestion()
@@ -21,7 +22,19 @@ export default function ListenAnd_learning(props) {
         $('#next').addClass('disableButton')
     }
 
+    function setResponseError(evt){
+        $('#next').removeClass('disableButton').addClass('next-error')
+        $('#next').click(() => {
+            props.rand()
+        })
+        toast.error(`❌ ERRADO!`, {
+            autoClose: 1100
+        })
+        setError(!error)
+    }
+
     function setResponse(evt){
+        if(!error){
         if($('.response').html() === '____'){
             if(evt.target.value === props.item.r){
                 evt.target.className = 'disableButton'
@@ -36,10 +49,11 @@ export default function ListenAnd_learning(props) {
                 })
                 return
             }else {
-                alert('erro')
+                setResponseError(evt)
+                $('.response').html(evt.target.value).removeClass('response').addClass('error-text')
                 return
             
-        }}
+        }}}
     }
 
     return (

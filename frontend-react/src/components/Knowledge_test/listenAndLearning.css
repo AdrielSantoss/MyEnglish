@@ -34,3 +34,11 @@
 .report{
     cursor: pointer;
 }
+.progress{
+    margin-top: 20px;
+    width: 600px;
+}
+.progress-wrapper{
+    display: flex;
+    justify-content: center;
+}

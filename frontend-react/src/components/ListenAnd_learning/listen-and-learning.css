@@ -106,6 +106,12 @@ audio{
     font-size: 35pt;
     
 }
+
 .text-listen .response {
     font-size: 30px;
+}
+.text-listen .error-text {
+    color: red;
+    font-weight: 600;
+    font-size: 25pt;
 }

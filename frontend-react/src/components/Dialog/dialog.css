@@ -171,3 +171,21 @@
     cursor: pointer;
   
 }
+.next-error{
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: red;
+    border-radius: 5%;
+    width: 120px;
+    height: 35px;
+    margin: 50px;
+    cursor: pointer;
+    justify-content: center;
+}
+.error{
+    color: red;
+    font-weight: 600;
+}

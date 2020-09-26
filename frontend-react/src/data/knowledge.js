@@ -51,15 +51,34 @@ export const knowledgeQuestions = [{
     r4: 'thank',
     type: 'dialog'
 }, {
-    word: 'casa',
-    img1: '',
-    img2: '',
-    img3: '',
-    img4: '',
-    audio1: '',
-    audio2: '',
-    audio3: '',
-    audio4: '',
+    word: 'Home',
+    img1: require('../assets/imgs/home.jpg'),
+    img2: require('../assets/imgs/igreja.jpg'),
+    img3: require('../assets/imgs/park.jpg'),
+    img4: require('../assets/imgs/car.png'),
+    audio: require('../assets/audios/Home.mp3'),
     r: 'img1',
     type: 'images-listen-and-learning'
+},{
+    text: 'I’m <span class="response"></span> rich',
+    audio: require('../assets/audios/very-rich.mp3'),
+    img: require("../assets/imgs/very-rich.jpg"),
+    btn1: 'very',
+    btn2: 'much',
+    btn3: 'easy',
+    btn4: 'extreme',
+    r: 'very',
+    type: 'listen-and-learning'
+},{
+    text: 'hello let’s play',
+    img: require("../assets/imgs/lets-play.jpg"),
+    t1: 'ola',
+    t2: 'vamos',
+    t3: 'brincar',
+    btn1: 'como',
+    btn2: 'vamos',
+    btn3: 'ola',
+    btn4: 'brincar',
+    btn5: 'com',
+    type:'translate'
 }]

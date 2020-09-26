@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './translate.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Image} from './style.js'
 
 export default function Translate(props) {
+
+    const [error, setError] = useState(false)
 
     useEffect(()=>{
 
@@ -20,6 +22,8 @@ export default function Translate(props) {
        $('#next').addClass('disableButton')
      
     }
+
+    
 
     function wordCounter(){         
         let text = props.item.text
@@ -42,7 +46,20 @@ export default function Translate(props) {
 
     }
 
+    function setResponseError(evt){
+        $('#next').removeClass('disableButton').addClass('next-error')
+        $('#next').click(() => {
+            props.rand()
+        })
+        toast.error(`❌ ERRADO!`, {
+            autoClose: 1100
+        })
+        evt.target.className = 'disableButton'
+        setError(!error)
+    }
+
     function setResponse(evt){
+        if(!error){
         if($('.text1').html() === "____ "){
             if(evt.target.value === props.item.t1){
                 evt.target.className = 'disableButton'
@@ -60,7 +77,8 @@ export default function Translate(props) {
                 }
                 return
             }else {
-               alert('errou')
+                setResponseError(evt)
+                $('.text1').html(evt.target.value).removeClass('text1').addClass('error')
                return
                 
             }
@@ -82,7 +100,8 @@ export default function Translate(props) {
                 }
                 return
             }else {
-               alert('errou')
+                setResponseError(evt)
+                $('.text2').html(evt.target.value).removeClass('text2').addClass('error')
                return
                 
             }
@@ -105,7 +124,8 @@ export default function Translate(props) {
                 }
                 return
             }else {
-               alert('errou')
+                setResponseError(evt)
+                $('.text3').html(evt.target.value).removeClass('text3').addClass('error')
                return
                 
             }
@@ -127,7 +147,8 @@ export default function Translate(props) {
                 }
                 return
             }else {
-               alert('errou')
+                setResponseError(evt)
+                $('.text4').html(evt.target.value).removeClass('text4').addClass('error')
                return
                 
             }
@@ -149,11 +170,12 @@ export default function Translate(props) {
                 }
                 return
             }else {
-               alert('errou')
+                setResponseError(evt)
+                $('.text5').html(evt.target.value).removeClass('text5').addClass('error')
                return
                 
             }
-        }
+        }}
     }
 
     return (

@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import $ from 'jquery'
 import './dialog.css'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Dialog(props) {
+
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         setQuestion()
@@ -33,15 +35,28 @@ export default function Dialog(props) {
 
     }
 
+    function setResponseError(evt){
+        $('#next').removeClass('disableButton').addClass('next-error')
+        $('#next').click(() => {
+            props.rand()
+        })
+        toast.error(`❌ ERRADO!`, {
+            autoClose: 1100
+        })
+        evt.target.className = 'disableButton'
+        setError(!error)
+    }
+
     function setResponse(evt) {
+        if(!error){
         if ($('.response').html() === '____') {
             if (evt.target.value === props.item.r1) {
                 $('.response').html(props.item.r1)
                 evt.target.className = 'disableButton'
-
                 return
             } else {
-                alert('erro')
+                $('.response').html(evt.target.value).removeClass('response').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -51,7 +66,8 @@ export default function Dialog(props) {
                 evt.target.className = 'disableButton'
                 return
             } else {
-                alert('erro')
+                $('.response2').html(evt.target.value).removeClass('response2').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -62,7 +78,8 @@ export default function Dialog(props) {
                 return
 
             } else {
-                alert('erro')
+                $('.response3').html(evt.target.value).removeClass('response3').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -84,7 +101,8 @@ export default function Dialog(props) {
 
                 return
             } else {
-                alert('erro')
+                $('.response4').html(evt.target.value).removeClass('response4').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -106,7 +124,8 @@ export default function Dialog(props) {
 
                 return
             } else {
-                alert('erro')
+                $('.response5').html(evt.target.value).removeClass('response5').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -128,7 +147,8 @@ export default function Dialog(props) {
 
                 return
             } else {
-                alert('erro')
+                $('.response6').html(evt.target.value).removeClass('response6').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -149,7 +169,8 @@ export default function Dialog(props) {
                 }
                 return
             } else {
-                alert('erro')
+                $('.response7').html(evt.target.value).removeClass('response7').addClass('error')
+                setResponseError(evt)
                 return
             }
         }
@@ -168,10 +189,11 @@ export default function Dialog(props) {
                 })
                 return
             } else {
-                alert('erro')
+                $('.response8').html(evt.target.value).removeClass('response8').addClass('error')
+                setResponseError(evt)
                 return
             }
-        }
+        }}
     }
 
     return (
