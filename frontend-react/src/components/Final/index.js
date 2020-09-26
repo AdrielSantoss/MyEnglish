@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Times} from '@styled-icons/fa-solid/Times'
 import {useNavigate} from 'react-router-dom'
 import './final.css'
 
 
-export default function Final() {
+export default function Final(props) {
+
+    useEffect(()=>{
+        clearInterval(props.interval)
+    },[])
 
     const navigation = useNavigate()
 
@@ -39,10 +43,10 @@ export default function Final() {
         </div>
         <div className="icons-description">
             <div className="icon-content">
-                <div className="icon"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo realizado:</strong></div>  10 minutos
+                <div className="icon"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo realizado:</strong></div>  {props.time.toFixed(2)}
             </div>
             <div className="icon-content">
-                <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Score:</strong></div>  100 pts
+                <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Score:</strong></div>  {props.pts} pts
             </div>
             <div className="icon-content">
                 <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Acertou:</strong></div> 15 de 30

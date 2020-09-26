@@ -16,6 +16,9 @@ import Final from '../Final'
 import { IntroWrapper, FinishWrapper } from './style.js'
 
 let val = 0
+let second = 0
+let interval =''
+
 export default function Knowledge_test() {
 
     const [selecteds, setSelecteds] = useState([])
@@ -23,8 +26,11 @@ export default function Knowledge_test() {
     const [showIntro, setShowIntro] = useState('normal')
     const [showEnd, setShowEnd] = useState('none')
     const [progressValue, setProgressValue] = useState('')
+    const [time, setTime] = useState(0)
+    const [pts, setPts] = useState(0)
 
     useEffect(() => {
+        timer()
         rand()
     }, [])
 
@@ -32,10 +38,10 @@ export default function Knowledge_test() {
         if (selecteds.length >= 5) {
             setShowEnd('flex')
         }
+        
 
         val = val + 17
         setProgressValue(val + "%")
-        console.log(progressValue)
 
         while (selecteds.length < 6) {
             const num = Math.random() * (max - min) + min
@@ -47,6 +53,26 @@ export default function Knowledge_test() {
             }
         }
 
+    }
+
+    function correct(){
+        setPts(pts+100)   
+
+    }
+    function correctMedium(){
+        setPts(pts+200)   
+
+    }
+    function correctHard(){
+        setPts(pts+300)   
+
+    }
+
+   function timer(){
+         interval =  setInterval(()=>{
+            second += 0.1
+            setTime(second)
+        },100)
     }
 
 
@@ -87,25 +113,25 @@ export default function Knowledge_test() {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
-                                        <Dialog item={i} rand={rand} />
+                                        <Dialog item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard}/>
                                     </div>
                                 )
                             } else if (i.type === 'translate') {
                                 return (
                                     <div>
-                                        <Translate item={i} rand={rand} />
+                                        <Translate item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard}/>
                                     </div>
                                 )
                             } else if (i.type === 'listen-and-learning') {
                                 return (
                                     <div>
-                                        <ListenAnd_learning item={i} rand={rand} />
+                                        <ListenAnd_learning item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard}/>
                                     </div>
                                 )
                             } else if (i.type === 'images-listen-and-learning') {
                                 return (
                                     <div>
-                                        <ImagesListen_AndLearning item={i} rand={rand} />
+                                        <ImagesListen_AndLearning item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard}/>
                                     </div>
                                 )
                             }
@@ -124,7 +150,7 @@ export default function Knowledge_test() {
             </IntroWrapper>
 
             <FinishWrapper display={showEnd}>
-                <Final />
+                <Final time={time} interval={interval} pts={pts}/>
             </FinishWrapper>
 
 

@@ -12,7 +12,8 @@ export const knowledgeQuestions = [{
     r2: 'old',
     r3: 'I am',
     r4: 'years',
-    type: 'dialog'
+    type: 'dialog',
+    difficulty: 'easy'
 },{
     text: 'How are you',
     img: require("../assets/imgs/how-are-you.jpg"),
@@ -24,7 +25,8 @@ export const knowledgeQuestions = [{
     btn3: 'vai',
     btn4: 'você',
     btn5: 'A',
-    type:'translate'
+    type:'translate',
+    difficulty: 'easy'
 }, {
     text: 'Lets <span class="response"></span> soccer',
     audio: require('../assets/audios/lets-play-soccer.mp3'),
@@ -34,7 +36,8 @@ export const knowledgeQuestions = [{
     btn3: 'run',
     btn4: 'slay',
     r: 'play',
-    type: 'listen-and-learning'
+    type: 'listen-and-learning',
+    difficulty: 'easy'
 },{
     text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
     text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
@@ -49,7 +52,8 @@ export const knowledgeQuestions = [{
     r2: 'yours',
     r3: 'speak',
     r4: 'thank',
-    type: 'dialog'
+    type: 'dialog',
+    difficulty: 'easy'
 }, {
     word: 'Home',
     img1: require('../assets/imgs/home.jpg'),
@@ -58,7 +62,8 @@ export const knowledgeQuestions = [{
     img4: require('../assets/imgs/car.png'),
     audio: require('../assets/audios/Home.mp3'),
     r: 'img1',
-    type: 'images-listen-and-learning'
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
 },{
     text: 'I’m <span class="response"></span> rich',
     audio: require('../assets/audios/very-rich.mp3'),
@@ -68,7 +73,8 @@ export const knowledgeQuestions = [{
     btn3: 'easy',
     btn4: 'extreme',
     r: 'very',
-    type: 'listen-and-learning'
+    type: 'listen-and-learning',
+    difficulty: 'easy'
 },{
     text: 'hello let’s play',
     img: require("../assets/imgs/lets-play.jpg"),
@@ -80,5 +86,6 @@ export const knowledgeQuestions = [{
     btn3: 'ola',
     btn4: 'brincar',
     btn5: 'com',
-    type:'translate'
+    type:'translate',
+    difficulty: 'easy'
 }]

@@ -15,6 +15,16 @@ export default function ListenAnd_learning(props) {
 
     },[])
 
+    function setDifficulty(){
+        if(props.item.difficulty === 'easy'){
+            props.correct()
+        }else if(props.item.difficulty === 'medium'){
+            props.correctMedium()
+        }else if(props.item.difficulty === 'hard'){
+            props.correctHard()
+        }
+    }
+
     function setQuestion(){
         $('.text-listen').html(props.item.text)
         $('.response').html('____')
@@ -47,6 +57,7 @@ export default function ListenAnd_learning(props) {
                 $('#next').click(()=>{
                     props.rand()
                 })
+                setDifficulty()
                 return
             }else {
                 setResponseError(evt)

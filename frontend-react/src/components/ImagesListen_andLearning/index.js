@@ -17,6 +17,16 @@ export default function ImagesListen_andLearning(props) {
 
     }, [])
 
+    function setDifficulty(){
+        if(props.item.difficulty === 'easy'){
+            props.correct()
+        }else if(props.item.difficulty === 'medium'){
+            props.correctMedium()
+        }else if(props.item.difficulty === 'hard'){
+            props.correctHard()
+        }
+    }
+
     function setResponseError(evt){
         $('#next').removeClass('disableButton').addClass('next-error')
         $('#next').click(() => {
@@ -40,6 +50,7 @@ export default function ImagesListen_andLearning(props) {
             $('#next').click(() => {
                 props.rand()
             })
+            setDifficulty()
             return
         } else {
             setResponseError(evt)

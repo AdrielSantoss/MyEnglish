@@ -45,6 +45,15 @@ export default function Translate(props) {
         }
 
     }
+    function setDifficulty(){
+        if(props.item.difficulty === 'easy'){
+            props.correct()
+        }else if(props.item.difficulty === 'medium'){
+            props.correctMedium()
+        }else if(props.item.difficulty === 'hard'){
+            props.correctHard()
+        }
+    }
 
     function setResponseError(evt){
         $('#next').removeClass('disableButton').addClass('next-error')
@@ -74,7 +83,9 @@ export default function Translate(props) {
                     $('#next').click(()=>{
                         props.rand()
                     })
+                    setDifficulty()
                 }
+
                 return
             }else {
                 setResponseError(evt)
@@ -97,6 +108,7 @@ export default function Translate(props) {
                     $('#next').click(()=>{
                         props.rand()
                     })
+                    setDifficulty()
                 }
                 return
             }else {
@@ -121,6 +133,7 @@ export default function Translate(props) {
                     $('#next').click(()=>{
                         props.rand()
                     })
+                    setDifficulty()
                 }
                 return
             }else {
@@ -144,6 +157,7 @@ export default function Translate(props) {
                     $('#next').click(()=>{
                         props.rand()
                     })
+                    setDifficulty()
                 }
                 return
             }else {
@@ -167,6 +181,7 @@ export default function Translate(props) {
                     $('#next').click(()=>{
                         props.rand()
                     })
+                    setDifficulty()
                 }
                 return
             }else {

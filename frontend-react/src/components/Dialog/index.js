@@ -35,6 +35,16 @@ export default function Dialog(props) {
 
     }
 
+    function setDifficulty(){
+        if(props.item.difficulty === 'easy'){
+            props.correct()
+        }else if(props.item.difficulty === 'medium'){
+            props.correctMedium()
+        }else if(props.item.difficulty === 'hard'){
+            props.correctHard()
+        }
+    }
+
     function setResponseError(evt){
         $('#next').removeClass('disableButton').addClass('next-error')
         $('#next').click(() => {
@@ -97,6 +107,7 @@ export default function Dialog(props) {
                     $('#next').click(() => {
                         props.rand()
                     })
+                    setDifficulty()
                 }
 
                 return
@@ -120,6 +131,7 @@ export default function Dialog(props) {
                     $('#next').click(() => {
                         props.rand()
                     })
+                    setDifficulty()
                 }
 
                 return
@@ -143,6 +155,7 @@ export default function Dialog(props) {
                     $('#next').click(() => {
                         props.rand()
                     })
+                    setDifficulty()
                 }
 
                 return
@@ -166,6 +179,7 @@ export default function Dialog(props) {
                     $('#next').click(() => {
                         props.rand()
                     })
+                    setDifficulty()
                 }
                 return
             } else {
@@ -187,6 +201,7 @@ export default function Dialog(props) {
                 $('#next').click(() => {
                     props.rand()
                 })
+                setDifficulty()
                 return
             } else {
                 $('.response8').html(evt.target.value).removeClass('response8').addClass('error')
