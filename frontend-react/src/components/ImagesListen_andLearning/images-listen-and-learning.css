@@ -1,30 +1,73 @@
 .images-wrapper{
-    width: 400x;
-    height: 300px;
+    background-color: white;
+    color:black;
+    height: 470px;
+    width: 600px;
+  
 }
-.images-learning{
+.images{
     display: grid;
     justify-content: center;
     grid-template-rows: 200px 200px;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 250px 250px;
     grid-template-areas:
-    "home recreation"
-    "office park"
+    "slot1 slot2"
+    "slot3 slot4"
 }
 
-.home{
-    background-image: url('../../assets/imgs/question.jpg');
+.slot1{
+    background-image: url('../../assets/imgs/home.jpg');
     background-repeat: no-repeat;
+    cursor: pointer;
+   
 }
-.recreation{
-    background-image: url('../../assets/imgs/question.jpg');
+.slot2{
+    background-image: url('../../assets/imgs/igreja.jpg');
     background-repeat: no-repeat;
+    cursor: pointer;
 }
-.office{
-    background-image: url('../../assets/imgs/question.jpg');
+.slot3{
+    background-image: url('../../assets/imgs/park.jpg');
     background-repeat: no-repeat;
+    cursor: pointer;
 }
-.park{
-    background-image: url('../../assets/imgs/question.jpg');
+.slot4{
+    background-image: url('../../assets/imgs/car.png');
     background-repeat: no-repeat;
+    background-color: yellow;
+    cursor: pointer;
+}
+.text-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+.audio{
+    display: none;
+}
+.next-img{
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: green;
+    border-radius: 5%;
+    width: 120px;
+    height: 35px;
+    margin: 50px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+
+ 
+}
+.responses-area{
+    display: flex;
+    align-items: center;
+}
+.disableButton{
+    display: none;
 }
