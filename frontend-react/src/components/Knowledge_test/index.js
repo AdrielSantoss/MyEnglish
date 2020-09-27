@@ -37,17 +37,17 @@ export default function Knowledge_test() {
         rand()
     }, [])
 
-    function rand(min = 0, max = 8) {
-        if (selecteds.length >= 7) {
+    function rand(min = 0, max = 10) {
+        if (selecteds.length >= 9) {
             setShowEnd('flex')
             setShowProgress('none')
         }
         
 
-        val = val + 17
+        val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 8) {
+        while (selecteds.length < 10) {
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -122,7 +122,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 8) {
+                        while (selecteds.length < 10) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>

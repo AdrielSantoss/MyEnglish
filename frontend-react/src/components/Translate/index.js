@@ -3,7 +3,8 @@ import './translate.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image} from './style.js'
+import {Image, showButton} from './style.js'
+import { ShowButton } from '../Dialog/style';
 
 export default function Translate(props) {
 
@@ -230,6 +231,10 @@ export default function Translate(props) {
                     <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    <ShowButton display={props.item.btn5}><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
+                    <ShowButton display={props.item.btn6}><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
+                    <ShowButton display={props.item.btn7}><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
+                    <ShowButton display={props.item.btn8}><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
                     <div className="next" id="next">Continuar</div>
                 </div>
             </div>

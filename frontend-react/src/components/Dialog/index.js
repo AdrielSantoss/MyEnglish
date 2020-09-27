@@ -3,6 +3,7 @@ import $ from 'jquery'
 import './dialog.css'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {ShowButton} from './style'
 
 export default function Dialog(props) {
 
@@ -235,7 +236,18 @@ export default function Dialog(props) {
                     <input type="button" className="option" value={props.item.btn2} onClick={(evt) => { setResponse(evt) }} />
                     <input type="button" className="option" value={props.item.btn3} onClick={(evt) => { setResponse(evt) }} />
                     <input type="button" className="option" value={props.item.btn4} onClick={(evt) => { setResponse(evt) }} />
-
+                    <ShowButton display={props.item.btn5}>
+                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                    </ShowButton>
+                    <ShowButton display={props.item.btn6}>
+                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                    </ShowButton>
+                    <ShowButton display={props.item.btn7}>
+                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                    </ShowButton>
+                    <ShowButton display={props.item.btn8}>
+                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                    </ShowButton>
                     <div className="next" id="next">Continuar</div>
                 </div>
             </div>
