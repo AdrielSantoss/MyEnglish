@@ -38,7 +38,7 @@ export default function Final(props) {
                 <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Dificuldade:</strong></div>  Variado - Aleatório
             </div>
             <div className="icon-content">
-                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Recorde:</strong></div> 200 pts
+                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Recorde:</strong></div> Não possui
             </div>
         </div>
         <div className="icons-description">
@@ -49,10 +49,10 @@ export default function Final(props) {
                 <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Score:</strong></div>  {props.pts} pts
             </div>
             <div className="icon-content">
-                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Acertou:</strong></div> 15 de 30
+                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Acertou:</strong></div> {props.correct} de {props.knowledgeQuestions.length - 1}
             </div>
             <div className="icon-content">
-                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Errou:</strong></div> 15 de 30
+                <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Errou:</strong></div> {props.incorrect} de {props.knowledgeQuestions.length - 1}
             </div>
         </div>
         </center>

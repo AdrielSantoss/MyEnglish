@@ -67,6 +67,7 @@ export default function Dialog(props) {
             } else {
                 $('.response').html(evt.target.value).removeClass('response').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -78,6 +79,7 @@ export default function Dialog(props) {
             } else {
                 $('.response2').html(evt.target.value).removeClass('response2').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -90,6 +92,7 @@ export default function Dialog(props) {
             } else {
                 $('.response3').html(evt.target.value).removeClass('response3').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -114,6 +117,7 @@ export default function Dialog(props) {
             } else {
                 $('.response4').html(evt.target.value).removeClass('response4').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -138,6 +142,7 @@ export default function Dialog(props) {
             } else {
                 $('.response5').html(evt.target.value).removeClass('response5').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -162,6 +167,7 @@ export default function Dialog(props) {
             } else {
                 $('.response6').html(evt.target.value).removeClass('response6').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -185,6 +191,7 @@ export default function Dialog(props) {
             } else {
                 $('.response7').html(evt.target.value).removeClass('response7').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }
@@ -206,6 +213,7 @@ export default function Dialog(props) {
             } else {
                 $('.response8').html(evt.target.value).removeClass('response8').addClass('error')
                 setResponseError(evt)
+                props.incorrect()
                 return
             }
         }}

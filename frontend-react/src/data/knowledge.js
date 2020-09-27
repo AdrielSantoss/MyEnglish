@@ -88,4 +88,43 @@ export const knowledgeQuestions = [{
     btn5: 'com',
     type:'translate',
     difficulty: 'easy'
+},{
+    word: 'Eye',
+    img1: require('../assets/imgs/ear.jpg'),
+    img2: require('../assets/imgs/eye.jpg'),
+    img3: require('../assets/imgs/nose.jpg'),
+    img4: require('../assets/imgs/mouth.jpg'),
+    audio: require('../assets/audios/Eye.mp3'),
+    r: 'img2',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+},{
+    text: 'I’am drink water',
+    img: require("../assets/imgs/water.jpg"),
+    t1: 'Eu estou',
+    t2: 'Tomando',
+    t3: 'Água',
+    btn1: 'água',
+    btn2: 'Eu estou',
+    btn3: 'Eu estava',
+    btn4: 'bebendo',
+    btn5: 'Eu estarei',
+    type:'translate',
+    difficulty: 'easy'
+}, {
+    text1: '<span class="left"><div class="man-perfil"></div> - Are you Brazilian?</span>',
+    text2: '<span class="right">I am <span class="response"></span> thanks - <div class="woman-perfil"></div></span>',
+    text3: '<span class="left"><div class="man-perfil"></div> - How <span class="response2"></span> are you? </span>',
+    text4: '<span class="right"> <span class="response3"></span> 17 years old and you? - <div class="woman-perfil"></div></span></span>',
+    text5: '<span class="left"><div class="man-perfil"></div> - Im 20 <span class="response4"></span> old </span>',
+    btn1: 'years',
+    btn2: 'old',
+    btn3: 'I am',
+    btn4: 'fine',
+    r1: 'fine',
+    r2: 'old',
+    r3: 'I am',
+    r4: 'years',
+    type: 'dialog',
+    difficulty: 'easy'
 }]

@@ -62,6 +62,7 @@ export default function ListenAnd_learning(props) {
             }else {
                 setResponseError(evt)
                 $('.response').html(evt.target.value).removeClass('response').addClass('error-text')
+                props.incorrect()
                 return
             
         }}}

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
 
 
-export default function Introduction(props) {
+export default function Introduction() {
 
     const navigation = useNavigate()
 

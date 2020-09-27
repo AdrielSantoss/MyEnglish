@@ -90,6 +90,7 @@ export default function Translate(props) {
             }else {
                 setResponseError(evt)
                 $('.text1').html(evt.target.value).removeClass('text1').addClass('error')
+                props.incorrect()
                return
                 
             }
@@ -114,6 +115,7 @@ export default function Translate(props) {
             }else {
                 setResponseError(evt)
                 $('.text2').html(evt.target.value).removeClass('text2').addClass('error')
+                props.incorrect()
                return
                 
             }
@@ -139,6 +141,7 @@ export default function Translate(props) {
             }else {
                 setResponseError(evt)
                 $('.text3').html(evt.target.value).removeClass('text3').addClass('error')
+                props.incorrect()
                return
                 
             }
@@ -163,6 +166,7 @@ export default function Translate(props) {
             }else {
                 setResponseError(evt)
                 $('.text4').html(evt.target.value).removeClass('text4').addClass('error')
+                props.incorrect()
                return
                 
             }
@@ -187,6 +191,7 @@ export default function Translate(props) {
             }else {
                 setResponseError(evt)
                 $('.text5').html(evt.target.value).removeClass('text5').addClass('error')
+                props.incorrect()
                return
                 
             }

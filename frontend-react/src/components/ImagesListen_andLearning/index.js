@@ -27,7 +27,7 @@ export default function ImagesListen_andLearning(props) {
         }
     }
 
-    function setResponseError(evt){
+    function setResponseError(){
         $('#next').removeClass('disableButton').addClass('next-error')
         $('#next').click(() => {
             props.rand()
@@ -54,6 +54,7 @@ export default function ImagesListen_andLearning(props) {
             return
         } else {
             setResponseError(evt)
+            props.incorrect()
             return
         }}
     }
@@ -96,9 +97,11 @@ export default function ImagesListen_andLearning(props) {
                     </div>
                 </div>
             </div>
-            <div className="responses-area">
-                <div className="text-img">{props.item.word}</div>
-                <div className="next-img" id="next">Continuar</div>
+            <div className="responses-img">
+            
+                    <div className="text-img">{props.item.word}</div>
+                    <div className="next" id="next">Continuar</div>
+                
             </div>
         </div>
     );
