@@ -103,11 +103,25 @@ audio{
 .response{
     color: slategray;
     font-weight: 600;
-    font-size: 35pt;
     
 }
 
 .text-listen .response {
+    font-size: 30px;
+}
+.text-listen .response2 {
+    color: slategray;
+    font-weight: 600;
+    font-size: 30px;
+}
+.text-listen .response3 {
+    color: slategray;
+    font-weight: 600;
+    font-size: 30px;;
+}
+.text-listen .response4 {
+    color: slategray;
+    font-weight: 600;
     font-size: 30px;
 }
 .text-listen .error-text {

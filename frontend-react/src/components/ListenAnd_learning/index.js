@@ -3,7 +3,7 @@ import './listen-and-learning.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image} from './style.js'
+import {Image, ShowButton} from './style.js'
 
 
 export default function ListenAnd_learning(props) {
@@ -28,11 +28,15 @@ export default function ListenAnd_learning(props) {
     function setQuestion(){
         $('.text-listen').html(props.item.text)
         $('.response').html('____')
+        $('.response2').html('____')
+        $('.response3').html('____')
+        $('.response4').html('____')
         $('#next').removeClass('next')
         $('#next').addClass('disableButton')
     }
 
     function setResponseError(evt){
+        evt.target.className='disableButton'
         $('#next').removeClass('disableButton').addClass('next-error')
         $('#next').click(() => {
             props.rand()
@@ -49,14 +53,16 @@ export default function ListenAnd_learning(props) {
             if(evt.target.value === props.item.r){
                 evt.target.className = 'disableButton'
                 $('.response').html(props.item.r)
-                $('#next').removeClass('disableButton')
-                $('#next').addClass('next')
-                toast.success(`✔️ CORRETO!`, {
-                    autoClose: 1100
-                })
-                $('#next').click(()=>{
-                    props.rand()
-                })
+                if(!props.item.r2){
+                    $('#next').removeClass('disableButton')
+                    $('#next').addClass('next')
+                    toast.success(`✔️ CORRETO!`, {
+                        autoClose: 1100
+                    })
+                    $('#next').click(()=>{
+                        props.rand()
+                    })
+                }
                 setDifficulty()
                 return
             }else {
@@ -65,7 +71,77 @@ export default function ListenAnd_learning(props) {
                 props.incorrect()
                 return
             
-        }}}
+        }}
+        if($('.response2').html() === '____'){
+            if(evt.target.value === props.item.r2){
+                evt.target.className = 'disableButton'
+                $('.response2').html(props.item.r2)
+                if(!props.item.r3){
+                    $('#next').removeClass('disableButton')
+                    $('#next').addClass('next')
+                    toast.success(`✔️ CORRETO!`, {
+                        autoClose: 1100
+                    })
+                    $('#next').click(()=>{
+                        props.rand()
+                    })
+                }
+                setDifficulty()
+                return
+            }else {
+                setResponseError(evt)
+                $('.response2').html(evt.target.value).removeClass('response2').addClass('error-text')
+                props.incorrect()
+                return
+            
+        }}
+        if($('.response3').html() === '____'){
+            if(evt.target.value === props.item.r3){
+                evt.target.className = 'disableButton'
+                $('.response3').html(props.item.r3)
+                if(!props.item.r4){
+                    $('#next').removeClass('disableButton')
+                    $('#next').addClass('next')
+                    toast.success(`✔️ CORRETO!`, {
+                        autoClose: 1100
+                    })
+                    $('#next').click(()=>{
+                        props.rand()
+                    })
+                }
+                setDifficulty()
+                return
+            }else {
+                setResponseError(evt)
+                $('.response3').html(evt.target.value).removeClass('response3').addClass('error-text')
+                props.incorrect()
+                return
+            
+        }}
+        if($('.response4').html() === '____'){
+            if(evt.target.value === props.item.r4){
+                evt.target.className = 'disableButton'
+                $('.response4').html(props.item.r4)
+      
+                    $('#next').removeClass('disableButton')
+                    $('#next').addClass('next')
+                    toast.success(`✔️ CORRETO!`, {
+                        autoClose: 1100
+                    })
+                    $('#next').click(()=>{
+                        props.rand()
+                    })
+            
+                setDifficulty()
+                return
+            }else {
+                setResponseError(evt)
+                $('.response4').html(evt.target.value).removeClass('response4').addClass('error-text')
+                props.incorrect()
+                return
+            
+        }}
+    }
     }
 
     return (
@@ -93,6 +169,12 @@ export default function ListenAnd_learning(props) {
                     <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    <ShowButton display={props.item.btn5}>
+                        <input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    </ShowButton>
+                    <ShowButton display={props.item.btn6}>
+                        <input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    </ShowButton>
                     <div className="next" id="next">Continuar</div>
           </div>
       </div>

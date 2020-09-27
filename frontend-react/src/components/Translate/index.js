@@ -24,8 +24,6 @@ export default function Translate(props) {
      
     }
 
-    
-
     function wordCounter(){         
         let text = props.item.text
         text.replace(/(\r\n|\n|\r)/g," ").trim();
@@ -41,6 +39,9 @@ export default function Translate(props) {
             }
             if(i === 3){
                 $('.text3').append('____ ')
+            }
+            if(i === 4){
+                $('.text4').append('____ ')
             }
 
         }
