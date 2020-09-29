@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './listenAndLearning.css'
-import { knowledgeQuestions } from '../../data/knowledge.js'
+import { knowledgeQuestions } from '../../data/knowledgeQuestions.js'
 import Dialog from '../Dialog'
 import Translate from '../Translate'
 import ListenAnd_learning from '../ListenAnd_learning'
@@ -37,8 +37,8 @@ export default function Knowledge_test() {
         rand()
     }, [])
 
-    function rand(min = 0, max = 14) {
-        if (selecteds.length >= 13) {
+    function rand(min = 0, max = 18) {
+        if (selecteds.length >= 17) {
             setShowEnd('flex')
             setShowProgress('none')
         }
@@ -47,7 +47,7 @@ export default function Knowledge_test() {
         val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 14) {
+        while (selecteds.length < 18) {
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -122,7 +122,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 14) {
+                        while (selecteds.length < 18) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>

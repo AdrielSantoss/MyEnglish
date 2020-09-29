@@ -7,6 +7,6 @@ height: 300px;
 background-repeat: no-repeat;
 background-position: center;
 `
-export const ShowButton = styled.div`
-    display: ${props => (props.display?'normal':'none')}
+export const ShowButtonTranslate = styled.div`
+    display: ${props => (props.display?'flex':'none')}
 `

@@ -240,13 +240,13 @@ export default function Dialog(props) {
                         <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
                     </ShowButton>
                     <ShowButton display={props.item.btn6}>
-                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                        <input type="button" className="option" value={props.item.btn6} onClick={(evt) => { setResponse(evt) }} />
                     </ShowButton>
                     <ShowButton display={props.item.btn7}>
-                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                        <input type="button" className="option" value={props.item.btn7} onClick={(evt) => { setResponse(evt) }} />
                     </ShowButton>
                     <ShowButton display={props.item.btn8}>
-                        <input type="button" className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }} />
+                        <input type="button" className="option" value={props.item.btn8} onClick={(evt) => { setResponse(evt) }} />
                     </ShowButton>
                     <div className="next" id="next">Continuar</div>
                 </div>

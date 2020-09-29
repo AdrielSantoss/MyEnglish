@@ -175,6 +175,12 @@ export default function ListenAnd_learning(props) {
                     <ShowButton display={props.item.btn6}>
                         <input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" />
                     </ShowButton>
+                    <ShowButton display={props.item.btn7}>
+                        <input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    </ShowButton>
+                    <ShowButton display={props.item.btn8}>
+                        <input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                    </ShowButton>
                     <div className="next" id="next">Continuar</div>
           </div>
       </div>

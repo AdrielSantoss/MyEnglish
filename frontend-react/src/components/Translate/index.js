@@ -3,7 +3,7 @@ import './translate.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image, showButton} from './style.js'
+import {Image, ShowButtonTranslate} from './style.js'
 import { ShowButton } from '../Dialog/style';
 
 export default function Translate(props) {
@@ -226,16 +226,16 @@ export default function Translate(props) {
                 </div>
 
             </div>
-            <div className="responses-area">
-                <div className="responses-options">
+            <div className="responses-area-translate">
+                <div className="responses-options-translate">
                     <input type="button" value={props.item.btn1} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
                     <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    <ShowButton display={props.item.btn5}><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
-                    <ShowButton display={props.item.btn6}><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
-                    <ShowButton display={props.item.btn7}><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
-                    <ShowButton display={props.item.btn8}><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButton>
+                    <ShowButtonTranslate display={props.item.btn5}><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                    <ShowButtonTranslate display={props.item.btn6}><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                    <ShowButtonTranslate display={props.item.btn7}><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                    <ShowButtonTranslate display={props.item.btn8}><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
                     <div className="next" id="next">Continuar</div>
                 </div>
             </div>

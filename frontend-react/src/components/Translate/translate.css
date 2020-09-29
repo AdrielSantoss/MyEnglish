@@ -1,4 +1,4 @@
-.responses-area{
+.responses-area-translate{
     position: absolute;
     bottom:0px;
     width: 100%;
@@ -7,13 +7,13 @@
     border-top: 1px solid slategray;
     box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 }
-.responses-area{
+.responses-area-translate{
     display: flex;
     justify-content: center;
 }
-.responses-options{
+.responses-options-translate{
     display: flex;
-    width: 1000px;
+    width: 1500px;
     justify-content: center;
     align-items: center;
 }
