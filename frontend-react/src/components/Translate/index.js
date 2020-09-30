@@ -43,6 +43,9 @@ export default function Translate(props) {
             if(i === 4){
                 $('.text4').append('____ ')
             }
+            if(i === 5){
+                $('.text5').append('____ ')
+            }
 
         }
 
@@ -178,7 +181,6 @@ export default function Translate(props) {
                 evt.target.className = 'disableButton'
                 $('.text5').html(props.item.t5)
 
-                if(!props.item.t6){
                     toast.success(`✔️ CORRETO!`, {
                         autoClose: 1100
                     })
@@ -188,7 +190,7 @@ export default function Translate(props) {
                         props.rand()
                     })
                     setDifficulty()
-                }
+                
                 return
             }else {
                 setResponseError(evt)
@@ -221,6 +223,7 @@ export default function Translate(props) {
                             <div className="text2"></div>
                             <div className="text3"></div>
                             <div className="text4"></div>
+                            <div className="text5"></div>
                         </div>
                     </div>
                 </div>

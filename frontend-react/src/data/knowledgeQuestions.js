@@ -170,14 +170,16 @@ export const knowledgeQuestions = [{
     type: 'listen-and-learning',
     difficulty: 'medium'  
 }, {
-    text: 'You are a very <span class="response"></span> boy',
-    audio: require('../assets/audios/pretty-boy.mp3'),
+    text: 'I want to <span class="response"></span> a <span class="response2"></span> and a motorcycle',
+    audio: require('../assets/audios/buy-car.mp3'),
     img: require("../assets/imgs/ListenAndLerning1.jpg"),
-    btn1: 'very',
-    btn2: 'pretty',
-    btn3: 'beatiful',
-    btn4: 'pity',
-    r: 'pretty',
+    btn1: 'buy',
+    btn2: 'but',
+    btn3: 'car',
+    btn4: 'motorcycle',
+    btn5: 'get',
+    r: 'buy',
+    r2: 'car',
     type: 'listen-and-learning',
     difficulty: 'medium'  
 }, {
@@ -205,7 +207,7 @@ export const knowledgeQuestions = [{
 }, {
     text1: '<span class="left"><div class="oldman-perfil"></div> - <span class="response"></span> you like English?</span>',
     text2: '<span class="right"> yes i <span class="response2"></span> it and i am <span class="response3"></span> english. - <div class="womanTwo-perfil"></div></span>',
-    text3: '<span class="left"><div class="oldman-perfil"></div> - that Cool! I am already <span class="response4"></span> in English I can give you some <span class="response5"></span> </span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - I am already <span class="response4"></span> in English I can give you some <span class="response5"></span></span>',
     text4: '<span class="right"> no need, I already have English classes, thanks - <div class="womanTwo-perfil"></div></span>',
     text5: '<span class="left"><div class="oldman-perfil"></div> - ok if you need call me. </span>',
     btn1: 'do',
@@ -237,9 +239,38 @@ export const knowledgeQuestions = [{
     img1: require('../assets/imgs/happy.jpg'),
     img2: require('../assets/imgs/upset.jpg'),
     img3: require('../assets/imgs/people.jpg'),
-    img4: require('../assets/imgs/water.jpg'),
+    img4: require('../assets/imgs/boy.jpg'),
     audio: require('../assets/audios/upset.mp3'),
     r: 'img2',
     type: 'images-listen-and-learning',
+    difficulty: 'medium'
+}, {
+    text: 'I <span class="response"></span> <span class="response2"></span> <span class="response3"></span> during the afternoon',
+    audio: require('../assets/audios/i-work-a-lot.mp3'),
+    img: require("../assets/imgs/ListenAndLerning1.jpg"),
+    btn1: 'fork',
+    btn2: 'work',
+    btn3: 'a',
+    btn4: 'not',
+    btn5: 'lot',
+    r: 'work',
+    r2: 'a',
+    r3: 'lot',
+    type: 'listen-and-learning',
+    difficulty: 'medium'  
+}, {
+    text: 'Você precisa de um emprego',
+    img: require("../assets/imgs/very-rich.jpg"),
+    t1: 'do',
+    t2: 'you',
+    t3: 'need',
+    t4: 'a',
+    t5: 'job',
+    btn1: 'do',
+    btn2: 'you',
+    btn3: 'a',
+    btn4: 'need',
+    btn5: 'job',
+    type:'translate',
     difficulty: 'medium'
 }]

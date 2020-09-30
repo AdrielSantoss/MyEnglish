@@ -42,3 +42,8 @@
     display: flex;
     justify-content: center;
 }
+#more-info{
+    position: absolute;
+    top: 300px;
+    right: 100px
+}

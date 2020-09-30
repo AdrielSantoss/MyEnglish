@@ -9,11 +9,13 @@ import { TimesCircle } from '@styled-icons/fa-solid/TimesCircle'
 import { ColorPalette } from '@styled-icons/ionicons-sharp/ColorPalette'
 import { ReportProblem } from '@styled-icons/material/ReportProblem'
 import { InfoCircle } from '@styled-icons/boxicons-solid/InfoCircle'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Introduction from '../Introduction'
 import Final from '../Final'
-import { IntroWrapper, FinishWrapper, ShowProgressBar } from './style.js'
+import $ from 'jquery'
+import More_info from '../More_info'
+import { IntroWrapper, FinishWrapper, ShowProgressBar, ShowInfos } from './style.js'
 
 let val = 0
 let second = 0
@@ -26,6 +28,7 @@ export default function Knowledge_test() {
     const [showIntro, setShowIntro] = useState('normal')
     const [showProgress, setShowProgress] = useState('none')
     const [showEnd, setShowEnd] = useState('none')
+    const [showInfos, setShowInfos] = useState(false)
     const [progressValue, setProgressValue] = useState('')
     const [time, setTime] = useState(0)
     const [pts, setPts] = useState(0)
@@ -35,10 +38,11 @@ export default function Knowledge_test() {
     useEffect(() => {
         timer()
         rand()
+        $('#more-info').draggable()
     }, [])
 
-    function rand(min = 0, max = 18) {
-        if (selecteds.length >= 17) {
+    function rand(min = 0, max = 20) {
+        if (selecteds.length >= 19) {
             setShowEnd('flex')
             setShowProgress('none')
         }
@@ -47,7 +51,7 @@ export default function Knowledge_test() {
         val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 18) {
+        while (selecteds.length < 20) {
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -85,7 +89,6 @@ export default function Knowledge_test() {
         },100)
     }
 
-
     function hideIntro() {
          setShowIntro('none')
          setShowProgress('normal')
@@ -96,14 +99,13 @@ export default function Knowledge_test() {
 
             <div className="icons-main">
                 <div className="icons">
-                    <div className="times"><TimesCircle size={25} color="black" /></div>
+                    <div className="times" ><TimesCircle size={25} color="black" /></div>
                     <div className="palette"><ColorPalette size={25} color="black" /></div>
-                    <div className="info"><InfoCircle size={25} color="black" /></div>
+                    <div className="info"><InfoCircle size={25} color="black" onClick={()=>{setShowInfos(!showInfos)}} /></div>
                     <div className="report"><ReportProblem size={25} color="black" /></div>
 
                 </div>
             </div>
-
 
             <ToastContainer />
 
@@ -122,7 +124,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 18) {
+                        while (selecteds.length < 20) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -153,7 +155,10 @@ export default function Knowledge_test() {
                     }
                 }
             })}
-
+            <ShowInfos id="more-info" display={showInfos}>
+                <More_info/>
+            </ShowInfos>
+        
             <IntroWrapper display={showIntro}>
                 <div className="responses-area">
                     <div className="responses-options">

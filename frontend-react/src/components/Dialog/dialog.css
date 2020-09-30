@@ -14,7 +14,7 @@
 }
 .responses-options{
     display: flex;
-    width: 1000px;
+    width: 2000px;
     justify-content: center;
     align-items: center;
 }
@@ -26,7 +26,7 @@
     color: black;
     background-color: white;
     border-radius: 5%;
-    width: 120px;
+    min-width: 120px;
     height: 35px;
     margin: 50px;
     cursor: pointer;
