@@ -3,8 +3,7 @@ import './translate.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image, ShowButtonTranslate} from './style.js'
-import { ShowButton } from '../Dialog/style';
+import {Image, ShowButtonTranslate, ButtonsWrapper, ButtonsArea} from './style.js'
 
 export default function Translate(props) {
 
@@ -45,6 +44,9 @@ export default function Translate(props) {
             }
             if(i === 5){
                 $('.text5').append('____ ')
+            }
+            if(i === 6){
+                $('.text6').append('____ ')
             }
 
         }
@@ -180,7 +182,32 @@ export default function Translate(props) {
             if(evt.target.value === props.item.t5){
                 evt.target.className = 'disableButton'
                 $('.text5').html(props.item.t5)
-
+                if(!props.item.t6){
+                    toast.success(`✔️ CORRETO!`, {
+                        autoClose: 1100
+                    })
+                    $('#next').removeClass('disableButton')
+                    $('#next').addClass('next')
+                    $('#next').click(()=>{
+                        props.rand()
+                    })
+                    setDifficulty()
+                }
+                
+                return
+            }else {
+                setResponseError(evt)
+                $('.text5').html(evt.target.value).removeClass('text5').addClass('error')
+                props.incorrect()
+               return
+                
+            }
+        }
+        if($('.text6').html() === "____ "){
+            if(evt.target.value === props.item.t6){
+                evt.target.className = 'disableButton'
+                $('.text6').html(props.item.t6)
+            
                     toast.success(`✔️ CORRETO!`, {
                         autoClose: 1100
                     })
@@ -191,15 +218,17 @@ export default function Translate(props) {
                     })
                     setDifficulty()
                 
+                
                 return
             }else {
                 setResponseError(evt)
-                $('.text5').html(evt.target.value).removeClass('text5').addClass('error')
+                $('.text6').html(evt.target.value).removeClass('text6').addClass('error')
                 props.incorrect()
                return
                 
             }
-        }}
+        }
+    }
     }
 
     return (
@@ -224,24 +253,31 @@ export default function Translate(props) {
                             <div className="text3"></div>
                             <div className="text4"></div>
                             <div className="text5"></div>
+                            <div className="text6"></div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div className="responses-area-translate">
-                <div className="responses-options-translate">
-                    <input type="button" value={props.item.btn1} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    <ShowButtonTranslate display={props.item.btn5}><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                    <ShowButtonTranslate display={props.item.btn6}><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                    <ShowButtonTranslate display={props.item.btn7}><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                    <ShowButtonTranslate display={props.item.btn8}><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                    <div className="next" id="next">Continuar</div>
-                </div>
-            </div>
+           
+                <ButtonsArea>
+
+                
+           
+                    <ButtonsWrapper>
+                        <input type="button" value={props.item.btn1} onClick={(evt)=>{setResponse(evt)}} className="option" />
+                        <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
+                        <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
+                        <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
+                        <ShowButtonTranslate display={props.item.btn5} className="option"><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                        <ShowButtonTranslate display={props.item.btn6} className="option"><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                        <ShowButtonTranslate display={props.item.btn7} className="option"><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}} className="option"/></ShowButtonTranslate>
+                        <ShowButtonTranslate display={props.item.btn8} className="option"><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
+                        <div className="next" id="next">Continuar</div>
+                    </ButtonsWrapper>
+                    </ButtonsArea>
+           
+      
         </div>
     );
 }

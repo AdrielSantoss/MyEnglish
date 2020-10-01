@@ -41,8 +41,8 @@ export default function Knowledge_test() {
         $('#more-info').draggable()
     }, [])
 
-    function rand(min = 0, max = 20) {
-        if (selecteds.length >= 19) {
+    function rand(min = 0, max = 24) {
+        if (selecteds.length >= 23) {
             setShowEnd('flex')
             setShowProgress('none')
         }
@@ -51,7 +51,7 @@ export default function Knowledge_test() {
         val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 20) {
+        while (selecteds.length < 24) {
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -124,7 +124,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 20) {
+                        while (selecteds.length < 24) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>

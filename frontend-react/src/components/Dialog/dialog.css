@@ -31,6 +31,9 @@
     margin: 50px;
     cursor: pointer;
 }
+.display{
+    display: flex;
+}
 .question-container{
     display: flex;
     justify-content: center;
