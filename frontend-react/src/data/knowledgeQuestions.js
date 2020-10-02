@@ -1,5 +1,9 @@
 export const knowledgeQuestions = [{
-    text1: '<span class="left"><div class="man-perfil"></div> - Hello how are you?</span>',
+    type: 'speaks'
+}]
+
+/**
+ *   text1: '<span class="left"><div class="man-perfil"></div> - Hello how are you?</span>',
     text2: '<span class="right">I am <span class="response"></span> thanks - <div class="woman-perfil"></div></span>',
     text3: '<span class="left"><div class="man-perfil"></div> - How <span class="response2"></span> are you? </span>',
     text4: '<span class="right"> <span class="response3"></span> 17 years old and you? - <div class="woman-perfil"></div></span></span>',
@@ -129,7 +133,7 @@ export const knowledgeQuestions = [{
     r4: 'but',
     type: 'dialog',
     difficulty: 'easy'
-}, {
+},{
     text: 'I’m walking through the park',
     img: require("../assets/imgs/peoplePark.jpg"),
     t1: 'Estou',
@@ -329,22 +333,4 @@ export const knowledgeQuestions = [{
     r4: 'concentrate',
     type: 'listen-and-learning',
     difficulty: 'hard'  
-}, {
-    text: 'do you spend all day on your cell phone or computer?',
-    audio: require('../assets/audios/at-school.mp3'),
-    img: require("../assets/imgs/learning.jpg"),
-    btn1: 'very',
-    btn2: 'work',
-    btn3: 'at',
-    btn4: 'not',
-    btn5: 'concentrate',
-    btn6: 'slowly',
-    btn7: 'a',
-    btn8: 'why',
-    r: 'very',
-    r2: 'at',
-    r3: 'school',
-    r4: 'concentrate',
-    type: 'listen-and-learning',
-    difficulty: 'hard'  
-}]
+} */

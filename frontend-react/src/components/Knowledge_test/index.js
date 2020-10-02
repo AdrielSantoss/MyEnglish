@@ -5,6 +5,7 @@ import Dialog from '../Dialog'
 import Translate from '../Translate'
 import ListenAnd_learning from '../ListenAnd_learning'
 import ImagesListen_AndLearning from '../ImagesListen_andLearning'
+import Speaks from '../Speaks'
 import { TimesCircle } from '@styled-icons/fa-solid/TimesCircle'
 import { ColorPalette } from '@styled-icons/ionicons-sharp/ColorPalette'
 import { ReportProblem } from '@styled-icons/material/ReportProblem'
@@ -41,8 +42,8 @@ export default function Knowledge_test() {
         $('#more-info').draggable()
     }, [])
 
-    function rand(min = 0, max = 24) {
-        if (selecteds.length >= 23) {
+    function rand(min = 0, max = 2) {
+        if (selecteds.length >= 1) {
             setShowEnd('flex')
             setShowProgress('none')
         }
@@ -51,7 +52,7 @@ export default function Knowledge_test() {
         val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 24) {
+        while (selecteds.length < 2){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -124,7 +125,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 24) {
+                        while (selecteds.length < 2) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -147,6 +148,12 @@ export default function Knowledge_test() {
                                 return (
                                     <div>
                                         <ImagesListen_AndLearning item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard} incorrect={incorrect}/>
+                                    </div>
+                                )
+                            }else if (i.type === "speaks"){
+                                return (
+                                    <div>
+                                          <Speaks  />
                                     </div>
                                 )
                             }
