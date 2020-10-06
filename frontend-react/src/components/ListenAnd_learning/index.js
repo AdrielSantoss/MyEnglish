@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './listen-and-learning.css'
+import '../../assets/css/global.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image, ShowButton} from './style.js'
+import {ShowButton, Button, ButtonsArea, ButtonsWrapper} from '../../assets/styleds/global'
+import {Image} from './style.js'
 
 
 export default function ListenAnd_learning(props) {
@@ -165,23 +167,27 @@ export default function ListenAnd_learning(props) {
 
       <div class="responses-area">
           <div class="responses-options">
-          <input type="button" value={props.item.btn1} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                    <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    <ShowButton display={props.item.btn5} className="option">
-                        <input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    </ShowButton>
-                    <ShowButton display={props.item.btn6} className="option">
-                        <input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    </ShowButton>
-                    <ShowButton display={props.item.btn7} className="option">
-                        <input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    </ShowButton>
-                    <ShowButton display={props.item.btn8} className="option">
-                        <input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                    </ShowButton>
-                    <div className="next" id="next">Continuar</div>
+            <ButtonsArea>
+                        <ButtonsWrapper>
+                            <input type="button" className="option" value={props.item.btn1} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn2} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn3} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn4} onClick={(evt) => { setResponse(evt) }} />
+                            <ShowButton display={props.item.btn5} className="buttonWrapper" >
+                                <Button  className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn6} className="buttonWrapper" >
+                                <Button  className="option" value={props.item.btn6} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn7} className="buttonWrapper">
+                                <Button  className="option" value={props.item.btn7} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn8} className="buttonWrapper">
+                                <Button className="option" value={props.item.btn8} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <div className="next" id="next">Continuar</div>
+                        </ButtonsWrapper>
+                    </ButtonsArea>
           </div>
       </div>
         </div>

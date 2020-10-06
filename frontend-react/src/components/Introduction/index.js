@@ -2,14 +2,15 @@ import React from 'react';
 import './introduction.css'
 import { useNavigate } from 'react-router-dom'
 import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
+import {GameTemplate} from './style'
 
 
 export default function Introduction() {
 
     const navigation = useNavigate()
-
     return (
-        <div className="game-template">
+        
+        <GameTemplate>
             <div className="game-introduction">
                 <div className="leftArrow">
                     <LeftArrowAlt size={45} onClick={() => { navigation('/start') }} />
@@ -39,6 +40,7 @@ export default function Introduction() {
                     </div>
                 </center>
             </div>
-        </div>
+            </GameTemplate>
+        
     );
 }

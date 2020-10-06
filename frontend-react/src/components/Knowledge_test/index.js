@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './listenAndLearning.css'
 import { knowledgeQuestions } from '../../data/knowledgeQuestions.js'
 import Dialog from '../Dialog'
@@ -16,7 +16,9 @@ import Introduction from '../Introduction'
 import Final from '../Final'
 import $ from 'jquery'
 import More_info from '../More_info'
-import { IntroWrapper, FinishWrapper, ShowProgressBar, ShowInfos } from './style.js'
+import { IntroWrapper, FinishWrapper, ShowProgressBar, ShowInfos, Icons } from './style.js'
+import {ResponseArea} from '../../assets/styleds/global'
+import ThemeContext from '../../config/theme'
 
 let val = 0
 let second = 0
@@ -35,6 +37,7 @@ export default function Knowledge_test() {
     const [pts, setPts] = useState(0)
     const [correctCounter, setCorrectCounter] = useState(0)
     const [incorrectCounter, setIncorrectCounter] = useState(0)
+    const {switchTheme} = useContext(ThemeContext)
 
     useEffect(() => {
         timer()
@@ -42,8 +45,8 @@ export default function Knowledge_test() {
         $('#more-info').draggable()
     }, [])
 
-    function rand(min = 0, max = 2) {
-        if (selecteds.length >= 1) {
+    function rand(min = 0, max = 21) {
+        if (selecteds.length >= 20) {
             setShowEnd('flex')
             setShowProgress('none')
         }
@@ -52,7 +55,7 @@ export default function Knowledge_test() {
         val = val + 10
         setProgressValue(val + "%")
 
-        while (selecteds.length < 2){
+        while (selecteds.length < 21){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -96,17 +99,17 @@ export default function Knowledge_test() {
     }
 
     return (
-        <div className="game-wrapper ">
-
+       <div>
             <div className="icons-main">
-                <div className="icons">
+                <Icons>
                     <div className="times" ><TimesCircle size={25} color="black" /></div>
-                    <div className="palette"><ColorPalette size={25} color="black" /></div>
+                    <div className="palette"><ColorPalette size={25} color="black" onClick={switchTheme}/></div>
                     <div className="info"><InfoCircle size={25} color="black" onClick={()=>{setShowInfos(!showInfos)}} /></div>
                     <div className="report"><ReportProblem size={25} color="black" /></div>
+                </Icons>
 
                 </div>
-            </div>
+           
 
             <ToastContainer />
 
@@ -125,7 +128,7 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
-                        while (selecteds.length < 2) {
+                        while (selecteds.length < 21) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -167,11 +170,11 @@ export default function Knowledge_test() {
             </ShowInfos>
         
             <IntroWrapper display={showIntro}>
-                <div className="responses-area">
+                <ResponseArea>
                     <div className="responses-options">
                         <center><button type="button" class="btn btn-primary btn-block" onClick={hideIntro}>Começar a praticar</button></center>
                     </div>
-                </div>
+                </ResponseArea>
             </IntroWrapper>
 
             <FinishWrapper display={showEnd}>
@@ -179,6 +182,7 @@ export default function Knowledge_test() {
             </FinishWrapper>
 
 
-        </div>
+            </div>
+
     );
 }

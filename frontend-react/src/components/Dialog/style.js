@@ -5,8 +5,7 @@ export const ShowButton = styled.div`
  
 `
 export const Button = styled.input.attrs({
-    type: 'button',
-    value: `${props => props.value}`
+    type: 'button'
 })`
     display: flex;
         justify-content: center;

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import $ from 'jquery'
 import './dialog.css'
+import '../../assets/css/global.css'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {ShowButton, Button} from './style'
+import {ShowButton, Button, ButtonsArea, ButtonsWrapper, ResponseArea, TemplateQuestion} from '../../assets/styleds/global'
 
 export default function Dialog(props) {
 
@@ -221,7 +222,7 @@ export default function Dialog(props) {
     }
 
     return (
-        <div>
+        <TemplateQuestion>
             <div className="question-container">
                 <div className="question-content">
                     <div className="question-type">
@@ -230,27 +231,32 @@ export default function Dialog(props) {
                 </div>
             </div>
 
-            <div className="responses-area">
+            <ResponseArea>
                 <div className="responses-options">
-                    <input type="button" className="option" value={props.item.btn1} onClick={(evt) => { setResponse(evt) }} />
-                    <input type="button" className="option" value={props.item.btn2} onClick={(evt) => { setResponse(evt) }} />
-                    <input type="button" className="option" value={props.item.btn3} onClick={(evt) => { setResponse(evt) }} />
-                    <input type="button" className="option" value={props.item.btn4} onClick={(evt) => { setResponse(evt) }} />
-                    <ShowButton display={props.item.btn5}>
-                        <Button  className="option" value={'oi'} onClick={(evt) => { setResponse(evt) }}/>
-                    </ShowButton>
-                    <ShowButton display={props.item.btn6}>
-                        <Button  className="option" value={props.item.btn6} onClick={(evt) => { setResponse(evt) }}/>
-                    </ShowButton>
-                    <ShowButton display={props.item.btn7}>
-                        <Button  className="option" value={props.item.btn7} onClick={(evt) => { setResponse(evt) }}/>
-                    </ShowButton>
-                    <ShowButton display={props.item.btn8}>
-                        <Button className="option" value={props.item.btn8} onClick={(evt) => { setResponse(evt) }}/>
-                    </ShowButton>
-                    <div className="next" id="next">Continuar</div>
+                    <ButtonsArea>
+                        <ButtonsWrapper>
+                            <input type="button" className="option" value={props.item.btn1} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn2} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn3} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn4} onClick={(evt) => { setResponse(evt) }} />
+                            <ShowButton display={props.item.btn5} className="buttonWrapper" >
+                                <Button  className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn6} className="buttonWrapper" >
+                                <Button  className="option" value={props.item.btn6} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn7} className="buttonWrapper">
+                                <Button  className="option" value={props.item.btn7} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn8} className="buttonWrapper">
+                                <Button className="option" value={props.item.btn8} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <div className="next" id="next">Continuar</div>
+                        </ButtonsWrapper>
+                    </ButtonsArea>
+                    
                 </div>
-            </div>
-        </div>
+            </ResponseArea>
+        </TemplateQuestion>
     );
 }

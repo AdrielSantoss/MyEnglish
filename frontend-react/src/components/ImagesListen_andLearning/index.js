@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './images-listen-and-learning.css'
+import '../../assets/css/global.css'
 import { Slot1, Slot2, Slot3, Slot4 } from './style.js'
 import $ from 'jquery'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {ButtonsAreaImg} from '../../assets/styleds/global'
 
 export default function ImagesListen_andLearning(props) {
 
@@ -97,12 +99,12 @@ export default function ImagesListen_andLearning(props) {
                     </div>
                 </div>
             </div>
-            <div className="responses-img">
+            <ButtonsAreaImg>
             
                     <div className="text-img">{props.item.word}</div>
-                    <div className="next" id="next">Continuar</div>
+                    <div className="next-img" id="next">Continuar</div>
                 
-            </div>
+            </ButtonsAreaImg>
         </div>
     );
 }

@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './translate.css'
+import '../../assets/css/global.css'
 import $ from 'jquery'
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Image, ShowButtonTranslate, ButtonsWrapper, ButtonsArea} from './style.js'
+import {Image} from './style.js'
+import {ShowButton, Button, ButtonsArea, ButtonsWrapper} from '../../assets/styleds/global'
 
 export default function Translate(props) {
 
@@ -75,6 +77,7 @@ export default function Translate(props) {
     }
 
     function setResponse(evt){
+        console.log(evt.target)
         if(!error){
         if($('.text1').html() === "____ "){
             if(evt.target.value === props.item.t1){
@@ -259,25 +262,28 @@ export default function Translate(props) {
                 </div>
 
             </div>
-           
-                <ButtonsArea>
 
-                
-           
-                    <ButtonsWrapper>
-                        <input type="button" value={props.item.btn1} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                        <input type="button" value={props.item.btn2} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                        <input type="button" value={props.item.btn3} onClick={(evt)=>{setResponse(evt)}} className="option" />
-                        <input type="button" value={props.item.btn4} onClick={(evt)=>{setResponse(evt)}}className="option" />
-                        <ShowButtonTranslate display={props.item.btn5} className="option"><input type="button" value={props.item.btn5} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                        <ShowButtonTranslate display={props.item.btn6} className="option"><input type="button" value={props.item.btn6} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                        <ShowButtonTranslate display={props.item.btn7} className="option"><input type="button" value={props.item.btn7} onClick={(evt)=>{setResponse(evt)}} className="option"/></ShowButtonTranslate>
-                        <ShowButtonTranslate display={props.item.btn8} className="option"><input type="button" value={props.item.btn8} onClick={(evt)=>{setResponse(evt)}}className="option" /></ShowButtonTranslate>
-                        <div className="next" id="next">Continuar</div>
-                    </ButtonsWrapper>
-                    </ButtonsArea>
-           
-      
+            <ButtonsArea>
+                        <ButtonsWrapper>
+                            <input type="button" className="option" value={props.item.btn1} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn2} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn3} onClick={(evt) => { setResponse(evt) }} />
+                            <input type="button" className="option" value={props.item.btn4} onClick={(evt) => { setResponse(evt) }} />
+                            <ShowButton display={props.item.btn5} className="buttonWrapper">
+                                <Button  className="option" value={props.item.btn5} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn6} className="buttonWrapper">
+                                <Button  className="option" value={props.item.btn6} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn7} className="buttonWrapper">
+                                <Button  className="option" value={props.item.btn7} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <ShowButton display={props.item.btn8} className="buttonWrapper">
+                                <Button className="option" value={props.item.btn8} onClick={(evt) => { setResponse(evt) }}/>
+                            </ShowButton>
+                            <div className="next" id="next">Continuar</div>
+                        </ButtonsWrapper>
+                </ButtonsArea>
         </div>
     );
 }

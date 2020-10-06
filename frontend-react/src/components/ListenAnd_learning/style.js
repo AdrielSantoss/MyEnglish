@@ -7,6 +7,3 @@ height: 300px;
 background-repeat: no-repeat;
 background-position: center;
 `
-export const ShowButton = styled.div`
-    display: ${props => (props.display?'normal':'none')}
-`

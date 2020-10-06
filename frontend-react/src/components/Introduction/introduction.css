@@ -8,6 +8,16 @@
 
     box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.9);
 }
+.game-template-dark{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(56, 62, 71);
+
+    box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.9);
+}
 .game-introduction{
     background-color: rgb(228, 228, 228);
     width: 500px;

@@ -1,74 +1,4 @@
 
-.responses-area{
-    position: absolute;
-    bottom:0px;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(123, 140, 158);
-    border-top: 1px solid slategray;
-    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
-}
-.responses-area{
-    display: flex;
-    justify-content: center;
-}
-.responses-options{
-    display: flex;
-    width: 2000px;
-    justify-content: center;
-    align-items: center;
-}
-.option{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    color: black;
-    background-color: white;
-    border-radius: 5%;
-    min-width: 120px;
-    height: 35px;
-    margin: 50px;
-    cursor: pointer;
-}
-.display{
-    display: flex;
-}
-.question-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.question-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 600px;
-    border-radius: 1%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 80px;
-    padding-right: 80px;
-    margin-top: 45px;
-;
-}
-.question-content span{
-    margin: 10px ;
-    font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.question-type{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    height: 30px;
-    margin-bottom: 10px;
-    padding: 20px;
-}
 .response {
     color: slategray;
     font-weight: 600;
@@ -89,8 +19,19 @@
     color: slategray;
     font-weight: 600;
 }
-.disableButton{
-    display: none;
+.next{
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: green;
+    border-radius: 5%;
+    width: 120px;
+    height: 35px;
+    margin: 50px;
+    cursor: pointer;
+  
 }
 .left {
     position: relative;
@@ -145,34 +86,6 @@
     background-image: url('../../assets/imgs/woman2.jpg');
     background-position: center;
     margin-left: 5px;
-}
-.errorBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    color: black;
-    background-color: white;
-    border-radius: 5%;
-    width: 120px;
-    height: 35px;
-    margin: 50px;
-    cursor: pointer;
-    border: 3px solid red;
-}
-.next{
-    position: absolute;
-    right: 100px;
-    display: flex;
-    align-items: center;
-    color: white;
-    background-color: green;
-    border-radius: 5%;
-    width: 120px;
-    height: 35px;
-    margin: 50px;
-    cursor: pointer;
-  
 }
 .next-error{
     position: absolute;
