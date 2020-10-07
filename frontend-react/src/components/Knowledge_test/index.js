@@ -38,6 +38,7 @@ export default function Knowledge_test() {
     const [correctCounter, setCorrectCounter] = useState(0)
     const [incorrectCounter, setIncorrectCounter] = useState(0)
     const {switchTheme} = useContext(ThemeContext)
+    const [questionNum, setQuestionNum] = useState(0)
 
     useEffect(() => {
         timer()
@@ -46,9 +47,11 @@ export default function Knowledge_test() {
     }, [])
 
     function rand(min = 0, max = 21) {
+        setQuestionNum(questionNum+1)
         if (selecteds.length >= 20) {
             setShowEnd('flex')
             setShowProgress('none')
+            
         }
         
 
@@ -102,10 +105,10 @@ export default function Knowledge_test() {
        <div>
             <div className="icons-main">
                 <Icons>
-                    <div className="times" ><TimesCircle size={25} color="black" /></div>
-                    <div className="palette"><ColorPalette size={25} color="black" onClick={switchTheme}/></div>
-                    <div className="info"><InfoCircle size={25} color="black" onClick={()=>{setShowInfos(!showInfos)}} /></div>
-                    <div className="report"><ReportProblem size={25} color="black" /></div>
+                    <div className="times" ><TimesCircle size={25} color={`${({theme})=>theme.icons};`} /></div>
+                    <div className="palette"><ColorPalette size={25} color={`${({theme})=>theme.icons};`} onClick={switchTheme}/></div>
+                    <div className="info"><InfoCircle size={25} color={`${({theme})=>theme.icons};`} onClick={()=>{setShowInfos(!showInfos)}} /></div>
+                    <div className="report"><ReportProblem size={25} color={`${({theme})=>theme.icons};`} /></div>
                 </Icons>
 
                 </div>
@@ -166,7 +169,7 @@ export default function Knowledge_test() {
                 }
             })}
             <ShowInfos id="more-info" display={showInfos}>
-                <More_info/>
+                <More_info time={time} question={questionNum}/>
             </ShowInfos>
         
             <IntroWrapper display={showIntro}>

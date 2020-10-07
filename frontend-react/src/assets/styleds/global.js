@@ -60,7 +60,7 @@ position: absolute;
 bottom:0px;
 width: 100%;
 height: 100px;
-background-color: rgb(123, 140, 158);
+background-color: ${({theme})=>theme.background};
 border-top: 1px solid slategray;
 box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 display: flex;

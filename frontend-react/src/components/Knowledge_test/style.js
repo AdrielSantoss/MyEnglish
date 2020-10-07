@@ -24,6 +24,7 @@ export const Icons = styled.div`
     border-left: 1px solid black;
 
     div{
+        color: ${({theme})=>theme.icons};
         margin-bottom: 55px;
     }
 `

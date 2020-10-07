@@ -8,10 +8,12 @@ function App() {
 
 
   const LightTheme = {
-    background: 'rgb(123, 140, 158)'
+    background: 'rgb(123, 140, 158)',
+    icons: 'black'
   }
   const DarkTheme = {
-    background: 'rgb(56, 62, 71)'
+    background: 'rgb(56, 62, 71)',
+    icons: 'white'
   }
   
   const [theme, setTheme] = useState(LightTheme)
