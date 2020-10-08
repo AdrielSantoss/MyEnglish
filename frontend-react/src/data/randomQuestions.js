@@ -54,4 +54,36 @@ export const randomQuestions = [{
     r4: 'thank',
     type: 'dialog',
     difficulty: 'easy'
+},{
+    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+    text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
+    text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',
+    text5: '<span class="left"><div class="oldman-perfil"></div> - <span class="response4"></span> you </span>',
+    btn1: 'thank',
+    btn2: 'yours',
+    btn3: 'what',
+    btn4: 'speak',
+    r1: 'what',
+    r2: 'yours',
+    r3: 'speak',
+    r4: 'thank',
+    type: 'dialog',
+    difficulty: 'easy'
+},{
+    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+    text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
+    text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',
+    text5: '<span class="left"><div class="oldman-perfil"></div> - <span class="response4"></span> you </span>',
+    btn1: 'thank',
+    btn2: 'yours',
+    btn3: 'what',
+    btn4: 'speak',
+    r1: 'what',
+    r2: 'yours',
+    r3: 'speak',
+    r4: 'thank',
+    type: 'dialog',
+    difficulty: 'easy'
 }]

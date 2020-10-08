@@ -13,16 +13,17 @@ import Speaks from '../Speaks'
 import { TimesCircle } from '@styled-icons/fa-solid/TimesCircle'
 import { ColorPalette } from '@styled-icons/ionicons-sharp/ColorPalette'
 import { ReportProblem } from '@styled-icons/material/ReportProblem'
-import { InfoCircle } from '@styled-icons/boxicons-solid/InfoCircle'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Introduction from '../Introduction'
 import Final from '../Final'
 import $ from 'jquery'
-import More_info from '../More_info'
 import { IntroWrapper, FinishWrapper, ShowProgressBar, ShowInfos, Icons } from './style.js'
 import {ResponseArea} from '../../assets/styleds/global'
 import ThemeContext from '../../config/theme'
+import UsersService from '../../config/services';
+import {toast} from 'react-toastify'
+
 
 let val = 0
 let second = 0
@@ -35,7 +36,6 @@ export default function Knowledge_test() {
     const [showIntro, setShowIntro] = useState('normal')
     const [showProgress, setShowProgress] = useState('none')
     const [showEnd, setShowEnd] = useState('none')
-    const [showInfos, setShowInfos] = useState(false)
     const [progressValue, setProgressValue] = useState('')
     const [time, setTime] = useState(0)
     const [pts, setPts] = useState(0)
@@ -43,9 +43,8 @@ export default function Knowledge_test() {
     const [incorrectCounter, setIncorrectCounter] = useState(0)
     const {switchTheme} = useContext(ThemeContext)
     const [questionNum, setQuestionNum] = useState(0)
-    const [difficultyQuestion, setDifficultyQuestion] = useState('')
-    const [type, setType] = useState('')
     const [questionsSelecteds, setQuestionsSelecteds] = useState([])
+    const [newRecordView, setNewRecordView] = useState(true)
 
     useEffect(() => {
         timer()
@@ -68,9 +67,9 @@ export default function Knowledge_test() {
 
     }, [])
 
-    function rand(min = 0, max = 4) {
+    function rand(min = 0, max = 6) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 3) {
+        if (selecteds.length >= 5) {
             setShowEnd('flex')
             setShowProgress('none')
             
@@ -79,7 +78,7 @@ export default function Knowledge_test() {
         val = val + 3.35
         setProgressValue(val + "%")
 
-        while (selecteds.length < 4){
+        while (selecteds.length < 6){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -89,21 +88,91 @@ export default function Knowledge_test() {
         }
 
     }
+    function setRecord(){
+        const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
+        const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+
+        if(difficulty === 'easy'){
+            if(pts > user.records.easy){
+                if(newRecordView){
+                    toast.info('🦄 Novo Recorde', {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    })
+                    setNewRecordView(!newRecordView)
+                }
+                UsersService.updateRecords({id: user._id, records: {easy: pts, medium: user.records.medium, hard: user.records.hard, random: user.records.random}})
+            }
+        }else if(difficulty === 'medium'){
+            if(pts > user.records.medium){
+                if(newRecordView){
+                    toast.info('🆕 Novo Recorde!', {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    })
+                    setNewRecordView(!newRecordView)
+                }
+                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: pts , hard: user.records.hard, random: user.records.random}})
+            }
+
+        }else if(difficulty === 'hard'){
+            if(pts > user.records.hard){
+                if(newRecordView){
+                toast.info('🆕 Novo Recorde!', {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                })
+                setNewRecordView(!newRecordView)
+            }
+                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: pts, random: user.records.random}})
+            }
+        }else if(difficulty === 'random'){
+            if(pts > user.records.random){
+                if(newRecordView){
+                    toast.info('☑️ Novo Recorde!', {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    })
+                    setNewRecordView(!newRecordView)
+                }
+                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: user.records.random, random: pts }})
+            }
+        }
+    }
 
     function correct(){
         setPts(pts+100)
-        setCorrectCounter(correctCounter+1)  
+        setCorrectCounter(correctCounter+1) 
+        setRecord() 
 
     }
 
     function correctMedium(){
         setPts(pts+200)   
         setCorrectCounter(correctCounter+1)  
+        setRecord()
 
     }
     function correctHard(){
         setPts(pts+300) 
         setCorrectCounter(correctCounter+1)    
+        setRecord()
 
     }
     function incorrect(){
@@ -131,8 +200,7 @@ export default function Knowledge_test() {
                     <div className="palette"><ColorPalette size={28} color={`${({theme})=>theme.icons};`} onClick={switchTheme}/></div>
                     <div className="report"><ReportProblem size={28} color={`${({theme})=>theme.icons};`} /></div>
                 </Icons>
-
-                </div>
+            </div>
            
 
             <ToastContainer />
@@ -153,7 +221,7 @@ export default function Knowledge_test() {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length <4) {
+                        while (selecteds.length < 6) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -195,9 +263,6 @@ export default function Knowledge_test() {
                     
                 }
             })}
-            <ShowInfos id="more-info" display={showInfos}>
-                <More_info time={time} question={questionNum} difficulty={difficultyQuestion} type={type} pts={pts}/>
-            </ShowInfos>
         
             <IntroWrapper display={showIntro}>
                 <ResponseArea>

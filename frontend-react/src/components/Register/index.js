@@ -18,7 +18,7 @@ export default function Register() {
       setMsg('')
       try{
         navigation('/login')
-        await UsersService.register({name: name, email: email, password: password})
+        await UsersService.register({name: name, email: email, password: password, records: {easy: 0, medium: 0, hard:0, random: 0}})
         
       }catch (err){
         setMsg('Erro:' + err)

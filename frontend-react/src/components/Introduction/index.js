@@ -9,22 +9,28 @@ export default function Introduction() {
 
     const [difficulty, setDifficulty] = useState('')
     const [time, setTime] = useState('')
+    const [record, setRecord] = useState('')
 
     useEffect(()=>{
         const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+        const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
 
         if(difficulty === 'easy'){
             setDifficulty('Fácil')
             setTime('6 minutos')
+            setRecord(user.records.easy)
         }else if(difficulty === 'medium'){
             setDifficulty('Médio')
             setTime('8 minutos')
+            setRecord(user.records.medium)
         }else if(difficulty === 'hard'){
             setDifficulty('Dificil')
             setTime('10 minutos')
+            setRecord(user.records.hard)
         }else if(difficulty === 'random'){
             setDifficulty('Variado - Aleatório')
             setTime('10 minutos')
+            setRecord(user.records.random)
         }
     },[])
 

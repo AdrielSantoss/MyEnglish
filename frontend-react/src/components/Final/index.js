@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Times} from '@styled-icons/fa-solid/Times'
 import {useNavigate} from 'react-router-dom'
 import './final.css'
@@ -7,9 +7,15 @@ import {FinalTemplate} from './style.js'
 
 export default function Final(props) {
 
+
+
     useEffect(()=>{
         clearInterval(props.interval)
+       
+
     },[])
+
+
 
     const navigation = useNavigate()
 

@@ -15,3 +15,11 @@ module.exports.login = (app, req ,res)=>{
 
     UsersDAO.login(data, res)
 }
+module.exports.updateRecords = (app, req ,res)=>{
+    let data = req.body 
+
+    let connection = app.api.config.database
+    let UsersDAO = new app.api.models.UsersDAO(connection)
+
+    UsersDAO.updateRecords(data, res)
+}
