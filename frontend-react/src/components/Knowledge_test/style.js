@@ -17,11 +17,9 @@ export const Icons = styled.div`
     background-color: ${({theme})=>theme.background};
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 
-    height: 100vh;
+
     padding: 10px;
-    border-left: 1px solid black;
 
     div{
         color: ${({theme})=>theme.icons};

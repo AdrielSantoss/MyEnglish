@@ -1,21 +1,10 @@
 
 .icons-main{
     position: absolute;
-    border-right: 1px solid  rgb(99, 104, 110);
-}
-.icons{
-    display: flex;
-    flex-direction: column;
-    background-color:  rgb(123, 140, 158);
-    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 
-    height: 100vh;
-    padding: 10px;
-    border-left: 1px solid black;
+
 }
-.icons div{
-    margin-bottom: 55px;
-}
+
 .times{
     cursor: pointer;
 }

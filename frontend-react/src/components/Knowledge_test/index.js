@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './listenAndLearning.css'
 import { knowledgeQuestions } from '../../data/knowledgeQuestions.js'
+import { easyQuestions } from '../../data/easyQuestions.js'
+import { mediumQuestions } from '../../data/mediumQuestions.js'
+import { hardQuestions } from '../../data/hardQuestions.js'
+import { randomQuestions } from '../../data/randomQuestions.js'
 import Dialog from '../Dialog'
 import Translate from '../Translate'
 import ListenAnd_learning from '../ListenAnd_learning'
@@ -41,36 +45,41 @@ export default function Knowledge_test() {
     const [questionNum, setQuestionNum] = useState(0)
     const [difficultyQuestion, setDifficultyQuestion] = useState('')
     const [type, setType] = useState('')
+    const [questionsSelecteds, setQuestionsSelecteds] = useState([])
 
     useEffect(() => {
         timer()
         rand()
         $('#more-info').draggable()
+
+        const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+        if(difficulty === 'easy'){
+            setQuestionsSelecteds(easyQuestions)
+        }else if(difficulty === 'medium'){
+            setQuestionsSelecteds(mediumQuestions)
+
+        }else if(difficulty === 'hard'){
+            setQuestionsSelecteds(hardQuestions)
+
+        }else if(difficulty === 'random'){
+            setQuestionsSelecteds(knowledgeQuestions)
+      
+        }
+
     }, [])
 
-    function rand(min = 0, max = 21) {
+    function rand(min = 0, max = 4) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 20) {
+        if (selecteds.length >= 3) {
             setShowEnd('flex')
             setShowProgress('none')
             
         }
 
-        knowledgeQuestions.map((i, indice)=>{
-            if(indice === counterQuestions){
-                setDifficultyQuestion(i.difficulty)
-                setType(i.type)
-                console.log(i.difficulty)
-                console.log(i.type)
-                console.log(indice)
-                console.log(counterQuestions)
-            }
-        })
-
         val = val + 3.35
         setProgressValue(val + "%")
 
-        while (selecteds.length < 21){
+        while (selecteds.length < 4){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -83,9 +92,10 @@ export default function Knowledge_test() {
 
     function correct(){
         setPts(pts+100)
-        setCorrectCounter(correctCounter+1)   
+        setCorrectCounter(correctCounter+1)  
 
     }
+
     function correctMedium(){
         setPts(pts+200)   
         setCorrectCounter(correctCounter+1)  
@@ -117,10 +127,9 @@ export default function Knowledge_test() {
        <div>
             <div className="icons-main">
                 <Icons>
-                    <div className="times" ><TimesCircle size={25} color={`${({theme})=>theme.icons};`} /></div>
-                    <div className="palette"><ColorPalette size={25} color={`${({theme})=>theme.icons};`} onClick={switchTheme}/></div>
-                    <div className="info"><InfoCircle size={25} color={`${({theme})=>theme.icons};`} onClick={()=>{setShowInfos(!showInfos)}} /></div>
-                    <div className="report"><ReportProblem size={25} color={`${({theme})=>theme.icons};`} /></div>
+                    <div className="times" ><TimesCircle size={28} color={`${({theme})=>theme.icons};`} /></div>
+                    <div className="palette"><ColorPalette size={28} color={`${({theme})=>theme.icons};`} onClick={switchTheme}/></div>
+                    <div className="report"><ReportProblem size={28} color={`${({theme})=>theme.icons};`} /></div>
                 </Icons>
 
                 </div>
@@ -140,11 +149,11 @@ export default function Knowledge_test() {
                 </div>
             </ShowProgressBar>
 
-            {knowledgeQuestions.map((i, indice) => {
+            {questionsSelecteds.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length < 21) {
+                        while (selecteds.length <4) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -187,7 +196,7 @@ export default function Knowledge_test() {
                 }
             })}
             <ShowInfos id="more-info" display={showInfos}>
-                <More_info time={time} question={questionNum} difficulty={difficultyQuestion} type={type}/>
+                <More_info time={time} question={questionNum} difficulty={difficultyQuestion} type={type} pts={pts}/>
             </ShowInfos>
         
             <IntroWrapper display={showIntro}>

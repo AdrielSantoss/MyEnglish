@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {Times} from '@styled-icons/fa-solid/Times'
 import {useNavigate} from 'react-router-dom'
 import './final.css'
+import {FinalTemplate} from './style.js'
 
 
 export default function Final(props) {
@@ -13,7 +14,8 @@ export default function Final(props) {
     const navigation = useNavigate()
 
  return (
-   <div className="final-template">
+    <FinalTemplate>
+
        <div className="final-wrapper">
        <div className="left-times">
                 <Times size={30} onClick={()=>{navigation('/start')}}/>
@@ -61,6 +63,6 @@ export default function Final(props) {
         </div>
 
        </div>
-   </div>
+   </FinalTemplate>
  );
 }

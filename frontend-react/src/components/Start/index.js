@@ -8,10 +8,26 @@ export default function Start() {
   const navigation = useNavigate()
 
   useEffect(()=>{
-    if(!localStorage.getItem('user_MyEnglish')){
+    /*if(!localStorage.getItem('user_MyEnglish')){
       navigation('/login')
-    }
+    }*/
   },[])
+
+  function setEasy(){
+    localStorage.setItem('Difficulty_MyEnglish', 'easy')
+  }
+  function setMedium(){
+    localStorage.setItem('Difficulty_MyEnglish', 'medium')
+
+  }
+  function setHard(){
+    localStorage.setItem('Difficulty_MyEnglish', 'hard')
+
+  }
+  function setRandom(){
+    localStorage.setItem('Difficulty_MyEnglish', 'random')
+
+  }
 
 
  return (
@@ -27,10 +43,10 @@ export default function Start() {
         <center>Por favor, selecione seu nível de conhecimento em inglês.</center> 
         <hr/>
         <div className="levels">
-            <div className="basic "><div className="level-title">Básico</div></div>
-            <div className="intermediario "><div className="level-title">Intermediario</div></div>
-            <div className="avanced "><div className="level-title">Avançado</div></div>
-            <div className="idontknow "><Link to="/game"><div className="level-title">Eu não sei</div></Link></div>
+            <div className="basic "><Link to="/game" onClick={()=>{setEasy()}}><div className="level-title">Básico</div></Link></div>
+            <div className="intermediario "><Link to="/game" onClick={()=>{setMedium()}}><div className="level-title">Intermediario</div></Link></div>
+            <div className="avanced "><Link to="/game" onClick={()=>{setHard()}}><div className="level-title">Avançado</div></Link></div>
+            <div className="idontknow "><Link to="/game" onClick={()=>{setRandom()}}><div className="level-title">Eu não sei</div></Link></div>
         </div>
       </div>
       </div>

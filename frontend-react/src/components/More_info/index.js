@@ -1,5 +1,6 @@
 import React from 'react';
 import './more-info.css'
+import $ from 'jquery'
 
 export default function More_info(props) {
 
@@ -24,6 +25,7 @@ export default function More_info(props) {
           return 'ver, escutar e aprender'
       }
   }
+
 
     return (
         <div className="info-wrapper">
@@ -56,7 +58,7 @@ export default function More_info(props) {
                     <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Recorde:</strong></div>  1200pts
                         </div>
                 <div className="icon-content">
-                    <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Pontos:</strong></div><span className="ml-2">800pts</span>
+                    <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Pontos:</strong></div><span className="ml-2">{props.pts}</span>
                 </div>
             </div>
 

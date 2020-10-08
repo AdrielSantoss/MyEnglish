@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './introduction.css'
 import { useNavigate } from 'react-router-dom'
 import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
@@ -6,6 +6,27 @@ import {GameTemplate} from './style'
 
 
 export default function Introduction() {
+
+    const [difficulty, setDifficulty] = useState('')
+    const [time, setTime] = useState('')
+
+    useEffect(()=>{
+        const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+
+        if(difficulty === 'easy'){
+            setDifficulty('Fácil')
+            setTime('6 minutos')
+        }else if(difficulty === 'medium'){
+            setDifficulty('Médio')
+            setTime('8 minutos')
+        }else if(difficulty === 'hard'){
+            setDifficulty('Dificil')
+            setTime('10 minutos')
+        }else if(difficulty === 'random'){
+            setDifficulty('Variado - Aleatório')
+            setTime('10 minutos')
+        }
+    },[])
 
     const navigation = useNavigate()
     return (
@@ -29,10 +50,10 @@ export default function Introduction() {
                 <center>
                     <div className="icons-description">
                         <div className="icon-content">
-                            <div className="icon"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo:</strong></div>  3 minutos
+                            <div className="icon"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo médio:</strong></div>  {time}
                         </div>
                         <div className="icon-content">
-                            <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Dificuldade:</strong></div>  Variado - Aleatório
+                            <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Dificuldade:</strong></div>  {difficulty}
                         </div>
                         <div className="icon-content">
                             <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Recorde:</strong></div> 0
