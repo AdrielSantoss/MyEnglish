@@ -39,6 +39,8 @@ export default function Knowledge_test() {
     const [incorrectCounter, setIncorrectCounter] = useState(0)
     const {switchTheme} = useContext(ThemeContext)
     const [questionNum, setQuestionNum] = useState(0)
+    const [difficultyQuestion, setDifficultyQuestion] = useState('')
+    const [type, setType] = useState('')
 
     useEffect(() => {
         timer()
@@ -53,9 +55,19 @@ export default function Knowledge_test() {
             setShowProgress('none')
             
         }
-        
 
-        val = val + 10
+        knowledgeQuestions.map((i, indice)=>{
+            if(indice === counterQuestions){
+                setDifficultyQuestion(i.difficulty)
+                setType(i.type)
+                console.log(i.difficulty)
+                console.log(i.type)
+                console.log(indice)
+                console.log(counterQuestions)
+            }
+        })
+
+        val = val + 3.35
         setProgressValue(val + "%")
 
         while (selecteds.length < 21){
@@ -63,8 +75,7 @@ export default function Knowledge_test() {
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
                 selecteds.push(random)
-                console.log(selecteds)
-                return setCounterQuestions(random)
+                return  setCounterQuestions(random)
             }
         }
 
@@ -100,6 +111,7 @@ export default function Knowledge_test() {
          setShowIntro('none')
          setShowProgress('normal')
     }
+  
 
     return (
        <div>
@@ -131,11 +143,14 @@ export default function Knowledge_test() {
             {knowledgeQuestions.map((i, indice) => {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
+                        
                         while (selecteds.length < 21) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
+            
                                         <Dialog item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard} incorrect={incorrect}/>
+                                        
                                     </div>
                                 )
                             } else if (i.type === 'translate') {
@@ -148,12 +163,14 @@ export default function Knowledge_test() {
                                 return (
                                     <div>
                                         <ListenAnd_learning item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard} incorrect={incorrect}/>
+                                   
                                     </div>
                                 )
                             } else if (i.type === 'images-listen-and-learning') {
                                 return (
                                     <div>
                                         <ImagesListen_AndLearning item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard} incorrect={incorrect}/>
+                                
                                     </div>
                                 )
                             }else if (i.type === "speaks"){
@@ -166,10 +183,11 @@ export default function Knowledge_test() {
 
                         }
                     }
+                    
                 }
             })}
             <ShowInfos id="more-info" display={showInfos}>
-                <More_info time={time} question={questionNum}/>
+                <More_info time={time} question={questionNum} difficulty={difficultyQuestion} type={type}/>
             </ShowInfos>
         
             <IntroWrapper display={showIntro}>
