@@ -1,4 +1,4 @@
-export const mediumQuestions = [{
+export const randomQuestions = [{
     text1: '<span class="left"><div class="man-perfil"></div> - Hello how are you?</span>',
     text2: '<span class="right">I am <span class="response"></span> thanks - <div class="woman-perfil"></div></span>',
     text3: '<span class="left"><div class="man-perfil"></div> - How <span class="response2"></span> are you? </span>',
@@ -16,7 +16,7 @@ export const mediumQuestions = [{
     difficulty: 'easy'
 },{
     text: 'How are you',
-    img: require("../assets/imgs/how-are-you.jpg"),
+    img: require("../../assets/imgs/how-are-you.jpg"),
     t1: 'como',
     t2: 'vai',
     t3: 'você',
@@ -29,14 +29,46 @@ export const mediumQuestions = [{
     difficulty: 'easy'
 }, {
     text: 'Lets <span class="response"></span> soccer',
-    audio: require('../assets/audios/lets-play-soccer.mp3'),
-    img: require("../assets/imgs/lets-play.jpg"),
+    audio: require('../../assets/audios/lets-play-soccer.mp3'),
+    img: require("../../assets/imgs/lets-play.jpg"),
     btn1: 'going',
     btn2: 'play',
     btn3: 'run',
     btn4: 'slay',
     r: 'play',
     type: 'listen-and-learning',
+    difficulty: 'easy'
+},{
+    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+    text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
+    text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',
+    text5: '<span class="left"><div class="oldman-perfil"></div> - <span class="response4"></span> you </span>',
+    btn1: 'thank',
+    btn2: 'yours',
+    btn3: 'what',
+    btn4: 'speak',
+    r1: 'what',
+    r2: 'yours',
+    r3: 'speak',
+    r4: 'thank',
+    type: 'dialog',
+    difficulty: 'easy'
+},{
+    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+    text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
+    text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
+    text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',
+    text5: '<span class="left"><div class="oldman-perfil"></div> - <span class="response4"></span> you </span>',
+    btn1: 'thank',
+    btn2: 'yours',
+    btn3: 'what',
+    btn4: 'speak',
+    r1: 'what',
+    r2: 'yours',
+    r3: 'speak',
+    r4: 'thank',
+    type: 'dialog',
     difficulty: 'easy'
 },{
     text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',

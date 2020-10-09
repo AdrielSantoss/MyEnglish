@@ -1,0 +1,129 @@
+.types-wrapper{
+    background-color: white;
+    color:black;
+    height: 570px;
+    width: 650px;
+    padding: 10px;
+    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+    margin-left: 70px;
+}
+.options-types {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 200px 200px ;
+    grid-template-columns: 200px 200px 200px ;
+    grid-template-areas:
+    "dialogue translate-type"
+    "listen-type listen-and-learning-type"
+    "speak-pronunce random-type"
+
+}
+.dialogue {
+    background-image: url('../../assets/imgs/dialogue.jpg');
+    background-repeat: no-repeat;
+    border: 1px solid black;
+
+}
+.translate-type {
+    background-image: url('../../assets/imgs/translate.jpg');
+    background-repeat: no-repeat;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  
+}
+.listen-type{
+    background-image: url('../../assets/imgs/listen.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+.listen-and-learning-type {
+    background-image: url('../../assets/imgs/listenAndLearning.jpg');
+    background-position: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 1px solid black;
+}
+.speak-pronounce {
+    background-image: url('../../assets/imgs/speak-pronounce.jpg');
+    background-position: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+.random-type {
+    background-image: url('../../assets/imgs/random.jpg');
+    background-position: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 1px solid black;
+
+}
+.dialogue:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+   
+    cursor: pointer;
+}
+.translate-type:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.listen-type:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.listen-and-learning-type:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.speak-pronounce:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.random-type:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.level-title-types{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.616);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+}
+.level-title:hover{
+        background-color: rgba(0, 0, 0, 0.274);
+        transition: 0.5s;
+}
+.test-wrapper{
+    width: 450px;
+    background-color: white;
+    height: 200px;
+}
+.buttons-response {
+    text-align: center;
+}
+.wrapper_alert{
+    height: 250px;
+    background-color: red;
+}
+.start-alert{
+    color: black;
+    margin-left: 70px;
+    margin-top: 160px
+}

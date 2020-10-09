@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './listenAndLearning.css'
 import { knowledgeQuestions } from '../../data/knowledgeQuestions.js'
-import { easyQuestions } from '../../data/easyQuestions.js'
-import { mediumQuestions } from '../../data/mediumQuestions.js'
-import { hardQuestions } from '../../data/hardQuestions.js'
-import { randomQuestions } from '../../data/randomQuestions.js'
+import { easyQuestions } from '../../data/easy/easyQuestions.js'
+import { mediumQuestions } from '../../data/medium/mediumQuestions.js'
+import { hardQuestions } from '../../data/hard/hardQuestions.js'
+import { randomQuestions } from '../../data/random/randomQuestions.js'
 import Dialog from '../Dialog'
 import Translate from '../Translate'
 import ListenAnd_learning from '../ListenAnd_learning'
@@ -52,6 +52,8 @@ export default function Knowledge_test() {
         $('#more-info').draggable()
 
         const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+        const type = localStorage.getItem('Type_MyEnglish')
+
         if(difficulty === 'easy'){
             setQuestionsSelecteds(easyQuestions)
         }else if(difficulty === 'medium'){
@@ -63,6 +65,26 @@ export default function Knowledge_test() {
         }else if(difficulty === 'random'){
             setQuestionsSelecteds(knowledgeQuestions)
       
+        }
+
+        if (type === "dialogue") {
+            setTitle('Diálogos')
+            setText('Diálogos')
+        }else if(type === 'translate'){
+            setTitle('Tradução')
+            setText('Traduzir frases e ou palavras')
+        }else if(type === 'listen and learning'){
+            setTitle('Ouvir e traduzir')
+            setText('Ouvir audios e traduzir')
+        }else if(type === 'images and learning'){
+            setTitle('Tradução através de imagens')
+            setText('selecionar a imagem correta conforme a palavra solicitada')
+        }else if(type === 'speak'){
+            setTitle('Fala e pronúncia')
+            setText('pronunciar palavras e frases em ingles')
+        }else if( type === 'random'){
+            setTitle('Todos os tipos')
+            setText('Todos os tipos de questões selecionadas em ordem aleatória')
         }
 
     }, [])

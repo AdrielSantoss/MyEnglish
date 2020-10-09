@@ -1,4 +1,4 @@
-export const hardQuestions = [{
+export const mediumQuestions = [{
     text1: '<span class="left"><div class="man-perfil"></div> - Hello how are you?</span>',
     text2: '<span class="right">I am <span class="response"></span> thanks - <div class="woman-perfil"></div></span>',
     text3: '<span class="left"><div class="man-perfil"></div> - How <span class="response2"></span> are you? </span>',
@@ -16,7 +16,7 @@ export const hardQuestions = [{
     difficulty: 'easy'
 },{
     text: 'How are you',
-    img: require("../assets/imgs/how-are-you.jpg"),
+    img: require("../../assets/imgs/how-are-you.jpg"),
     t1: 'como',
     t2: 'vai',
     t3: 'você',
@@ -29,8 +29,8 @@ export const hardQuestions = [{
     difficulty: 'easy'
 }, {
     text: 'Lets <span class="response"></span> soccer',
-    audio: require('../assets/audios/lets-play-soccer.mp3'),
-    img: require("../assets/imgs/lets-play.jpg"),
+    audio: require('../../assets/audios/lets-play-soccer.mp3'),
+    img: require("../../assets/imgs/lets-play.jpg"),
     btn1: 'going',
     btn2: 'play',
     btn3: 'run',

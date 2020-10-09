@@ -6,6 +6,7 @@ import Register from '../components/Register'
 import Container from '../components/Header_Container'
 import Content from '../components/Header_Content'
 import Start from '../components/Start'
+import Types from '../components/Types'
 import Game from '../components/Game'
 
 export default function MainRoutes(){
@@ -20,6 +21,7 @@ export default function MainRoutes(){
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
                     <Route path="/start" element={<Start/>}/>
+                    <Route path="/types" element={<Types/>}/>
                 </Route>
             </Route>
 
