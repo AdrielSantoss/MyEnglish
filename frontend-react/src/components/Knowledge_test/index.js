@@ -2,8 +2,23 @@ import React, { useState, useEffect, useContext } from 'react';
 import './listenAndLearning.css'
 import { knowledgeQuestions } from '../../data/knowledgeQuestions.js'
 import { easyQuestions } from '../../data/easy/easyQuestions.js'
+import { easyQuestionsDialogue } from '../../data/easy/easyQuestionsDialogue.js'
+import { easyQuestionsTranslate } from '../../data/easy/easyQuestionsTranslate.js'
+import { easyQuestionsIAL } from '../../data/easy/easyQuestionsIAL.js'
+import { easyQuestionsLAL } from '../../data/easy/easyQuestionsLAL.js'
+import { easyQuestionsSpeak } from '../../data/easy/easyQuestionsSpeak.js'
 import { mediumQuestions } from '../../data/medium/mediumQuestions.js'
+import { mediumQuestionsDialogue } from '../../data/medium/mediumQuestionsDialogue.js'
+import { mediumQuestionsIAL } from '../../data/medium/mediumQuestionsIAL.js'
+import { mediumQuestionsLAL } from '../../data/medium/mediumQuestionsLAL.js'
+import { mediumQuestionsSpeak } from '../../data/medium/mediumQuestionsSpeak.js'
+import { mediumQuestionsTranslate } from '../../data/medium/mediumQuestionsTranslate.js'
 import { hardQuestions } from '../../data/hard/hardQuestions.js'
+import { hardQuestionsDialogue } from '../../data/hard/hardQuestionsDialogue.js'
+import { hardQuestionsIAL } from '../../data/hard/hardQuestionsIAL.js'
+import { hardQuestionsLAL } from '../../data/hard/hardQuestionsLAL.js'
+import { hardQuestionsSpeak } from '../../data/hard/hardQuestionsSpeak.js'
+import { hardQuestionsTranslate } from '../../data/hard/hardQuestionsTranslate.js'
 import { randomQuestions } from '../../data/random/randomQuestions.js'
 import Dialog from '../Dialog'
 import Translate from '../Translate'
@@ -55,38 +70,51 @@ export default function Knowledge_test() {
         const type = localStorage.getItem('Type_MyEnglish')
 
         if(difficulty === 'easy'){
-            setQuestionsSelecteds(easyQuestions)
+            if (type === "dialogue") {
+                setQuestionsSelecteds(easyQuestionsDialogue)
+            }else if(type === 'translate'){
+                setQuestionsSelecteds(easyQuestionsTranslate)
+            }else if(type === 'listen and learning'){
+                setQuestionsSelecteds(easyQuestionsLAL)
+            }else if(type === 'images and learning'){
+                setQuestionsSelecteds(easyQuestionsIAL)
+            }else if(type === 'speak'){
+                setQuestionsSelecteds(easyQuestionsSpeak)
+            }else if( type === 'random'){
+                setQuestionsSelecteds(easyQuestions)
+            }
         }else if(difficulty === 'medium'){
-            setQuestionsSelecteds(mediumQuestions)
+            if (type === "dialogue") {
+                setQuestionsSelecteds(mediumQuestionsDialogue)
+            }else if(type === 'translate'){
+                setQuestionsSelecteds(mediumQuestionsTranslate)
+            }else if(type === 'listen and learning'){
+                setQuestionsSelecteds(mediumQuestionsLAL)
+            }else if(type === 'images and learning'){
+                setQuestionsSelecteds(mediumQuestionsIAL)
+            }else if(type === 'speak'){
+                setQuestionsSelecteds(mediumQuestionsSpeak)
+            }else if( type === 'random'){
+                setQuestionsSelecteds(mediumQuestions)
+            }
 
         }else if(difficulty === 'hard'){
-            setQuestionsSelecteds(hardQuestions)
-
+            if (type === "dialogue") {
+                setQuestionsSelecteds(hardQuestionsDialogue)
+            }else if(type === 'translate'){
+                setQuestionsSelecteds(hardQuestionsTranslate)
+            }else if(type === 'listen and learning'){
+                setQuestionsSelecteds(hardQuestionsLAL)
+            }else if(type === 'images and learning'){
+                setQuestionsSelecteds(hardQuestionsIAL)
+            }else if(type === 'speak'){
+                setQuestionsSelecteds(hardQuestionsSpeak)
+            }else if( type === 'random'){
+                setQuestionsSelecteds(hardQuestions)
+            }
         }else if(difficulty === 'random'){
-            setQuestionsSelecteds(knowledgeQuestions)
-      
+            setQuestionsSelecteds(randomQuestions)
         }
-
-        if (type === "dialogue") {
-            setTitle('Diálogos')
-            setText('Diálogos')
-        }else if(type === 'translate'){
-            setTitle('Tradução')
-            setText('Traduzir frases e ou palavras')
-        }else if(type === 'listen and learning'){
-            setTitle('Ouvir e traduzir')
-            setText('Ouvir audios e traduzir')
-        }else if(type === 'images and learning'){
-            setTitle('Tradução através de imagens')
-            setText('selecionar a imagem correta conforme a palavra solicitada')
-        }else if(type === 'speak'){
-            setTitle('Fala e pronúncia')
-            setText('pronunciar palavras e frases em ingles')
-        }else if( type === 'random'){
-            setTitle('Todos os tipos')
-            setText('Todos os tipos de questões selecionadas em ordem aleatória')
-        }
-
     }, [])
 
     function rand(min = 0, max = 6) {

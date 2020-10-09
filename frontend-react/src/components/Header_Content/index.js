@@ -43,7 +43,7 @@ export default function Header_Content() {
 
  return (
   <div className="menu-content">
-  <h1 className="title"> Melhor software para o aprendizado de inglês - com o melhor ritmo de aprendizado.</h1>
+  <h1 className="title"> Melhor sistema para a prática de inglês - com o melhor ritmo de desenvolvimento</h1>
   <p className="mt-4"> ipsum porro vitae ullam quaerat distinctio, labore dolor hic veritatis natus enim quam praesentium, ipsam iusto?</p>
   {renderIntroduction()}
 
