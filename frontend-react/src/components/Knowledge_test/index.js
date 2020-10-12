@@ -117,9 +117,9 @@ export default function Knowledge_test() {
         }
     }, [])
 
-    function rand(min = 0, max = 6) {
+    function rand(min = 0, max = 3) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 5) {
+        if (selecteds.length >= 2) {
             setShowEnd('flex')
             setShowProgress('none')
             
@@ -251,8 +251,7 @@ export default function Knowledge_test() {
                     <div className="report"><ReportProblem size={28} color={`${({theme})=>theme.icons};`} /></div>
                 </Icons>
             </div>
-           
-
+            
             <ToastContainer />
 
             <IntroWrapper display={showIntro}>
@@ -271,7 +270,7 @@ export default function Knowledge_test() {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length < 6) {
+                        while (selecteds.length < 3) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
