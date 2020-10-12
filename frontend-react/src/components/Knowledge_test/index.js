@@ -138,6 +138,7 @@ export default function Knowledge_test() {
         }
 
     }
+
     function setRecord(){
         const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
         const difficulty = localStorage.getItem('Difficulty_MyEnglish')
@@ -299,12 +300,14 @@ export default function Knowledge_test() {
                                 
                                     </div>
                                 )
-                            }else if (i.type === "speaks"){
-                                return (
-                                    <div>
-                                          <Speaks  />
-                                    </div>
-                                )
+                            }else if (i.type === "speaks" || i.type === "speaks-audio"){
+                            
+                                    return (
+                                        <div>
+                                            <Speaks item={i} rand={rand} correct={correct} correctMedium={correctMedium} correctHard={correctHard} incorrect={incorrect} />
+                                        </div>
+                                    )
+                            
                             }
 
                         }
@@ -324,7 +327,6 @@ export default function Knowledge_test() {
             <FinishWrapper display={showEnd}>
                 <Final time={time} interval={interval} pts={pts} correct={correctCounter} incorrect={incorrectCounter} knowledgeQuestions={knowledgeQuestions}/>
             </FinishWrapper>
-
 
             </div>
 
