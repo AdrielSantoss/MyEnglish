@@ -1,12 +1,4 @@
-.start-wrapper{
-    background-color: white;
-    color:black;
-    height: 570px;
-    width: 450px;
-    padding: 10px;
-    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
-    margin-left: 70px;
-}
+
 .levels {
     display: grid;
     justify-content: center;

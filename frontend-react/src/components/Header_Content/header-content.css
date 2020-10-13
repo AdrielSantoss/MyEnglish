@@ -14,15 +14,6 @@
     justify-content: center;
     margin-top: 20px;
 }
-.login-container{
-    background-color: white;
-    width: 500px;
-    height: 125px;
-    margin-top: 80px;
-    text-align: center;
-    color: black;
-    box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
-}
 .buttons-authentication{
     display: flex;
     justify-content: center;
@@ -37,4 +28,7 @@
     display: flex;
     align-items: center;
     margin-left: 50px;
+}
+.btn{
+    background-color: palegoldenrod;
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, Link} from 'react-router-dom'
 import levelIcon from '../../assets/icons/configuracao.png'
+import {TemplateTypes} from './style'
 import './types.css'
 
 export default function Types() {
@@ -40,7 +41,7 @@ export default function Types() {
 
  return (
   <div className="start" >
-      <div className="types-wrapper mt-5">
+      <TemplateTypes className="mt-5">
       <div className="start-content" >
         <div className="hello">
             <span className="icon icon--circle">
@@ -59,9 +60,7 @@ export default function Types() {
             <div className="random-type "><Link to="/game" onClick={()=>{setRandom()}}><div className="level-title-types">Aleatório - todos</div></Link></div>
         </div>
       </div>
-      </div>
-
-
+      </TemplateTypes>
   </div>
  );
 }

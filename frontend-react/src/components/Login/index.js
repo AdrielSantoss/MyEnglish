@@ -16,6 +16,7 @@ import UsersService from '../../config/services'
     try{
       await UsersService.login({email: email, password: password})
       navigation('/')
+      window.location.reload()
     }catch (err){
       if(err == "Error: Request failed with status code 401"){
         setMsg('Email ou senha incorretas') 

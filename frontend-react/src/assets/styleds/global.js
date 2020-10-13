@@ -77,3 +77,7 @@ height: 300px;
 background-repeat: no-repeat;
 background-position: center;
 `
+export const Template = styled.div`
+background-color: ${({theme})=>theme.backgroundContent};
+color: ${({theme})=>theme.color};
+`

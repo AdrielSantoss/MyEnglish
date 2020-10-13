@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, Link} from 'react-router-dom'
 import levelIcon from '../../assets/icons/configuracao.png'
+import {TemplateStart} from './style'
 import './start.css'
 
 export default function Start() {
@@ -31,8 +32,9 @@ export default function Start() {
 
 
  return (
+ 
   <div className="start" >
-      <div className="start-wrapper mt-5">
+      <TemplateStart className="mt-5">
       <div className="start-content" >
         <div className="hello">
             <span className="icon icon--circle">
@@ -49,9 +51,8 @@ export default function Start() {
             <div className="idontknow "><Link to="/game" onClick={()=>{setRandom()}}><div className="level-title">Eu não sei</div></Link></div>
         </div>
       </div>
-      </div>
-
-
+      </TemplateStart>
   </div>
+
  );
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './header-content.css'
 import {Link} from 'react-router-dom'
+import {TemplateLogin} from './style'
 
 
 export default function Header_Content() {
@@ -20,23 +21,23 @@ export default function Header_Content() {
   function renderIntroduction(){
     if(localStorage.getItem('user_MyEnglish')){
       return (
-        <div className="login-container" >
-        <p className="login-msg">Seja muito bem vindo {name} , o que deseja fazer?</p>
-        <div className="buttons-authentication">
-        <Link to="/start"><button type="button" class="btn btn-dark mr-5 btn-lg">Começar</button></Link>
-           <button type="button" class="btn btn-dark btn-lg">ChatRoom</button>
-        </div>
-    </div>
+        <TemplateLogin>
+          <p className="login-msg">Seja muito bem vindo {name} , o que deseja fazer?</p>
+          <div className="buttons-authentication">
+          <Link to="/start"><button type="button" class="btn btn-light mr-5 btn-lg">Começar</button></Link>
+            <button type="button" class="btn btn-light btn-lg">ChatRoom</button>
+          </div>
+        </TemplateLogin>
       )
  }else {
    return (
-      <div className="login-container" >
+    <TemplateLogin>
         <p className="login-msg">Faça login para começar</p>
         <div className="buttons-authentication">
-        <Link to="/login"><button type="button" class="btn btn-dark mr-5 btn-lg">Login</button></Link>
-          <Link to="/register"><button type="button" class="btn btn-dark btn-lg">Register</button></Link>
+        <Link to="/login"><button type="button" class="btn btn-light mr-5 btn-lg">Login</button></Link>
+          <Link to="/register"><button type="button" class="btn btn-secondary btn-lg">Register</button></Link>
         </div>
-    </div>
+    </TemplateLogin>
    )
  }
   }
