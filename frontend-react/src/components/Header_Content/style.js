@@ -1,11 +1,30 @@
 import styled from 'styled-components'
 
 export const TemplateLogin = styled.div`
-background-color: ${({theme})=>theme.backgroundContent};
-width: 500px;
-height: 125px;
-margin-top: 80px;
+margin-right: 20px;
+margin-top: 30px;
 text-align: center;
 color: ${({theme})=>theme.color};
-box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+
+
+button.button {
+    background-color: ${({theme})=>theme.backgroundContent};
+    border: 0px;
+    padding: 10px;
+    border-radius: 3px;
+    color: ${({theme})=>theme.color};
+    width: 500px;
+    font-size: 15pt;
+    transition: 0.2s;
+
+}
+
+`
+export const TemplateLogin2 = styled.div`
+margin-right: 220px;
+margin-top: 30px;
+text-align: center;
+color: ${({theme})=>theme.color};
+
+
 `

@@ -11,8 +11,7 @@ import ThemeContext from '../../config/theme'
 export default function Header() {
 
   const [name, setName] = useState('Login')
-  const [color, setColor] = useState('secondary')
-  const [colorBtn, setColorBtn] = useState('light')
+
   const [theme, setTheme] = useState('')
   const {switchTheme} = useContext(ThemeContext)
 
@@ -28,12 +27,10 @@ export default function Header() {
 
       if(theme === 'whiteMode'){
         setTheme('Tema - black')
-        setColor('secondary')
-        setColorBtn('light')
+
       }else if(theme === 'darkMode') {
         setTheme('Tema - white')
-        setColor('dark')
-        setColorBtn('secondary')
+
       }
       
  }
@@ -51,20 +48,18 @@ export default function Header() {
 
       if(theme === 'whiteMode'){
         setTheme('Tema - black')
-        setColor('secondary')
-        setColorBtn('light')
+
       }else if(theme === 'darkMode') {
         setTheme('Tema - white')
-        setColor('dark')
-        setColorBtn('secondary')
+     
       }
 
   }
 
  return (
-   <div>
-<nav className={`navbar navbar-expand-lg navbar-light bg-${color} text-light`}>
-  <Link to="/"><a className="navbar-brand text-light ml-5 d-flex" href="#"><img src={eua2} className="mr-2"/> MyEnglish <img src={eua} className="ml-2"/></a></Link>
+   <div className="container-header">
+<nav className={`navbar navbar-expand-lg navbar-light bg-dark text-light`}>
+  <Link to="/"><a className="navbar-brand text-light ml-5 d-flex" href="#"><div ><img src={eua2} className="mr-2"/> MyEnglish <img src={eua} className="ml-2"/></div></a> </Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -76,7 +71,7 @@ export default function Header() {
     </ul>
     <form className="form-inline my-2 my-lg-0 mr-5">
         <div className="dropdown">
-        <button className={`btn btn-${colorBtn} dropdown-toggle`} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button className={`btn btn-secondary dropdown-toggle`} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {name}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
