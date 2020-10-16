@@ -8,15 +8,13 @@ export default function Content() {
   <div className="content">
       <img src={presentation}  alt="" srcset=""/>
       <div className="feedbacks">
-          <div className="feedback-title">
-            5 ANOS CONSECUTIVOS
-            PC MAGAZINE EDITOR'S CHOICE WINNER:
-            MELHOR SOFTWARE DE APRENDIZADO DE IDIOMAS
+          <div className="feedback-title ">
+            MELHOR SOFTWARE DE PRÁTICA DE INGLÊS COM O AUXILIO DE INÚMERAS METODOLOGIAS DE FIXAÇÃO DE CONTEÚDO.
           </div>
           <div className="review">
               <div className="review_stars">★ ★ ★ ★ ★</div>
               <div className="review_text">“É excelente, a dinâmica é bem interessante, você pratica seu inglês na medida que vai aprendendo palavras novas.”</div>
-              <div className="review_name">-Marcos.</div>
+              <div className="review_name">-Marcos</div>
             </div>
             <div className="review">
                 <div className="review_stars">★ ★ ★ ★ ★</div>
@@ -24,6 +22,7 @@ export default function Content() {
                 <div className="review_name">-Wanessa</div>
             </div>
       </div>
+      
   </div>
 </Template>
  );

@@ -38,6 +38,7 @@ import {ResponseArea} from '../../assets/styleds/global'
 import ThemeContext from '../../config/theme'
 import UsersService from '../../config/services';
 import {toast} from 'react-toastify'
+import {useNavigate} from 'react-router-dom'
 
 
 let val = 0
@@ -60,9 +61,10 @@ export default function Knowledge_test() {
     const [questionNum, setQuestionNum] = useState(0)
     const [questionsSelecteds, setQuestionsSelecteds] = useState([])
     const [newRecordView, setNewRecordView] = useState(true)
+    const navigation = useNavigate()
 
     useEffect(() => {
-        timer()
+       
         rand()
         $('#more-info').draggable()
 
@@ -117,9 +119,9 @@ export default function Knowledge_test() {
         }
     }, [])
 
-    function rand(min = 0, max = 3) {
+    function rand(min = 0, max = 7) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 2) {
+        if (selecteds.length >= 6) {
             setShowEnd('flex')
             setShowProgress('none')
             
@@ -128,7 +130,7 @@ export default function Knowledge_test() {
         val = val + 3.35
         setProgressValue(val + "%")
 
-        while (selecteds.length < 6){
+        while (selecteds.length < 7){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -230,16 +232,23 @@ export default function Knowledge_test() {
         setIncorrectCounter(incorrectCounter+1)
     }
 
-   function timer(){
-         interval =  setInterval(()=>{
-            second += 0.1
-            setTime(second)
-        },100)
-    }
 
     function hideIntro() {
          setShowIntro('none')
          setShowProgress('normal')
+    }
+
+    function confirm(){
+        if(showIntro === 'none'){
+            let response = window.confirm('Deseja mesmo sair? Todo seu progresso será perdido')
+            if(response){
+                navigation('/')
+            }else {
+                return
+            }
+        }else {
+            navigation('/')
+        }
     }
   
 
@@ -247,7 +256,7 @@ export default function Knowledge_test() {
        <div>
             <div className="icons-main">
                 <Icons>
-                    <div className="times" ><TimesCircle size={28} color={`${({theme})=>theme.icons};`} /></div>
+                    <div className="times" ><TimesCircle size={28} color={`${({theme})=>theme.icons};`} onClick={()=>confirm()}/></div>
                     <div className="palette"><ColorPalette size={28} color={`${({theme})=>theme.icons};`} onClick={switchTheme}/></div>
                     <div className="report"><ReportProblem size={28} color={`${({theme})=>theme.icons};`} /></div>
                 </Icons>
@@ -271,7 +280,7 @@ export default function Knowledge_test() {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length < 3) {
+                        while (selecteds.length < 7) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>
@@ -325,7 +334,7 @@ export default function Knowledge_test() {
             </IntroWrapper>
 
             <FinishWrapper display={showEnd}>
-                <Final time={time} interval={interval} pts={pts} correct={correctCounter} incorrect={incorrectCounter} knowledgeQuestions={knowledgeQuestions}/>
+                <Final interval={interval} pts={pts} correct={correctCounter} incorrect={incorrectCounter} knowledgeQuestions={knowledgeQuestions}/>
             </FinishWrapper>
 
             </div>

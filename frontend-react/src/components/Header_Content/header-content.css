@@ -1,5 +1,6 @@
 .title{
     font-size: 45px;
+ 
 }
 .menu-content {
    width: 500px;
@@ -8,6 +9,7 @@
 }
 .menu-content p{
     font-size: 20px;
+
 }
 .btn-container{
     display: flex;

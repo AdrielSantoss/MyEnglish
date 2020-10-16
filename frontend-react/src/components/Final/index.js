@@ -7,16 +7,6 @@ import {FinalTemplate} from './style.js'
 
 export default function Final(props) {
 
-
-
-    useEffect(()=>{
-        clearInterval(props.interval)
-       
-
-    },[])
-
-
-
     const navigation = useNavigate()
 
  return (
@@ -50,9 +40,6 @@ export default function Final(props) {
             </div>
         </div>
         <div className="icons-description">
-            <div className="icon-content">
-                <div className="icon"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo realizado:</strong></div>  {props.time.toFixed(2)}
-            </div>
             <div className="icon-content">
                 <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Score:</strong></div>  {props.pts} pts
             </div>

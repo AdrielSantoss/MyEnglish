@@ -6,6 +6,7 @@ display:flex;
     width: 1500px;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 `
 
 
@@ -20,6 +21,7 @@ background-color: ${({theme})=>theme.background};
 transition: 0.3s;
 border-top: 1px solid slategray;
 box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+transition: 0.2s;
 `
 export const ShowButton = styled.div`
     display: ${props => (props.display?'flex':'none')}
@@ -54,7 +56,7 @@ box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 display: flex;
 justify-content: center;
 aliggn-items: center;
-transition: 0.3s;
+transition: 0.2s;
 
 `
 
@@ -69,12 +71,12 @@ box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
 display: flex;
 justify-content: center;
 align-items: center;
-transition: 0.3s;
+transition: 0.2s;
 
 `
 export const TemplateQuestion = styled.div`
 background-color: ${({theme})=>theme.background};
-transition: 0.3s;
+transition: 0.2s;
 `
 export const Image = styled.div`
 width: 530px;
