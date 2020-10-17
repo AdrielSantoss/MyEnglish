@@ -30,10 +30,10 @@ export default function Header() {
       }
 
       if(theme === 'whiteMode'){
-        setTheme('Tema - black')
+        setTheme('Tema - dark')
 
       }else if(theme === 'darkMode') {
-        setTheme('Tema - white')
+        setTheme('Tema - light')
 
       }
       
@@ -51,10 +51,10 @@ export default function Header() {
     let theme = localStorage.getItem('theme_MyEnglish')
 
       if(theme === 'whiteMode'){
-        setTheme('Tema - black')
+        setTheme('Tema - dark')
 
       }else if(theme === 'darkMode') {
-        setTheme('Tema - white')
+        setTheme('Tema - light')
      
       }
 

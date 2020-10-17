@@ -43,11 +43,10 @@
 }
 .right{
     display: flex;
-    width: 100%;
     justify-content: right;
     align-items: center;
-    margin-right: 35px;
-    right: 0px;
+    margin-right: -50px;
+   
 }
 .man-perfil{
     width: 50px;

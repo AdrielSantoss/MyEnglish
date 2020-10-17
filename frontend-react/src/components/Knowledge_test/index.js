@@ -34,7 +34,7 @@ import Introduction from '../Introduction'
 import Final from '../Final'
 import $ from 'jquery'
 import { IntroWrapper, FinishWrapper, ShowProgressBar, ShowInfos, Icons } from './style.js'
-import {ResponseArea} from '../../assets/styleds/global'
+import {ResponseArea, ShowButton, Button} from '../../assets/styleds/global'
 import ThemeContext from '../../config/theme'
 import UsersService from '../../config/services';
 import {toast} from 'react-toastify'
@@ -324,6 +324,10 @@ export default function Knowledge_test() {
                     
                 }
             })}
+
+            <div className= "score-wrapper">
+                <span className="score">{pts} pts</span>  
+            </div>
         
             <IntroWrapper display={showIntro}>
                 <ResponseArea>

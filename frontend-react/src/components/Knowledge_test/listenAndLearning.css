@@ -21,6 +21,7 @@
 .progress{
     margin-top: 20px;
     width: 600px;
+
 }
 .progress-wrapper{
     display: flex;
@@ -29,5 +30,17 @@
 #more-info{
     position: absolute;
     top: 300px;
-    right: 100px
+    right: 100px;
+    background-color: rgb(97, 97, 97);
+}
+.score-wrapper{
+    position: absolute;
+    right: 130px;
+    top: 100px;
+}
+.score{
+    font-weight: 600;
+    color: black;
+    font-size: 16pt;
+    
 }

@@ -145,14 +145,4 @@ function Dictaphone(props) {
     </div>
   )
 }
-/**    <>
-    <center>
-      <h1>Voice Notes</h1>
-      <div className="container">
-        <button onClick={()=>{recognition()}}>ouvir</button>
-        <button onClick={()=>{mic.stop()}}>parar</button>
-        <p>{note}</p>
-      </div>
-      </center>
-    </> */
 export default Dictaphone

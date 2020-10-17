@@ -7,24 +7,32 @@ display:flex;
     justify-content: center;
     align-items: center;
     transition: 0.2s;
+    margin: 0px;
+    padding: 0px;
 `
 
 
 export const ButtonsArea = styled.div`
-display: flex;
-justify-content: center;
 position: absolute;
 bottom:0px;
 width: 100%;
 height: 100px;
 background-color: ${({theme})=>theme.background};
-transition: 0.3s;
 border-top: 1px solid slategray;
 box-shadow: 0 10px 20px 0 rgba(33,33,33,.9);
+display: flex;
+justify-content: center;
+aliggn-items: center;
 transition: 0.2s;
+margin: 0px;
+padding: 0px;
+
 `
 export const ShowButton = styled.div`
-    display: ${props => (props.display?'flex':'none')}
+    display: ${props => (props.display?'flex;':'none;')}
+    margin: 0px;
+    padding: 0px;
+
 
  
 `
@@ -42,6 +50,8 @@ export const Button = styled.input.attrs({
     height: 35px;
     margin: 50px;
     cursor: pointer;
+    padding: 0px;
+    margin: 0px;
     
 `
 
@@ -57,6 +67,7 @@ display: flex;
 justify-content: center;
 aliggn-items: center;
 transition: 0.2s;
+
 
 `
 
