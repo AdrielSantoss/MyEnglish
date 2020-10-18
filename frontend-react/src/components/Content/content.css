@@ -2,13 +2,12 @@
     display: flex;
     justify-content: center;
 }
+
 .review{
     font-size: 14px;
 line-height: 1.5;
 margin: 20px auto 0;
-padding-left: 15px;
-padding-bottom: 15px;
-padding-right: 15px;
+
 text-align: center;
 }
 .review_name{
@@ -17,8 +16,102 @@ text-align: center;
 .feedbacks {
     margin-top: 80px;
     width: 800px;
+    margin-bottom: 30px;
 }
 .feedback-title{
     font-weight: bolder;
     font-size: 25px;
+}
+
+@media(max-width: 850px)
+{
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .feedbacks {
+        margin-top: 50px;
+        width: 850px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .feedback-title{
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+    }
+    .img{
+        width: 800px;
+    }
+}
+
+@media(max-width: 800px)
+{
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .feedbacks {
+        margin-top: 50px;
+        width: 900px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .feedback-title{
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+@media(max-width: 750px)
+{
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .feedbacks {
+        margin-top: 50px;
+        width: 700px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .feedback-title{
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+    }
+    .img{
+        width: 750px;
+    }
+}
+@media(max-width: 700px)
+{
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .feedbacks {
+        margin-top: 50px;
+        width: 700px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .feedback-title{
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+    }
+    .img{
+        width: 700px;
+    }
 }

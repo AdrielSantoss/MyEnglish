@@ -15,3 +15,23 @@
     background-color: rgba(0, 0, 0, 0.5);
 
 }
+
+@media (max-width: 850px) 
+{
+    .menuContainer-wrapper{
+        height: 800px;
+        background-size: 150%;
+    }
+  
+  }
+
+@media (max-width: 800px) 
+{
+    .menuContainer-wrapper{
+        height: 700px;
+        background-size: 150%;
+    }
+  
+  }
+
+

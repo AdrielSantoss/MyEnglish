@@ -6,7 +6,11 @@ export default function Content() {
  return (
    <Template>
   <div className="content">
-      <img src={presentation}  alt="" srcset=""/>
+
+     
+          <img src={presentation}  alt="" srcset="" className="img"/>
+      
+      
       <div className="feedbacks">
           <div className="feedback-title ">
             MELHOR SOFTWARE DE PRÁTICA DE INGLÊS COM O AUXILIO DE INÚMERAS METODOLOGIAS DE FIXAÇÃO DE CONTEÚDO.
@@ -21,7 +25,10 @@ export default function Content() {
                 <div className="review_text">“estou aprendendo muito, principalmente a minha leitura que tenho mais dificuldade!”</div>
                 <div className="review_name">-Wanessa</div>
             </div>
-      </div>
+            </div>
+            
+         
+    
       
   </div>
 </Template>
