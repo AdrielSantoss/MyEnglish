@@ -93,7 +93,7 @@ function Dictaphone(props) {
 
   function setAudio(){
 
-    if(props.item.type === 'speaks-audio'){
+    if(props.item.type === 'audio'){
       $('#text').removeClass('text')
       return (
         <audio controls>
@@ -108,6 +108,7 @@ function Dictaphone(props) {
   function setQuestion() {
     $('#next').removeClass('next')
     $('#next').addClass('disableButton')
+    setAudio()
   }
   return (
     <div>
@@ -118,17 +119,17 @@ function Dictaphone(props) {
           </div>
 
           <Image img={props.item.img}>
-            <div className="text" id="text">{props.item.text}</div>
+            <div className="text" id="text">{props.item.type === "audio"?'':props.item.text}</div>
           </Image>
           {setAudio()}
 
           <div className="translate-wrapper">
             <div className="translate-title">
-              Pronuncie a frase acima:
+              {props.item.type === "audio"?'Repita a frase ou palavra dita no audio:':'Pronuncie a frase ou a palavra acima:'}
                 </div>
-            <div className="translate">
-              <div className="text1">{text}</div>
-            </div>
+                <center><div className="translate">
+            <div className="text1">{text}</div>
+            </div></center>
           </div>
         </div>
 

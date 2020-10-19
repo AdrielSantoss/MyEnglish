@@ -21,25 +21,25 @@
 .game-introduction{
     background-color: rgb(228, 228, 228);
     width: 500px;
-    height: 400px;
+    height: 550px;
     border-radius: 5%;
     margin-top: 80px;
 }
-.hello{
+.hello-intro{
 
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     padding: 5px;
+
 }
-.hello-title{
+.hello-title-intro{
     font-size: 25px;
     margin-top: 5px;
     margin-left: 10px;
 }
-.description{
-    margin-top: 30px;
+.description-intro{
     font-size: 20px;
     color: slategray;
 }
@@ -85,4 +85,13 @@
 .leftArrow{
     position: absolute;
     cursor: pointer;
+}
+.img-gif{
+    display: flex;
+    justify-content: center;
+}
+.img-gif img{
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
 }

@@ -14,32 +14,7 @@ export const easyQuestionsDialogue = [{
     r4: 'years',
     type: 'dialog',
     difficulty: 'easy'
-},{
-    text: 'How are you',
-    img: require("../../assets/imgs/how-are-you.jpg"),
-    t1: 'como',
-    t2: 'vai',
-    t3: 'você',
-    btn1: 'como',
-    btn2: 'Anda',
-    btn3: 'vai',
-    btn4: 'você',
-    btn5: 'A',
-    type:'translate',
-    difficulty: 'easy'
-}, {
-    text: 'Lets <span class="response"></span> soccer',
-    audio: require('../../assets/audios/lets-play-soccer.mp3'),
-    img: require("../../assets/imgs/lets-play.jpg"),
-    btn1: 'going',
-    btn2: 'play',
-    btn3: 'run',
-    btn4: 'slay',
-    r: 'play',
-    type: 'listen-and-learning',
-    difficulty: 'easy'
-},{
-    text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
+},{   text1: '<span class="left"><div class="oldman-perfil"></div> - Excuse me, <span class="response"></span> is name?</span>',
     text2: '<span class="right"> My name is Jessica, what is <span class="response2"></span>? - <div class="womanTwo-perfil"></div></span>',
     text3: '<span class="left"><div class="oldman-perfil"></div> - John </span>',
     text4: '<span class="right"> You <span class="response3"></span> english very well - <div class="womanTwo-perfil"></div></span>',

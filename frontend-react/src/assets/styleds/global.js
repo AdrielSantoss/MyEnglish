@@ -100,5 +100,5 @@ background-position: center;
 export const Template = styled.div`
 background-color: ${({theme})=>theme.backgroundContent};
 color: ${({theme})=>theme.color};
-transition: 0.3s;
+transition: 0.2s;
 `
