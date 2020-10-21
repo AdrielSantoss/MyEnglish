@@ -25,8 +25,15 @@ export default function Start() {
     localStorage.setItem('Difficulty_MyEnglish', 'hard')
 
   }
-  function setRandom(){
-    localStorage.setItem('Difficulty_MyEnglish', 'random')
+  function setRandom(event){
+    if(event.firstChild.data === "Eu não sei"){
+      localStorage.setItem('Difficulty_MyEnglish', 'random')
+      localStorage.setItem('Knowledge_test', true)
+    }else {
+      localStorage.setItem('Difficulty_MyEnglish', 'random')
+      localStorage.removeItem('Knowledge_test')
+    }
+
 
   }
 
@@ -45,10 +52,10 @@ export default function Start() {
         <center>Por favor, selecione seu nível de conhecimento em inglês.</center> 
         <hr/>
         <div className="levels">
-            <div className="basic "><Link to="/types" onClick={()=>{setEasy()}}><div className="level-title">Básico</div></Link></div>
-            <div className="intermediario "><Link to="/types" onClick={()=>{setMedium()}}><div className="level-title">Intermediario</div></Link></div>
-            <div className="avanced "><Link to="/types" onClick={()=>{setHard()}}><div className="level-title">Avançado</div></Link></div>
-            <div className="idontknow "><Link to="/game" onClick={()=>{setRandom()}}><div className="level-title">Eu não sei</div></Link></div>
+            <div className="basic "><Link to="/types" style={{ color: 'inherit', textDecoration: 'inherit'}} onClick={()=>{setEasy()}}><div className="level-title">Básico</div></Link></div>
+            <div className="intermediario "><Link to="/types" style={{ color: 'inherit', textDecoration: 'inherit'}} onClick={()=>{setMedium()}}><div className="level-title">Intermediario</div></Link></div>
+            <div className="avanced "><Link to="/types" style={{ color: 'inherit', textDecoration: 'inherit'}} onClick={()=>{setHard()}}><div className="level-title">Avançado</div></Link></div>
+            <div className="idontknow "><Link to="/game" style={{ color: 'inherit', textDecoration: 'inherit'}} onClick={(event)=>{setRandom(event.target)}}><div className="level-title">Eu não sei</div></Link></div>
         </div>
       </div>
       </TemplateStart>

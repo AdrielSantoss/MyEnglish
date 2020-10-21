@@ -20,7 +20,7 @@ export default function MainRoutes(){
                     <Route path="/" element={<Content/>}/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
-                    <Route path="/start" element={<Start/>}/>
+                    <Route path="/levels" element={<Start/>}/>
                     <Route path="/types" element={<Types/>}/>
                 </Route>
             </Route>

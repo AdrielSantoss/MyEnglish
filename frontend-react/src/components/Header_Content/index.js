@@ -29,7 +29,7 @@ export default function Header_Content() {
       return (
         <TemplateLogin>
           <div className="buttons-authentication">
-          <Link to="/start"><button type="button" className={`button`}>Começar</button></Link>
+          <Link to="/levels"><button type="button" className={`button`}>Começar</button></Link>
         
           </div>
         </TemplateLogin>

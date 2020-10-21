@@ -25,3 +25,7 @@ export const Icons = styled.div`
         margin-bottom: 55px;
     }
 `
+export const Pts = styled.div`
+        color: ${({theme})=>theme.icons};  
+  
+`
