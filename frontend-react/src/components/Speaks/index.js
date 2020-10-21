@@ -56,9 +56,9 @@ function Dictaphone(props) {
       mic.onresult = (evt) => {
         setNote('Clique para falar')
         setText('')
-        setText(evt.results[0][0].transcript)
+        setText(evt.results[0][0].transcript.toLowerCase())
   
-        if (evt.results[0][0].transcript === props.item.text) {
+        if (evt.results[0][0].transcript.toLowerCase() === props.item.text.toLowerCase()) {
           toast.success(`✔️ CORRETO!`, {
             autoClose: 1100
           })

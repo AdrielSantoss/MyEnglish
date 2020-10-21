@@ -119,9 +119,9 @@ export default function Knowledge_test() {
         }
     }, [])
 
-    function rand(min = 0, max = 10) {
+    function rand(min = 0, max = 29) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 9) {
+        if (selecteds.length >= 19) {
             setShowEnd('flex')
             setShowProgress('none')
             
@@ -130,7 +130,7 @@ export default function Knowledge_test() {
         val = val + 3.35
         setProgressValue(val + "%")
 
-        while (selecteds.length < 10){
+        while (selecteds.length < 20){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -280,7 +280,7 @@ export default function Knowledge_test() {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length < 10) {
+                        while (selecteds.length < 20) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>

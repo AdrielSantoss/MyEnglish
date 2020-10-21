@@ -48,4 +48,112 @@ export const easyQuestionsSpeak = [{
     audio: require("../../assets/audios/I-dont-know.mp3"),
     difficulty: 'easy'
     
+}, {
+    text: "tomorrow",
+    type: 'audio',
+    img: require("../../assets/imgs/tomorrow.jpg"),
+    audio: require("../../assets/audios/tomorrow.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "voice",
+    type: 'speaks',
+    img: require("../../assets/imgs/how-are-you.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "ocean",
+    type: 'audio',
+    img: require("../../assets/imgs/tomorrow.jpg"),
+    audio: require("../../assets/audios/ocean.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "apple",
+    type: 'audio',
+    img: require("../../assets/imgs/apple.jpg"),
+    audio: require("../../assets/audios/apple.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "game",
+    type: 'speaks',
+    img: require("../../assets/imgs/car-img.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "project",
+    type: 'speaks',
+    img: require("../../assets/imgs/pensando.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "browser",
+    type: 'audio',
+    img: require("../../assets/imgs/browser.jpg"),
+    audio: require("../../assets/audios/browser.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "wave",
+    type: 'speaks',
+    img: require("../../assets/imgs/tomorrow.jpg"),
+    difficulty: 'easy'
+},{
+    text: "computer",
+    type: 'speaks',
+    img: require("../../assets/imgs/browser.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "food",
+    type: 'audio',
+    img: require("../../assets/imgs/apple.jpg"),
+    audio: require("../../assets/audios/food.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "problem",
+    type: 'audio',
+    img: require("../../assets/imgs/pensando.jpg"),
+    audio: require("../../assets/audios/problem.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "happy",
+    type: 'speaks',
+    img: require("../../assets/imgs/ListenAndLerning1.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "money",
+    type: 'speaks',
+    img: require("../../assets/imgs/very-rich.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "adventure",
+    type: 'audio',
+    img: require("../../assets/imgs/peoplePark.jpg"),
+    audio: require("../../assets/audios/adventure.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "people",
+    type: 'audio',
+    img: require("../../assets/imgs/peoplePark.jpg"),
+    audio: require("../../assets/audios/people.mp3"),
+    difficulty: 'easy'
+}, {
+    text: "coffee",
+    type: 'speaks',
+    img: require("../../assets/imgs/coffe.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "blue",
+    type: 'speaks',
+    img: require("../../assets/imgs/colors.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "family",
+    type: 'speaks',
+    img: require("../../assets/imgs/coffe.jpg"),
+    difficulty: 'easy'
+}, {
+    text: "white",
+    type: 'speaks',
+    img: require("../../assets/imgs/colors.jpg"),
+    difficulty: 'easy'
+},{
+    text: "3",
+    type: 'speaks',
+    img: require("../../assets/imgs/numbers.jpg"),
+    difficulty: 'easy'
 }]
