@@ -115,7 +115,13 @@ export default function Knowledge_test() {
                 setQuestionsSelecteds(hardQuestions)
             }
         }else if(difficulty === 'random'){
-            setQuestionsSelecteds(randomQuestions)
+            let knowledge_test = localStorage.getItem('Knowledge_test')
+            if(knowledge_test){
+                setQuestionsSelecteds(knowledgeQuestions)
+            }else {
+                setQuestionsSelecteds(randomQuestions)
+            }
+            
         }
     }, [])
 

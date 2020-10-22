@@ -5,6 +5,7 @@ import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
 import { GameTemplate } from './style'
 import translate from '../../assets/gifs/translate.gif'
 import listenAndLearning from '../../assets/gifs/listen-and-learning.gif'
+import imgAndLearning from '../../assets/gifs/imgAndLearning.gif'
 import {TimeFive} from '@styled-icons/boxicons-solid/TimeFive'
 import {BarGraph} from '@styled-icons/entypo/BarGraph'
 import {StarFill} from '@styled-icons/bootstrap/StarFill'
@@ -53,8 +54,9 @@ export default function Introduction() {
             setTitle('Ouvir e traduzir')
             setText('Ouça audios e preencha a lacuna da frase conforme o contexto da frase e a pronuncia do audio selecionando a palavra correta.')
         }else if(type === 'images and learning'){
+            setGif(imgAndLearning)
             setTitle('Tradução através de imagens')
-            setText('selecionar a imagem correta conforme a palavra solicitada')
+            setText('Selecione a imagem correta conforme a palavra soclitada, para isso deverá entender o significado da palavra e em seguida ouvirá a mesma, caso acerte.')
         }else if(type === 'speak'){
             setTitle('Fala e pronúncia')
             setText('pronunciar palavras e frases em ingles')
