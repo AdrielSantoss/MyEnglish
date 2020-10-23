@@ -30,7 +30,8 @@ audio{
     border-radius: 5%;
     width: 120px;
     height: 35px;
-    margin: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
     cursor: pointer;
   
 }

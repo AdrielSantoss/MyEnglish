@@ -156,7 +156,7 @@ export default function Knowledge_test() {
                 if(newRecordView){
                     toast.info('🦄 Novo Recorde', {
                         position: "top-left",
-                        autoClose: 2000,
+                        autoClose: 3000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
@@ -171,7 +171,7 @@ export default function Knowledge_test() {
                 if(newRecordView){
                     toast.info('🆕 Novo Recorde!', {
                         position: "top-left",
-                        autoClose: 2000,
+                        autoClose: 3000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
@@ -187,7 +187,7 @@ export default function Knowledge_test() {
                 if(newRecordView){
                 toast.info('🆕 Novo Recorde!', {
                     position: "top-left",
-                    autoClose: 2000,
+                    autoClose: 3000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,

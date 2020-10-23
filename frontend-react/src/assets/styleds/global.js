@@ -30,7 +30,8 @@ padding: 0px;
 `
 export const ShowButton = styled.div`
     display: ${props => (props.display?'flex;':'none;')}
-    margin: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
     padding: 0px;
 
 

@@ -61,12 +61,16 @@
     transition: 0.5s;
     cursor: pointer;
 }
+.translate-type:hover {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+}
 .translate-type:hover{
     transform: scale(1.1);
     transition: 0.5s;
     cursor: pointer;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+
 }
 .listen-type:hover{
     transform: scale(1.1);

@@ -68,7 +68,7 @@ export default function Introduction() {
 
     const navigation = useNavigate()
     return (
-
+        
         <GameTemplate>
             <div className="game-introduction">
                 <div className="leftArrow">

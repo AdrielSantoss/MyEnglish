@@ -4,8 +4,10 @@ import Header_Container from '../Header_Container'
 import Content from '../Content'
 import Footer from '../Footer'
 import {Outlet} from 'react-router-dom'
+import { Transition } from 'react-transition-group';
 
-export default function Home() {
+
+export default function Home({ in: inProp }) {
 
   useEffect(()=>{
     if(!localStorage.getItem('theme_MyEnglish')){
@@ -15,10 +17,14 @@ export default function Home() {
 
  return (
    <div>
+     
        <Header/>
-       <Outlet/>
+       <Transition in={false} timeout={500}>
+         <Outlet/>
+       </Transition>
        <Content/>
        <Footer/>
+    
    </div>
  );
 }
