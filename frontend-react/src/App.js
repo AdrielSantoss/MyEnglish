@@ -3,10 +3,9 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Routes from './config/routes'
 import {ThemeProvider} from 'styled-components'
 import ThemeContext from './config/theme'
-import { Transition } from 'react-transition-group';
 
 
-function App({ in: inProp }) {
+function App() {
 
 
   const LightTheme = {
@@ -50,7 +49,6 @@ function App({ in: inProp }) {
 
   return (
     <Router>
-       <Transition in={inProp} timeout={500}>
       <div className="App">
       <ThemeContext.Provider value={{
         switchTheme: handleDarkMode
@@ -60,7 +58,6 @@ function App({ in: inProp }) {
         </ThemeProvider>
       </ThemeContext.Provider>
       </div>
-      </Transition>
     </Router>
   )
 }

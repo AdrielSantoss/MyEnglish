@@ -36,7 +36,6 @@ import $ from 'jquery'
 import { IntroWrapper, FinishWrapper, ShowProgressBar, Icons, Pts } from './style.js'
 import {ResponseArea} from '../../assets/styleds/global'
 import ThemeContext from '../../config/theme'
-import UsersService from '../../config/services';
 import {toast} from 'react-toastify'
 import {useNavigate} from 'react-router-dom'
 
@@ -125,9 +124,9 @@ export default function Knowledge_test() {
         }
     }, [])
 
-    function rand(min = 0, max = 29) {
+    function rand(min = 0, max = 5) {
         setQuestionNum(questionNum+1)
-        if (selecteds.length >= 19) {
+        if (selecteds.length >= 4) {
             setShowEnd('flex')
             setShowProgress('none')
             
@@ -136,7 +135,7 @@ export default function Knowledge_test() {
         val = val + 3.35
         setProgressValue(val + "%")
 
-        while (selecteds.length < 20){
+        while (selecteds.length < 5){
             const num = Math.random() * (max - min) + min
             let random = Math.floor(num)
             if (selecteds.indexOf(random) === -1) {
@@ -147,44 +146,28 @@ export default function Knowledge_test() {
 
     }
 
-    function setRecord(){
-        const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
-        const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+   function setRecordNotification(){
+    
+    const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
+    const difficulty = localStorage.getItem('Difficulty_MyEnglish')
 
-        if(difficulty === 'easy'){
-            if(pts > user.records.easy){
-                if(newRecordView){
-                    toast.info('🦄 Novo Recorde', {
-                        position: "top-left",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                    })
-                    setNewRecordView(!newRecordView)
-                }
-                UsersService.updateRecords({id: user._id, records: {easy: pts, medium: user.records.medium, hard: user.records.hard, random: user.records.random}})
+    if(difficulty === 'easy'){
+        if(pts > user.records.easy){
+            if(newRecordView){
+                toast.info('🦄 Novo Recorde', {
+                    position: "top-left",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                })
+                setNewRecordView(!newRecordView)
             }
-        }else if(difficulty === 'medium'){
-            if(pts > user.records.medium){
-                if(newRecordView){
-                    toast.info('🆕 Novo Recorde!', {
-                        position: "top-left",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                    })
-                    setNewRecordView(!newRecordView)
-                }
-                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: pts , hard: user.records.hard, random: user.records.random}})
-            }
-
-        }else if(difficulty === 'hard'){
-            if(pts > user.records.hard){
-                if(newRecordView){
+        }
+    }else if(difficulty === 'medium'){
+        if(pts > user.records.medium){
+            if(newRecordView){
                 toast.info('🆕 Novo Recorde!', {
                     position: "top-left",
                     autoClose: 3000,
@@ -195,43 +178,56 @@ export default function Knowledge_test() {
                 })
                 setNewRecordView(!newRecordView)
             }
-                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: pts, random: user.records.random}})
-            }
-        }else if(difficulty === 'random'){
-            if(pts > user.records.random){
-                if(newRecordView){
-                    toast.info('☑️ Novo Recorde!', {
-                        position: "top-left",
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                    })
-                    setNewRecordView(!newRecordView)
-                }
-                UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: user.records.random, random: pts }})
+        }
+
+    }else if(difficulty === 'hard'){
+        if(pts > user.records.hard){
+            if(newRecordView){
+            toast.info('🆕 Novo Recorde!', {
+                position: "top-left",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            })
+            setNewRecordView(!newRecordView)
+        }
+        }
+    }else if(difficulty === 'random'){
+        if(pts > user.records.random){
+            if(newRecordView){
+                toast.info('☑️ Novo Recorde!', {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                })
+                setNewRecordView(!newRecordView)
             }
         }
+    }
     }
 
     function correct(){
         setPts(pts+100)
         setCorrectCounter(correctCounter+1) 
-        setRecord() 
+        setRecordNotification() 
 
     }
 
     function correctMedium(){
         setPts(pts+200)   
         setCorrectCounter(correctCounter+1)  
-        setRecord()
+        setRecordNotification()
 
     }
     function correctHard(){
         setPts(pts+300) 
         setCorrectCounter(correctCounter+1)    
-        setRecord()
+        setRecordNotification()
 
     }
     function incorrect(){
@@ -286,7 +282,7 @@ export default function Knowledge_test() {
                 if (showIntro === 'none') {
                     if (indice === counterQuestions) {
                         
-                        while (selecteds.length < 20) {
+                        while (selecteds.length < 5) {
                             if (i.type === 'dialog') {
                                 return (
                                     <div>

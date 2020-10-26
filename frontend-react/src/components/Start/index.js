@@ -3,6 +3,8 @@ import {useNavigate, Link} from 'react-router-dom'
 import levelIcon from '../../assets/icons/configuracao.png'
 import {TemplateStart} from './style'
 import './start.css'
+import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
+
 
 export default function Start() {
 
@@ -16,13 +18,22 @@ export default function Start() {
 
   function setEasy(){
     localStorage.setItem('Difficulty_MyEnglish', 'easy')
+    if(localStorage.getItem('Knowledge_test')){
+      localStorage.removeItem('Knowledge_test')
+    }
   }
   function setMedium(){
     localStorage.setItem('Difficulty_MyEnglish', 'medium')
+    if(localStorage.getItem('Knowledge_test')){
+      localStorage.removeItem('Knowledge_test')
+    }
 
   }
   function setHard(){
     localStorage.setItem('Difficulty_MyEnglish', 'hard')
+    if(localStorage.getItem('Knowledge_test')){
+      localStorage.removeItem('Knowledge_test')
+    }
 
   }
   function setRandom(event){
@@ -37,11 +48,13 @@ export default function Start() {
 
   }
 
-
  return (
  
   <div className="start" >
       <TemplateStart className="mt-5">
+      <div className="leftArrow">
+                    <LeftArrowAlt size={45} onClick={() => { navigation('/') }} />
+        </div>
       <div className="start-content" >
         <div className="hello">
             <span className="icon icon--circle">

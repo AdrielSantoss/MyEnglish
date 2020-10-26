@@ -2,19 +2,55 @@ import React, {useEffect, useState} from 'react';
 import {Times} from '@styled-icons/fa-solid/Times'
 import {useNavigate} from 'react-router-dom'
 import './final.css'
-import {FinalTemplate} from './style.js'
-
+import {FinalTemplate, Recomended} from './style.js'
+import UsersService from '../../config/services';
 
 export default function Final(props) {
 
     const navigation = useNavigate()
+
+    const [showRecomended, setShowRecomended] = useState(false)
+
+    useEffect(()=>{
+  
+            const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
+            const difficulty = localStorage.getItem('Difficulty_MyEnglish')
+    
+            if(difficulty === 'easy'){
+                if(props.pts > user.records.easy){
+
+                    UsersService.updateRecords({id: user._id, records: {easy: props.pts, medium: user.records.medium, hard: user.records.hard, random: user.records.random}})
+                }
+            }else if(difficulty === 'medium'){
+                if(props.pts > user.records.medium){
+     
+                    UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: props.pts , hard: user.records.hard, random: user.records.random}})
+                }
+    
+            }else if(difficulty === 'hard'){
+                if(props.pts > user.records.hard){
+  
+                    UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: props.pts, random: user.records.random}})
+                }
+            }else if(difficulty === 'random'){
+                if(props.pts > user.records.random){
+     
+                    UsersService.updateRecords({id: user._id, records: {easy: user.records.easy, medium: user.records.medium , hard: user.records.random, random: props.pts }})
+                }
+            }
+
+            if(localStorage.getItem('Knowledge_test')){
+              setShowRecomended(true)
+            }
+ 
+    },[])
 
  return (
     <FinalTemplate>
 
        <div className="final-wrapper">
        <div className="left-times">
-                <Times size={30} onClick={()=>{navigation('/start')}}/>
+                <Times size={30} onClick={()=>{navigation('/')}}/>
         </div>
         <div className="bye">
         <span className="icon icon--circle">
@@ -51,9 +87,9 @@ export default function Final(props) {
             </div>
         </div>
         </center>
-        <div>
+        <Recomended display={showRecomended}>
           <div className="recomended"> Nível Recomendado: <div className="level">Intermediário</div></div> 
-        </div>
+        </Recomended>
 
        </div>
    </FinalTemplate>

@@ -185,16 +185,16 @@ export const easyQuestionsIAL = [{
     img3: require('../../assets/imgs/stars.jpg'),
     img4: require('../../assets/imgs/pineapple.jpg'),
     audio: require('../../assets/audios/stars.mp3'),
-    r: 'img1',
+    r: 'img3',
     type: 'images-listen-and-learning',
     difficulty: 'easy'
 }, {
     word: 'Constructor',
-    img1: require('../../assets/imgs/stairs.png'),
+    img1: require('../../assets/imgs/constructor.jpg'),
     img2: require('../../assets/imgs/bed.png'),
-    img3: require('../../assets/imgs/stars.jpg'),
+    img3: require('../../assets/imgs/fisherman.jpg'),
     img4: require('../../assets/imgs/pineapple.jpg'),
-    audio: require('../../assets/audios/stars.mp3'),
+    audio: require('../../assets/audios/constructor.mp3'),
     r: 'img1',
     type: 'images-listen-and-learning',
     difficulty: 'easy'

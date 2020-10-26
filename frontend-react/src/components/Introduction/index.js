@@ -55,7 +55,7 @@ export default function Introduction() {
             setText('Ouça audios e preencha a lacuna da frase conforme o contexto da frase e a pronuncia do audio selecionando a palavra correta.')
         }else if(type === 'images and learning'){
             setGif(imgAndLearning)
-            setTitle('Tradução através de imagens')
+            setTitle('Tradução com imagens')
             setText('Selecione a imagem correta conforme a palavra soclitada, para isso deverá entender o significado da palavra e em seguida ouvirá a mesma, caso acerte.')
         }else if(type === 'speak'){
             setTitle('Fala e pronúncia')
@@ -72,7 +72,7 @@ export default function Introduction() {
         <GameTemplate>
             <div className="game-introduction">
                 <div className="leftArrow">
-                    <LeftArrowAlt size={45} onClick={() => { navigation('/start') }} />
+                    <LeftArrowAlt size={45} onClick={() => { navigation('/levels') }} />
                 </div>
                 <div className="hello-intro">
                     <span className="icon icon--circle">

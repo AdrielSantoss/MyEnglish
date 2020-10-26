@@ -4,6 +4,8 @@ import levelIcon from '../../assets/icons/configuracao.png'
 import {TemplateTypes} from './style'
 import SpeechRecognition from 'react-speech-recognition'
 import './types.css'
+import { LeftArrowAlt } from '@styled-icons/boxicons-regular/LeftArrowAlt'
+
 
 export default function Types() {
 
@@ -54,6 +56,9 @@ export default function Types() {
  return (
   <div className="start" >
       <TemplateTypes className="mt-5">
+      <div className="leftArrow">
+                    <LeftArrowAlt size={45} onClick={() => { navigation('/levels') }} />
+      </div>
       <div className="start-content" >
         <div className="hello">
             <span className="icon icon--circle">
