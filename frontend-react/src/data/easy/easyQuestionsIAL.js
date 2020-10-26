@@ -44,7 +44,7 @@ export const easyQuestionsIAL = [{
     img2: require('../../assets/imgs/airplane.jpg'),
     img3: require('../../assets/imgs/ear.jpg'),
     img4: require('../../assets/imgs/bike.jpg'),
-    audio: require('../../assets/audios/factory.mp3'),
+    audio: require('../../assets/audios/bike.mp3'),
     r: 'img4',
     type: 'images-listen-and-learning',
     difficulty: 'easy'
@@ -74,7 +74,7 @@ export const easyQuestionsIAL = [{
     img2: require('../../assets/imgs/shoe.jpg'),
     img3: require('../../assets/imgs/shirt.jpg'),
     img4: require('../../assets/imgs/cap.jpg'),
-    audio: require('../../assets/audios/pants.mp3'),
+    audio: require('../../assets/audios/cap.mp3'),
     r: 'img4',
     type: 'images-listen-and-learning',
     difficulty: 'easy'
@@ -113,8 +113,88 @@ export const easyQuestionsIAL = [{
     img1: require('../../assets/imgs/cop.jpg'),
     img2: require('../../assets/imgs/fisherman.jpg'),
     img3: require('../../assets/imgs/constructor.jpg'),
-    img4: require('../../assets/imgs/five.png'),
-    audio: require('../../assets/audios/five.mp3'),
+    img4: require('../../assets/imgs/two.jpg'),
+    audio: require('../../assets/audios/cop.mp3'),
+    r: 'img1',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Apple',
+    img1: require('../../assets/imgs/boat.jpg'),
+    img2: require('../../assets/imgs/pineapple.jpg'),
+    img3: require('../../assets/imgs/airplane.jpg'),
+    img4: require('../../assets/imgs/apple2.jpg'),
+    audio: require('../../assets/audios/apple.mp3'),
+    r: 'img4',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy' 
+}, {
+    word: 'Sun',
+    img1: require('../../assets/imgs/sky.jpg'),
+    img2: require('../../assets/imgs/mountain.jpg'),
+    img3: require('../../assets/imgs/sun.png'),
+    img4: require('../../assets/imgs/airplane.jpg'),
+    audio: require('../../assets/audios/sun.mp3'),
+    r: 'img3',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy' 
+}, {
+    word: 'Sky',
+    img1: require('../../assets/imgs/mountain.jpg'),
+    img2: require('../../assets/imgs/sky.jpg'),
+    img3: require('../../assets/imgs/sun.png'),
+    img4: require('../../assets/imgs/airplane.jpg'),
+    audio: require('../../assets/audios/sky.mp3'),
+    r: 'img2',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Table',
+    img1: require('../../assets/imgs/factory.jpg'),
+    img2: require('../../assets/imgs/table.jpg'),
+    img3: require('../../assets/imgs/stairs.png'),
+    img4: require('../../assets/imgs/bed.png'),
+    audio: require('../../assets/audios/table.mp3'),
+    r: 'img2',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Bed',
+    img1: require('../../assets/imgs/ear.jpg'),
+    img2: require('../../assets/imgs/table.jpg'),
+    img3: require('../../assets/imgs/shirt.jpg'),
+    img4: require('../../assets/imgs/bed.png'),
+    audio: require('../../assets/audios/table.mp3'),
+    r: 'img4',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Stairs',
+    img1: require('../../assets/imgs/stairs.png'),
+    img2: require('../../assets/imgs/bed.png'),
+    img3: require('../../assets/imgs/cop.jpg'),
+    img4: require('../../assets/imgs/pineapple.jpg'),
+    audio: require('../../assets/audios/stairs.mp3'),
+    r: 'img1',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Stars',
+    img1: require('../../assets/imgs/stairs.png'),
+    img2: require('../../assets/imgs/bed.png'),
+    img3: require('../../assets/imgs/stars.jpg'),
+    img4: require('../../assets/imgs/pineapple.jpg'),
+    audio: require('../../assets/audios/stars.mp3'),
+    r: 'img1',
+    type: 'images-listen-and-learning',
+    difficulty: 'easy'
+}, {
+    word: 'Constructor',
+    img1: require('../../assets/imgs/stairs.png'),
+    img2: require('../../assets/imgs/bed.png'),
+    img3: require('../../assets/imgs/stars.jpg'),
+    img4: require('../../assets/imgs/pineapple.jpg'),
+    audio: require('../../assets/audios/stars.mp3'),
     r: 'img1',
     type: 'images-listen-and-learning',
     difficulty: 'easy'
