@@ -63,7 +63,10 @@ export default function Knowledge_test() {
     const navigation = useNavigate()
 
     useEffect(() => {
-       
+        if(!localStorage.getItem('user_MyEnglish')){
+            return navigation('/login')
+            
+          }
         rand()
         $('#more-info').draggable()
 
@@ -124,7 +127,7 @@ export default function Knowledge_test() {
         }
     }, [])
 
-    function rand(min = 0, max = 5) {
+    function rand(min = 0, max = 20) {
         setQuestionNum(questionNum+1)
         if (selecteds.length >= 4) {
             setShowEnd('flex')
@@ -210,6 +213,11 @@ export default function Knowledge_test() {
         }
     }
     }
+
+    function restart(){
+        window.location.reload()
+
+  }
 
     function correct(){
         setPts(pts+100)
@@ -339,8 +347,9 @@ export default function Knowledge_test() {
                 </ResponseArea>
             </IntroWrapper>
 
+
             <FinishWrapper display={showEnd}>
-                <Final interval={interval} pts={pts} correct={correctCounter} incorrect={incorrectCounter} knowledgeQuestions={knowledgeQuestions}/>
+                <Final restart={restart} interval={interval} pts={pts} correct={correctCounter} incorrect={incorrectCounter} knowledgeQuestions={knowledgeQuestions}/>
             </FinishWrapper>
 
             </div>

@@ -19,8 +19,16 @@ export default function Introduction() {
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
     const [gif, setGif] = useState('')
+    const navigation = useNavigate()
+
 
     useEffect(() => {
+
+        if(!localStorage.getItem('user_MyEnglish')){
+            return navigation('/login')
+            
+          }
+
         const difficulty = localStorage.getItem('Difficulty_MyEnglish')
         const type = localStorage.getItem('Type_MyEnglish')
         const user = JSON.parse(localStorage.getItem('user_MyEnglish'))
@@ -66,7 +74,6 @@ export default function Introduction() {
         }
     }, [])
 
-    const navigation = useNavigate()
     return (
         
         <GameTemplate>
@@ -91,13 +98,13 @@ export default function Introduction() {
                 <center>
                     <div className="icons-description">
                         <div className="icon-content">
-                            <div className="icon d-flex align-items-center"><i className="fa fa-clock-o" aria-hidden="true"></i><strong>Tempo médio <TimeFive size={15}/></strong></div>  {time}
+                            <div className="icon d-flex align-items-center"> <strong>Tempo médio <TimeFive size={15} className="mb-1"/></strong></div>  {time}
                         </div>
                         <div className="icon-content">
-                            <div className="icon"><i className="fa fa-bar-chart" aria-hidden="true"></i> <strong>Dificuldade <BarGraph size={15}/></strong></div>  {difficulty}
+                            <div className="icon"> <strong>Dificuldade <BarGraph size={15} className="mb-1"/></strong></div>  {difficulty}
                         </div>
                         <div className="icon-content">
-                            <div className="icon"><i className="fa fa-star-half-o" aria-hidden="true"></i> <strong>Recorde <StarFill size={15}/></strong></div> {record}
+                            <div className="icon"> <strong>Recorde <StarFill size={15} className="mb-1"/></strong></div> {record}
                         </div>
                     </div>
                 </center>

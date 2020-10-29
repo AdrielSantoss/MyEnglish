@@ -12,4 +12,10 @@ box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.9);
 export const Recomended = styled.div`
 display: ${props => (props.display?'flex':'none')}
 
+
+`
+export const Score = styled.div`
+display: ${props => (props.display?'flex':'none')}
+
+
 `
