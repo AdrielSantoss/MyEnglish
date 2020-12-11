@@ -20,7 +20,7 @@ O projeto está completo, o desenvolvimento seguiu as seguintes tarefas:
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-* Você instalou a versão mais recente de <[Node JS](https://nodejs.org/en/). e [MongoDB](https://www.mongodb.com/)>
+* Você instalou a versão mais recente de [Node JS](https://nodejs.org/en/). e [MongoDB](https://www.mongodb.com/)
 * Você tem uma máquina `<Windows / Linux / Mac>`. 
 
 ## 🚀 Instalando <MyEnglish>
@@ -28,14 +28,15 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o <MyEnglish>, siga estas etapas:
 
 Linux e macOS:
-```
-<npm install>
-```
+* Abra o Terminal
+* Entre dentro da pasta do projeto MyEnglish
+* Aplique o comando ```sudo npm install```
 
 Windows:
-```
-<npm install>
-```
+* Abra o CMD (Prompt de comando)
+* Entre dentro da pasta do projeto MyEnglish
+* Aplique o comando ```npm install```
+
 
 ## ☕ Usando <MyEnglish>
 
