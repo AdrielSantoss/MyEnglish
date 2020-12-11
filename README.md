@@ -4,7 +4,7 @@
 
 ![img3](https://user-images.githubusercontent.com/64885646/101936525-6be69d00-3bbf-11eb-9f03-ea3002ba2b2a.png)
 
-> Sistema para a prática e reforço de conhecimento teórico de Línguas inglesa através de questionários rápidos.
+> Sistema para a prática e reforço de conhecimento teórico de línguas inglesa através de questionários rápidos. Este sistema foi apresentado no Quarto seminário de tecnologia da Alcides Maya como projeto de conclusão de curso.
 
 ### Desenvolvimento
 
