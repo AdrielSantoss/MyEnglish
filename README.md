@@ -20,7 +20,7 @@ O projeto está completo, o desenvolvimento seguiu as seguintes tarefas:
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-* Você instalou a versão mais recente de `<NODE JS e MongoDB>`
+* Você instalou a versão mais recente de `<[Node JS](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). e MongoDB>`
 * Você tem uma máquina `<Windows / Linux / Mac>`. 
 
 ## 🚀 Instalando <MyEnglish>
