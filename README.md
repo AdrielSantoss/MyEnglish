@@ -8,18 +8,18 @@
 
 ### Desenvolvimento
 
-O projeto está completo, o desenvolvimento seguiu as seguintes tarefas:
+O projeto está em desenvolvimento, seguindo as seguintes tarefas:
 
 - [x] Planejamento e protótipos
 - [x] Pesquisa e estudo de métodos educativos para a prática de línguas estrangeiras. 
 - [x] Desenvolvivemento da API (Back-end)
 - [x] Desenvolvimento das telas (Front-end)
-- [x] Desenvolvimento dos questionários
+- [x] Planejamento e desenvolvimento do funcionamento do questionários
+- [ ] Desenvolvimento de 300 questões
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 * Você instalou a versão mais recente de [Node JS](https://nodejs.org/en/). e [MongoDB](https://www.mongodb.com/)
 * Você tem uma máquina `<Windows / Linux / Mac>`. 
 
@@ -28,26 +28,31 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o <MyEnglish>, siga estas etapas:
 
 Linux e macOS:
+* Clone este repositório ou faça dowload da pasta do projeto 
 * Abra o Terminal
 * Entre dentro da pasta do projeto MyEnglish
-* Aplique o comando ```sudo npm install```
+* Aplique o comando ``` npm install```
 
 Windows:
+* Clone este repositório ou faça dowload da pasta do projeto 
 * Abra o CMD (Prompt de comando)
 * Entre dentro da pasta do projeto MyEnglish
 * Aplique o comando ```npm install```
 
-
+```Após este processo, o dowload das dependencias do projeto deve iniciar.```
 
 ## ☕ Usando o MyEnglish
+
 Para usar <MyEnglish>, siga estas etapas:
 * Abra o CMD (Prompt de comando)
 * Entre dentro da pasta do projeto MyEnglish
 * Aplique o comando ```npm start```
+  
+```Após este processo, o projeto será iniciado no navegador na porta 3000 e estará pronto para uso.```
 
 
 ## 📫 Contribuindo para o MyEnglish
-<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
+
 Para contribuir com <MyEnglish>, siga estas etapas:
 
 1. Bifurque este repositório.
