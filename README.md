@@ -6,7 +6,7 @@
 
 > Sistema para a prática e reforço de conhecimento teórico de Línguas inglesa através de questionários rápidos.
 
-### Ajustes e melhorias
+### Desenvolvimento
 
 O projeto ainda está completo, o desenvolvimento seguiu as seguintes tarefas:
 
