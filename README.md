@@ -28,7 +28,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o <MyEnglish>, siga estas etapas:
 
 Linux e macOS:
-* Clone este repositório ou faça dowload da pasta do projeto 
+* Faça dowload da pasta do projeto 
 * Abra o Terminal
 * Entre dentro da pasta do projeto MyEnglish
 * Aplique o comando ``` npm install```
