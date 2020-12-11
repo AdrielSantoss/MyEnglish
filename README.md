@@ -23,7 +23,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente de [Node JS](https://nodejs.org/en/). e [MongoDB](https://www.mongodb.com/)
 * Você tem uma máquina `<Windows / Linux / Mac>`. 
 
-## 🚀 Instalando <MyEnglish>
+## 🚀 Instalando o MyEnglish
 
 Para instalar o <MyEnglish>, siga estas etapas:
 
@@ -39,14 +39,14 @@ Windows:
 
 
 
-## ☕ Usando <MyEnglish>
+## ☕ Usando o MyEnglish
 Para usar <MyEnglish>, siga estas etapas:
 * Abra o CMD (Prompt de comando)
 * Entre dentro da pasta do projeto MyEnglish
 * Aplique o comando ```npm start```
 
 
-## 📫 Contribuindo para <MyEnglish>
+## 📫 Contribuindo para o MyEnglish
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
 Para contribuir com <MyEnglish>, siga estas etapas:
 
