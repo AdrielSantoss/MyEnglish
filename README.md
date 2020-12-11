@@ -63,3 +63,16 @@ Para contribuir com <MyEnglish>, siga estas etapas:
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+## 🧩 Recursos/Tecnologias:
+
+| Recurso | Link |
+| ------ | ------ |
+| Node JS | https://nodejs.org/en/ |
+| React JS | https://pt-br.reactjs.org/ |
+| Bootstrap | https://getbootstrap.com/ |
+| Styled-components | https://styled-components.com/ |
+| Styled-icons | https://styled-icons.js.org/ |
+| React-router-dom | https://reactrouter.com/web/guides/quick-start |
+| React-hooks | https://pt-br.reactjs.org/docs/hooks-intro.html |
+| MongoDB | https://www.mongodb.com/ |
+
