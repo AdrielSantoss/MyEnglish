@@ -8,7 +8,7 @@
 
 ### Desenvolvimento
 
-O projeto ainda está completo, o desenvolvimento seguiu as seguintes tarefas:
+O projeto está completo, o desenvolvimento seguiu as seguintes tarefas:
 
 - [x] Planejamento e protótipos
 - [x] Pesquisa e estudo de métodos educativos para a prática de línguas estrangeiras. 
