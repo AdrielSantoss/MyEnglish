@@ -38,13 +38,13 @@ Windows:
 * Aplique o comando ```npm install```
 
 
+
 ## ☕ Usando <MyEnglish>
-
 Para usar <MyEnglish>, siga estas etapas:
+* Abra o CMD (Prompt de comando)
+* Entre dentro da pasta do projeto MyEnglish
+* Aplique o comando ```npm start```
 
-```
-<npm start>
-```
 
 ## 📫 Contribuindo para <MyEnglish>
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
